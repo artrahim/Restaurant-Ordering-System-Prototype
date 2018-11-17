@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:OrderingSystem"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <FontFamily x:Key="AmericanaExBold">/fonts/#Americana Extra Bold</FontFamily>
     </Application.Resources>
 </Application>

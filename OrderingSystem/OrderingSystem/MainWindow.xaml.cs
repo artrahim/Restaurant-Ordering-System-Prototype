@@ -23,6 +23,8 @@ namespace OrderingSystem
         public MainWindow()
         {
             InitializeComponent();
+            toMenu.Background = new SolidColorBrush(Color.FromRgb(227,24,53));
+
         }
     }
 }
