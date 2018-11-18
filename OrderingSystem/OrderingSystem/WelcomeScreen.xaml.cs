@@ -16,16 +16,24 @@ using System.Windows.Shapes;
 namespace OrderingSystem
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for WelcomeScreen.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class WelcomeScreen : Page
     {
+        Menu menu_Page = new Menu();
 
-        public MainWindow()
+        public WelcomeScreen()
         {
             InitializeComponent();
-            _NavigationFrame.Navigate(new WelcomeScreen());
-
         }
+        
+        private void toMenu_Click(object sender, RoutedEventArgs e)
+        {
+            this._NavigationFrame2.NavigationService.Navigate(new Uri("Pages/Menu.xaml", UriKind.Relative));
+            this._NavigationFrame2.NavigationService.Navigate(menu_Page);
+
+            this.Content = menu_Page;
+        }
+        
     }
 }

@@ -16,16 +16,13 @@ using System.Windows.Shapes;
 namespace OrderingSystem
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Starters.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Starters : Page
     {
-
-        public MainWindow()
+        public Starters()
         {
             InitializeComponent();
-            _NavigationFrame.Navigate(new WelcomeScreen());
-
         }
     }
 }
