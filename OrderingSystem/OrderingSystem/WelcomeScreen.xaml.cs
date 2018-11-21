@@ -20,20 +20,18 @@ namespace OrderingSystem
     /// </summary>
     public partial class WelcomeScreen : Page
     {
-        Menu menu_Page = new Menu();
 
         public WelcomeScreen()
         {
             InitializeComponent();
         }
         
-        private void toMenu_Click(object sender, RoutedEventArgs e)
+        private void ToMenu_Click(object sender, RoutedEventArgs e)
         {
-            this._NavigationFrame2.NavigationService.Navigate(new Uri("Pages/Menu.xaml", UriKind.Relative));
-            this._NavigationFrame2.NavigationService.Navigate(menu_Page);
 
-            this.Content = menu_Page;
+            this.NavigationService.Navigate(new Starters());
+
         }
-        
+
     }
 }

@@ -9,7 +9,7 @@
       Title="Menu" >
 
     <Grid>
-        <Frame Name="menu_Page" Visibility="Hidden" Source="Menu.xaml"/>
+        <Frame Name="menu_Page"/>
         <TabControl HorizontalAlignment="Left" Height="1160" Margin="0,0,0,0" VerticalAlignment="Top" Width="1320" FontWeight="Bold" FontFamily="Euphemia" FontSize="32">
             <TabItem Header="STARTERS" Width="260" Height="80">
                 <Grid Background="White">

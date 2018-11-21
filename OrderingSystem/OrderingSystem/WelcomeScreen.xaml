@@ -11,7 +11,7 @@
         <Frame x:Name="_NavigationFrame2" NavigationUIVisibility="Hidden"/>
         <Image Name ="Logo" Height="424" Margin="0,0,0,250" VerticalAlignment="Center" Width="672" HorizontalAlignment="Center" Source="img/bostonpizzalogo.jpg"/>
         <Label Name ="Welcome" Content="Welcome to" HorizontalAlignment="Center" Margin="0,0,0,850" VerticalAlignment="Center" FontSize="100" Foreground="#e01a31" FontFamily="/fonts/#Americana"/>
-        <Button Name ="toMenu" Content="Menu" HorizontalAlignment="Center" Margin="0,350,0,0" VerticalAlignment="Center" Width="180" Height="80" Background="#e01a31" Foreground="WhiteSmoke" FontSize="36" FontFamily="Arial"/>
+        <Button x:Name ="ToMenu" Content="Menu" HorizontalAlignment="Center" Margin="0,350,0,0" VerticalAlignment="Center" Width="180" Height="80" Background="#e01a31" Foreground="WhiteSmoke" FontSize="36" FontFamily="Arial" Click="ToMenu_Click"/>
         <Button x:Name ="callServer" Content="Call a Server" HorizontalAlignment="Left" Margin="60,0,0,60" VerticalAlignment="Bottom" Width="360" Height="80" Background="#e01a31" Foreground="WhiteSmoke" FontSize="36" FontFamily="Arial" />
     </Grid>
 </Page>

@@ -24,8 +24,14 @@ namespace OrderingSystem
         public MainWindow()
         {
             InitializeComponent();
-            _NavigationFrame.Navigate(new WelcomeScreen());
-
+            Loaded += Window_Loaded;
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            _NavigationFrame.NavigationService.Navigate(new WelcomeScreen());
+        }
+
+
     }
 }
