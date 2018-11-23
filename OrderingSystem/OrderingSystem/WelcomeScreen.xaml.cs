@@ -33,5 +33,11 @@ namespace OrderingSystem
 
         }
 
+        private void CallServer_Click(object sender, RoutedEventArgs e)
+        {
+
+            popUpServer.IsOpen = true;
+
+        }
     }
 }
