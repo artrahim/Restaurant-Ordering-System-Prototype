@@ -1,4 +1,4 @@
-﻿<Page x:Class="OrderingSystem.Starters"
+<Page x:Class="OrderingSystem.Starters"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -14,6 +14,34 @@
             <TabItem Header="STARTERS" Width="260" Height="80">
                 <Grid Background="White">
                     <Image HorizontalAlignment="Left" Height="300" Margin="150,156,0,0" VerticalAlignment="Top" Width="300" Source="img/chickenwings.jpg"/>
+                    <ToggleButton x:Name ="AddToOrder_1" Content="Add To Order" VerticalAlignment="Bottom" Margin="0,270,0,706" HorizontalAlignment="Center" Width="360" Height="80" FontSize="36" FontFamily="Arial" Click="AddToOrder_Click_1"/>
+                    <Popup x:Name="PopUpAddToOrder_1" Width="400" Height="400" Margin="0,0,0,0" IsOpen="{Binding ElementName=PopUpAddToOrder_1, Path=IsChecked, Mode=TwoWay}" PlacementTarget="{Binding ElementName=AddToOrder_1}" StaysOpen="True" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
+                        <Canvas Height="390" Background="LightGray" VerticalAlignment="Bottom" Margin="10,0,0,0">
+                            <Canvas.RenderTransform>
+                                <RotateTransform x:Name="Transform" />
+                            </Canvas.RenderTransform>
+                            <ScrollViewer Height="318" Canvas.Top="0" Width="390">
+                                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="390">
+                                    <Label Content="Select Flavor Of Wings"/>
+                                    <RadioButton x:Name="naked" FontSize="25">Naked</RadioButton>
+                                    <RadioButton x:Name="mild" FontSize="25">Mild</RadioButton>
+                                    <RadioButton x:Name="medium" FontSize="25">Medium</RadioButton>
+                                    <RadioButton x:Name="hot" FontSize="25">Hot</RadioButton>
+                                    <RadioButton x:Name="bbq" FontSize="25">BBQ</RadioButton>
+                                    <RadioButton x:Name="thai" FontSize="25">Thai Chili</RadioButton>
+                                    <RadioButton x:Name="honey" FontSize="25">Honey Garlic</RadioButton>
+                                    <RadioButton x:Name="salt" FontSize="25">Salt And Pepper</RadioButton>
+                                    <RadioButton x:Name="memphis" FontSize="25">Memphis Hot Sauce</RadioButton>
+                                    <Label Content="Select One Dipp"/>
+                                    <RadioButton x:Name="blue" FontSize="25" GroupName="Dip">Blue Cheese Dip</RadioButton>
+                                    <RadioButton x:Name="chip" FontSize="25" GroupName="Dip">Chipotle Caesar Dip</RadioButton>
+                                    <RadioButton x:Name="ranch" FontSize="25" GroupName="Dip">Ranch Dip</RadioButton>
+                                </StackPanel>
+                            </ScrollViewer>
+                            <Button x:Name="CancelButton_1" Content="Cancel" Canvas.Left="210" Canvas.Top="323" Height="36" Width="147" FontSize="25" Margin="3,11,0,-21" Click="CancelButton_1_Click"/>
+                            <Button Content="Add" Canvas.Left="213" Canvas.Top="334" Height="36" Width="147" FontSize="25" Margin="-210,0,-9,0"/>
+                        </Canvas>
+                    </Popup>
                 </Grid>
             </TabItem>
             <TabItem Header="PIZZA" Width="205">
@@ -34,12 +62,12 @@
             </TabItem>
             <TabItem Header="DRINKS" Width="210">
                 <Grid Background="White">
-                    
+
                 </Grid>
             </TabItem>
         </TabControl>
         <StackPanel HorizontalAlignment="Right" Height="1280" Margin="0,0,0,0" VerticalAlignment="Top" Width="480" Orientation="Vertical" Background="#292929">
-            
+
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" Height="120" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="1320" Background="#292929" Orientation="Horizontal" >
             <Button x:Name ="callServer" Content="Call a Server" Margin="20,20,20,20" HorizontalAlignment="Left" VerticalAlignment="Center" Width="360" Height="80" Background="#e01a31" Foreground="WhiteSmoke" FontSize="36" FontFamily="Arial"/>
