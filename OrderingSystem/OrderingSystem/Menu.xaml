@@ -13,8 +13,10 @@
         <TabControl HorizontalAlignment="Left" Height="1160" Margin="0,0,0,0" VerticalAlignment="Top" Width="1320" FontWeight="Bold" FontFamily="Euphemia" FontSize="32">
             <TabItem Header="STARTERS" Width="260" Height="80">
                 <Grid Background="White">
-                    <Image HorizontalAlignment="Left" Height="300" Margin="150,156,0,0" VerticalAlignment="Top" Width="300" Source="img/chickenwings.jpg"/>
-                    <ToggleButton x:Name ="AddToOrder_1" Content="Add To Order" VerticalAlignment="Bottom" Margin="0,270,0,706" HorizontalAlignment="Center" Width="360" Height="80" FontSize="36" FontFamily="Arial" Click="AddToOrder_Click_1"/>
+
+                    <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="348" Margin="44,54,0,0" VerticalAlignment="Top" Width="793" Background="#e01a31"/>
+                    <Image HorizontalAlignment="Left" Height="301" Margin="75,115,0,0" VerticalAlignment="Top" Width="300" Source="img/chickenwings.jpg"/>
+                    <ToggleButton x:Name ="AddToOrder_1" Content="Add To Order" VerticalAlignment="Bottom" Margin="426,0,528,741" HorizontalAlignment="Center" Width="360" Height="80" FontSize="36" FontFamily="Arial" Click="AddToOrder_Click_1"/>
                     <Popup x:Name="PopUpAddToOrder_1" Width="400" Height="400" Margin="0,0,0,0" IsOpen="{Binding ElementName=PopUpAddToOrder_1, Path=IsChecked, Mode=TwoWay}" PlacementTarget="{Binding ElementName=AddToOrder_1}" StaysOpen="True" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
                         <Canvas Height="390" Background="LightGray" VerticalAlignment="Bottom" Margin="10,0,0,0">
                             <Canvas.RenderTransform>
@@ -23,7 +25,16 @@
                             <ScrollViewer Height="318" Canvas.Top="0" Width="390">
                                 <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="390">
                                     <Label Content="Select Flavor Of Wings"/>
-                                    <RadioButton x:Name="naked" FontSize="25">Naked</RadioButton>
+                                    <RadioButton x:Name="naked" FontSize="20" RenderTransformOrigin="0,0.5">
+                                        <RadioButton.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                                <SkewTransform/>
+                                                <RotateTransform/>
+                                                <TranslateTransform/>
+                                            </TransformGroup>
+                                        </RadioButton.RenderTransform> Naked
+                                    </RadioButton>
                                     <RadioButton x:Name="mild" FontSize="25">Mild</RadioButton>
                                     <RadioButton x:Name="medium" FontSize="25">Medium</RadioButton>
                                     <RadioButton x:Name="hot" FontSize="25">Hot</RadioButton>
@@ -67,7 +78,22 @@
             </TabItem>
         </TabControl>
         <StackPanel HorizontalAlignment="Right" Height="1280" Margin="0,0,0,0" VerticalAlignment="Top" Width="480" Orientation="Vertical" Background="#292929">
-
+            <Expander Header="Expander"  Margin="0,0,0,0" IsExpanded="False">
+                <Expander.RenderTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </Expander.RenderTransform>
+                <Grid Background="White" Width="240" HorizontalAlignment="Left">
+                    <Label Content="Hi"/>
+                </Grid>
+            </Expander>
+            <Expander  Header="expander2" Name="expander2" IsExpanded="False" Margin="0,75,0,0">
+                <Expander.RenderTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </Expander.RenderTransform>
+                <Grid  Background="White" Width="240" HorizontalAlignment="Left">
+                    <Label Content="Hi"/>
+                </Grid>
+            </Expander>
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" Height="120" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="1320" Background="#292929" Orientation="Horizontal" >
             <Button x:Name ="callServer" Content="Call a Server" Margin="20,20,20,20" HorizontalAlignment="Left" VerticalAlignment="Center" Width="360" Height="80" Background="#e01a31" Foreground="WhiteSmoke" FontSize="36" FontFamily="Arial"/>
