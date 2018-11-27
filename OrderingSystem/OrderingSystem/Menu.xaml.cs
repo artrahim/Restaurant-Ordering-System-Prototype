@@ -31,7 +31,15 @@ namespace OrderingSystem
 
         private void CancelButton_1_Click(object sender, RoutedEventArgs e)
         {
+            quantity_1 = 1;
+
             PopUpAddToOrder_1.IsOpen = false;
+            quantityBox_1.Text = quantity_1.ToString();
+            expander_1.IsExpanded = false;
+            expander_2.IsExpanded = false;
+            expander_3.IsExpanded = false;
+            single_1.IsChecked = false;
+            double_1.IsChecked = false;
             naked.IsChecked = false;
             medium.IsChecked = false;
             mild.IsChecked = false;
@@ -44,6 +52,28 @@ namespace OrderingSystem
             blue.IsChecked = false;
             chip.IsChecked = false;
             ranch.IsChecked = false;
+
+            
         }
+
+        public int quantity_1 = 1;
+        private void add_1_Click(object sender, RoutedEventArgs e)
+        {
+            quantity_1++;
+            quantityBox_1.Text = quantity_1.ToString();
+        }
+
+        private void minus_1_Click(object sender, RoutedEventArgs e)
+        {
+            if(quantity_1 <= 1)
+            {
+                quantity_1 = 1;
+            }
+            else { 
+                quantity_1--;
+            }
+            quantityBox_1.Text = quantity_1.ToString();
+        }
+
     }
 }
