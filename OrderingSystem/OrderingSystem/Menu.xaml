@@ -13,44 +13,84 @@
         <TabControl HorizontalAlignment="Left" Height="1160" Margin="0,0,0,0" VerticalAlignment="Top" Width="1320" FontWeight="Bold" FontFamily="Euphemia" FontSize="32">
             <TabItem Header="STARTERS" Width="260" Height="80">
                 <Grid Background="White">
-
                     <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="348" Margin="44,54,0,0" VerticalAlignment="Top" Width="793" Background="#e01a31"/>
                     <Image HorizontalAlignment="Left" Height="301" Margin="75,115,0,0" VerticalAlignment="Top" Width="300" Source="img/chickenwings.jpg"/>
                     <ToggleButton x:Name ="AddToOrder_1" Content="Add To Order" VerticalAlignment="Bottom" Margin="426,0,528,741" HorizontalAlignment="Center" Width="360" Height="80" FontSize="36" FontFamily="Arial" Click="AddToOrder_Click_1"/>
-                    <Popup x:Name="PopUpAddToOrder_1" Width="400" Height="400" Margin="0,0,0,0" IsOpen="{Binding ElementName=PopUpAddToOrder_1, Path=IsChecked, Mode=TwoWay}" PlacementTarget="{Binding ElementName=AddToOrder_1}" StaysOpen="True" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
-                        <Canvas Height="390" Background="LightGray" VerticalAlignment="Bottom" Margin="10,0,0,0">
+                    <Popup x:Name="PopUpAddToOrder_1" Width="500" Height="500" Margin="0,0,0,0" IsOpen="{Binding ElementName=PopUpAddToOrder_1, Path=IsChecked, Mode=TwoWay}" PlacementTarget="{Binding ElementName=AddToOrder_1}" StaysOpen="True" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
+                        <Canvas Height="500" Background="LightGray" VerticalAlignment="Bottom" Margin="10,0,0,0" Width="500">
                             <Canvas.RenderTransform>
                                 <RotateTransform x:Name="Transform" />
                             </Canvas.RenderTransform>
-                            <ScrollViewer Height="318" Canvas.Top="0" Width="390">
-                                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="390">
-                                    <Label Content="Select Flavor Of Wings"/>
-                                    <RadioButton x:Name="naked" FontSize="20" RenderTransformOrigin="0,0.5">
-                                        <RadioButton.RenderTransform>
-                                            <TransformGroup>
-                                                <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
-                                                <SkewTransform/>
-                                                <RotateTransform/>
-                                                <TranslateTransform/>
-                                            </TransformGroup>
-                                        </RadioButton.RenderTransform> Naked
-                                    </RadioButton>
-                                    <RadioButton x:Name="mild" FontSize="25">Mild</RadioButton>
-                                    <RadioButton x:Name="medium" FontSize="25">Medium</RadioButton>
-                                    <RadioButton x:Name="hot" FontSize="25">Hot</RadioButton>
-                                    <RadioButton x:Name="bbq" FontSize="25">BBQ</RadioButton>
-                                    <RadioButton x:Name="thai" FontSize="25">Thai Chili</RadioButton>
-                                    <RadioButton x:Name="honey" FontSize="25">Honey Garlic</RadioButton>
-                                    <RadioButton x:Name="salt" FontSize="25">Salt And Pepper</RadioButton>
-                                    <RadioButton x:Name="memphis" FontSize="25">Memphis Hot Sauce</RadioButton>
-                                    <Label Content="Select One Dipp"/>
-                                    <RadioButton x:Name="blue" FontSize="25" GroupName="Dip">Blue Cheese Dip</RadioButton>
-                                    <RadioButton x:Name="chip" FontSize="25" GroupName="Dip">Chipotle Caesar Dip</RadioButton>
-                                    <RadioButton x:Name="ranch" FontSize="25" GroupName="Dip">Ranch Dip</RadioButton>
+                            <ScrollViewer Canvas.Top="0" Width="496" Height="420">
+                                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="500">
+                                    <Expander x:Name="expander_1" Header="Size">
+                                        <Menu>
+                                            <Viewbox Height="40" HorizontalAlignment="Left">
+                                                <RadioButton x:Name="single_1" FontSize="20" GroupName="Size" Content="Starter Size + $12.99 "></RadioButton>
+                                            </Viewbox>
+                                            <Viewbox Height="40" HorizontalAlignment="Left">
+                                                <RadioButton x:Name="double_1" FontSize="20" GroupName="Size" Content="Double Order + $23.00 "></RadioButton>
+                                            </Viewbox>
+                                        </Menu>
+                                    </Expander>
+                                    <Expander x:Name="expander_2" Header="Select Flavor Of Wings">
+                                        <Menu >
+                                            <Viewbox Height="40" HorizontalAlignment="Left">
+                                                <RadioButton x:Name="naked" FontSize="20" GroupName="Flavor" Content="Plain                                  "></RadioButton>
+                                            </Viewbox>
+                                            <Viewbox Height="40" HorizontalAlignment="Left">
+                                                <RadioButton x:Name="mild" FontSize="20" GroupName="Flavor" Content="Mild                                    "></RadioButton>
+                                            </Viewbox>
+                                            <Viewbox Height="40" HorizontalAlignment="Left">
+                                                <RadioButton x:Name="medium" FontSize="20" GroupName="Flavor" Content="Medium             "></RadioButton>
+                                            </Viewbox>
+                                            <Viewbox Height="40" HorizontalAlignment="Left">
+                                                <RadioButton x:Name="hot" FontSize="20" GroupName="Flavor" Content="Hot                                    "></RadioButton>
+                                            </Viewbox>
+                                            <Viewbox Height="40" HorizontalAlignment="Left">
+                                                <RadioButton x:Name="bbq" FontSize="20" GroupName="Flavor" Content="BBQ                                  "></RadioButton>
+                                            </Viewbox>
+                                            <Viewbox Height="40" HorizontalAlignment="Left">
+                                                <RadioButton x:Name="thai" FontSize="20" GroupName="Flavor" Content="Thai Chili                "></RadioButton>
+                                            </Viewbox>
+                                            <Viewbox Height="40" HorizontalAlignment="Left">
+                                                <RadioButton x:Name="honey" FontSize="20" GroupName="Flavor" Content="Honey Garlic         "></RadioButton>
+                                            </Viewbox>
+                                            <Viewbox Height="40" HorizontalAlignment="Left">
+                                                <RadioButton x:Name="salt" FontSize="20" GroupName="Flavor">Salt And Pepper</RadioButton>
+                                            </Viewbox>
+                                            <Viewbox Height="40" HorizontalAlignment="Left">
+                                                <RadioButton x:Name="memphis" FontSize="20" GroupName="Flavor">Memphis Hot Sauce</RadioButton>
+                                            </Viewbox>
+                                        </Menu>
+                                    </Expander>
+                                    <Expander x:Name="expander_3" Header="Select One Dip" Padding="0">
+                                        <Menu>
+                                            <Viewbox Height="40" HorizontalAlignment="Left">
+                                                <RadioButton x:Name="blue" FontSize="20" GroupName="Dip" Content="Blue Cheese Dip"></RadioButton>
+                                            </Viewbox>
+                                            <Viewbox Height="40" HorizontalAlignment="Left">
+                                                <RadioButton x:Name="chip" FontSize="20" GroupName="Dip" Content="Chipotle Caesar Dip     "></RadioButton>
+                                            </Viewbox>
+                                            <Viewbox Height="40" HorizontalAlignment="Left">
+                                                <RadioButton x:Name="ranch" FontSize="20" GroupName="Dip" Content="Ranch Dip    "></RadioButton>
+                                            </Viewbox>
+                                            <Viewbox Height="40" HorizontalAlignment="Left">
+                                                <RadioButton x:Name="cream" FontSize="20" GroupName="Dip" Content="Creamy Garlic Dip    "></RadioButton>
+                                            </Viewbox>
+                                            <Viewbox Height="40" HorizontalAlignment="Left">
+                                                <RadioButton x:Name="cactus" FontSize="20" GroupName="Dip" Content="Cactus Dip"></RadioButton>
+                                            </Viewbox>
+                                        </Menu>
+                                    </Expander>
                                 </StackPanel>
                             </ScrollViewer>
-                            <Button x:Name="CancelButton_1" Content="Cancel" Canvas.Left="210" Canvas.Top="323" Height="36" Width="147" FontSize="25" Margin="3,11,0,-21" Click="CancelButton_1_Click"/>
-                            <Button Content="Add" Canvas.Left="213" Canvas.Top="334" Height="36" Width="147" FontSize="25" Margin="-210,0,-9,0"/>
+                            <TextBox x:Name="quantityBox_1" IsReadOnly="True" Canvas.Left="60" Canvas.Top="439" Width="40" Height="40" Margin="1,0,0,0" Text="1" FontSize="27" HorizontalContentAlignment="Center"/>
+                            <Button x:Name="minus_1" Content="-" Width="40" Height="40" Canvas.Top="439" Canvas.Left="10" Margin="1,0,0,0" HorizontalContentAlignment="Center" Padding="1,-3,1,1" Click="minus_1_Click"/>
+                            <Button x:Name="add_1" Content="+" Width="40" Height="40" Canvas.Top="439" Canvas.Left="105" Margin="8,0,0,0" Click="add_1_Click" Padding="1,-4,1,1"/>
+                            <Button x:Name="CancelButton_1" Content="Cancel" Canvas.Left="330" Canvas.Top="439" Height="40" Width="140" FontSize="25" Click="CancelButton_1_Click" Margin="2,0,0,0"/>
+                            <Button Content="Add" Canvas.Left="165" Canvas.Top="439" Height="40" Width="140" FontSize="25" Margin="7,0,0,0"/>
+                            
                         </Canvas>
                     </Popup>
                 </Grid>
