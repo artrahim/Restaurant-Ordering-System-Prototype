@@ -16,7 +16,7 @@
                     <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="348" Margin="44,54,0,0" VerticalAlignment="Top" Width="793" Background="#e01a31"/>
                     <Image HorizontalAlignment="Left" Height="301" Margin="75,115,0,0" VerticalAlignment="Top" Width="300" Source="img/chickenwings.jpg"/>
                     <ToggleButton x:Name ="AddToOrder_1" Content="Add To Order" VerticalAlignment="Bottom" Margin="426,0,528,741" HorizontalAlignment="Center" Width="360" Height="80" FontSize="36" FontFamily="Arial" Click="AddToOrder_Click_1"/>
-                    <Popup x:Name="PopUpAddToOrder_1" Width="500" Height="500" Margin="0,0,0,0" IsOpen="{Binding ElementName=PopUpAddToOrder_1, Path=IsChecked, Mode=TwoWay}" PlacementTarget="{Binding ElementName=AddToOrder_1}" StaysOpen="True" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
+                    <Popup x:Name="PopUpAddToOrder_1" Width="500" Height="500" Margin="0,0,0,0" IsOpen="{Binding ElementName=PopUpAddToOrder_1, Path=IsChecked, Mode=TwoWay}" PlacementTarget="{Binding ElementName=AddToOrder_1}" StaysOpen="True" IsHitTestVisible="False" AllowsTransparency="True">
                         <Canvas Height="500" Background="LightGray" VerticalAlignment="Bottom" Margin="10,0,0,0" Width="500">
                             <Canvas.RenderTransform>
                                 <RotateTransform x:Name="Transform" />
