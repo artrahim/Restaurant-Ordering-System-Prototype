@@ -117,7 +117,7 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <StackPanel HorizontalAlignment="Right" Height="1280" Margin="0,0,0,0" VerticalAlignment="Top" Width="480" Orientation="Vertical" Background="#292929">
+        <StackPanel HorizontalAlignment="Right" Height="1280" Margin="0,0,0,0" VerticalAlignment="Top" Width="480" Orientation="Vertical" Background="White">
             <Expander Header="Expander"  Margin="0,0,0,0" IsExpanded="False">
                 <Expander.RenderTransform>
                     <ScaleTransform ScaleX="2" ScaleY="2" />
