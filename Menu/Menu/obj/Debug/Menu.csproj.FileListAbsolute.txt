@@ -1,0 +1,17 @@
+C:\Users\katie.tieu\source\repos\Menu\Menu\bin\Debug\Menu.exe.config
+C:\Users\katie.tieu\source\repos\Menu\Menu\bin\Debug\Menu.exe
+C:\Users\katie.tieu\source\repos\Menu\Menu\bin\Debug\Menu.pdb
+C:\Users\katie.tieu\source\repos\Menu\Menu\obj\Debug\BPMenuItem.g.cs
+C:\Users\katie.tieu\source\repos\Menu\Menu\obj\Debug\MainWindow.g.cs
+C:\Users\katie.tieu\source\repos\Menu\Menu\obj\Debug\App.g.cs
+C:\Users\katie.tieu\source\repos\Menu\Menu\obj\Debug\Menu_MarkupCompile.cache
+C:\Users\katie.tieu\source\repos\Menu\Menu\obj\Debug\Menu_MarkupCompile.lref
+C:\Users\katie.tieu\source\repos\Menu\Menu\obj\Debug\BPMenuItem.baml
+C:\Users\katie.tieu\source\repos\Menu\Menu\obj\Debug\MainWindow.baml
+C:\Users\katie.tieu\source\repos\Menu\Menu\obj\Debug\Menu.g.resources
+C:\Users\katie.tieu\source\repos\Menu\Menu\obj\Debug\Menu.Properties.Resources.resources
+C:\Users\katie.tieu\source\repos\Menu\Menu\obj\Debug\Menu.csproj.GenerateResource.Cache
+C:\Users\katie.tieu\source\repos\Menu\Menu\obj\Debug\Menu.csproj.CoreCompileInputs.cache
+C:\Users\katie.tieu\source\repos\Menu\Menu\obj\Debug\Menu.exe
+C:\Users\katie.tieu\source\repos\Menu\Menu\obj\Debug\Menu.pdb
+C:\Users\katie.tieu\source\repos\Menu\Menu\obj\Debug\GeneratedInternalTypeHelper.g.cs

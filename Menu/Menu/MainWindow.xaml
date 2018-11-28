@@ -1,0 +1,26 @@
+﻿<Window x:Class="Menu.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Menu"
+        mc:Ignorable="d"
+        Title="Menu" Height="1072" Width="1314" ResizeMode="NoResize" WindowStyle="None">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <local:BPMenuItem Width="Auto" Margin="10,30,10,30" foodImage="Images/Wings.jpg" Loaded="BPMenuItem_Loaded" itemDescription="Fried until golden and crispy." itemName="Fried Wings" price="$12.99"/>
+            <local:BPMenuItem Width="Auto" Margin="10,0,10,30" foodImage="Images/garlic bread.png" itemName="Garlic Toast" itemDescription="Fresh from the oven, brushed with butter and garlic." Loaded="BPMenuItem_Loaded" price="$1.80"/>
+            <local:BPMenuItem Width="Auto" Margin="10,0,10,30" foodImage="Images/soup.png" itemDescription="Baked with a toasted crouton and topped with pizza mozzarella, cheddar and feta. Finished with freshly grated Parmesan." itemName="Baked French Onion Soup" price="$6.99"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <local:BPMenuItem Width="Auto" Margin="10,30,10,30" foodImage="Images/soup.png"/>
+            <local:BPMenuItem Width="Auto" Margin="10,0,10,30"/>
+            <local:BPMenuItem Width="Auto" Margin="10,0,10,30"/>
+        </StackPanel>
+    </Grid>
+
+</Window>
