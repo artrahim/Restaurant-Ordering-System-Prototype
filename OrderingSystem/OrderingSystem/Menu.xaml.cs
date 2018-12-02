@@ -60,16 +60,12 @@ namespace OrderingSystem
             vars.Add(ranch);
 
         }
-        private void AddToOrder_Click_1(object sender, RoutedEventArgs e)
-        {
-            PopUpAddToOrder_1.IsOpen = true;
-        }
 
         private void CancelButton_1_Click(object sender, RoutedEventArgs e)
         {
             quantity_1 = 1;
 
-            PopUpAddToOrder_1.IsOpen = false;
+            PopUpAddToOrder_ChickenWings.IsOpen = false;
             quantityBox_1.Text = quantity_1.ToString();
             expander_1.IsExpanded = false;
             expander_2.IsExpanded = false;
@@ -137,6 +133,11 @@ namespace OrderingSystem
             orderSummeryExpander_1.Header = "Chicken Wings";
             orderSummeryExpander_1.Content = text1;
 
+        }
+
+        private void MenuItem_ChickenWings(object sender, EventArgs e)
+        {
+            PopUpAddToOrder_ChickenWings.IsOpen = true;
         }
     }
 }
