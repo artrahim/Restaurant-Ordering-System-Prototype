@@ -60,7 +60,6 @@ namespace OrderingSystem
             vars.Add(ranch);
 
         }
-        
 
         private void CancelButton_1_Click(object sender, RoutedEventArgs e)
         {
