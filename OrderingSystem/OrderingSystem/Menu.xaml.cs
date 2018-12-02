@@ -28,7 +28,7 @@ namespace OrderingSystem
             InitializeComponent();
 
         }
-        private void AddChickenWings_Click(object sender, RoutedEventArgs e)
+        private void AddChickenWings_Click(object sender, EventArgs e)
         {
             // create list of expanders
             // split all expanders into their own list of strings

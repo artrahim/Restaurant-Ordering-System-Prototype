@@ -61,7 +61,13 @@
     <Compile Include="OrderPopup.xaml.cs">
       <DependentUpon>OrderPopup.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MenuItem.xaml.cs">
+      <DependentUpon>OrderPopup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WelcomeScreen.xaml.cs">
+      <DependentUpon>WelcomeScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LastScreen.xaml.cs">
       <DependentUpon>WelcomeScreen.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
@@ -84,7 +90,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MenuItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WelcomeScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LastScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -127,6 +141,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\glutenfree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\garlicbread.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\soup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\smileyface.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
