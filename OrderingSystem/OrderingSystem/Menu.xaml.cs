@@ -26,8 +26,6 @@ namespace OrderingSystem
         public Starters()
         {
             InitializeComponent();
-         //   menuItems.Add("Creamy Garlic Dip");
-         //   menuItems.Add("Cactus Dip");
 
         }
         private void AddChickenWings_Click(object sender, RoutedEventArgs e)
@@ -40,7 +38,6 @@ namespace OrderingSystem
             List<String> sizes = new List<String>();
             List<String> flavours = new List<String>();
             List<String> dips = new List<String>();
-
 
             List<List<String>> menuItems = new List<List<String>>();
 

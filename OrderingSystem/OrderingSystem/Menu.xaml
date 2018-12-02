@@ -16,7 +16,37 @@
                     <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="348" Margin="44,54,0,0" VerticalAlignment="Top" Width="793" Background="#e01a31"/>
                     <Image HorizontalAlignment="Left" Height="301" Margin="75,115,0,0" VerticalAlignment="Top" Width="300" Source="img/chickenwings.jpg"/>
                     <ToggleButton x:Name ="AddChickenWings_Popup" Content="Add To Order" VerticalAlignment="Bottom" Margin="426,0,528,741" HorizontalAlignment="Center" Width="360" Height="80" FontSize="36" FontFamily="Arial" Click="AddChickenWings_Click"/>
-                    
+         
+                <Grid Background="White" Grid.IsSharedSizeScope="True" Height="1080" Width="1320">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition SharedSizeGroup="A" Height="360"/>
+                        <RowDefinition SharedSizeGroup="A" Height="360"/>
+                        <RowDefinition SharedSizeGroup="A" Height="360"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Column="0" Grid.Row="0">
+                        <local:MenuItem Width="Auto" Height="Auto" Margin="10,10,10,30" foodImage="img/chickenwings.jpg" itemDescription="Fried until golden and crispy." itemName="Fried Wings" price="$12.99" AddToOrderButtonClicked="MenuItem_ChickenWings" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="0" Grid.Row="1">
+                        <local:MenuItem Width="Auto" Margin="10,10,10,30" foodImage="img/garlicbread.png" itemName="Garlic Toast" itemDescription="Fresh from the oven, brushed with butter and garlic."  price="$1.80" Height="300"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="0" Grid.Row="2">
+                        <local:MenuItem Width="Auto" Height="Auto" Margin="10,10,10,30" foodImage="img/soup.png" itemDescription="Baked with a toasted crouton and topped with pizza mozzarella, cheddar and feta. Finished with freshly grated Parmesan." itemName="Baked French Onion Soup" price="$6.99"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" Grid.Row="0">
+                        <local:MenuItem Width="Auto" Margin="10,30,10,30" foodImage="img/soup.png"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Grid.Row="1">
+                        <local:MenuItem Width="Auto" Height="Auto" Margin="10,0,10,30"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Grid.Row="2">
+                        <local:MenuItem Width="Auto" Margin="10,0,10,30"/>
+                    </StackPanel>
+
                 </Grid>
             </TabItem>
             <TabItem Header="PIZZA" Width="205">
@@ -41,9 +71,7 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <StackPanel x:Name="orderSummery" HorizontalAlignment="Right" Height="1280" Margin="0,0,0,0" VerticalAlignment="Top" Width="480" Orientation="Vertical" Background="#292929">
-
-        </StackPanel>
+        <StackPanel x:Name="orderSummery" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Top" Width="472" Orientation="Vertical" Background="#292929" Height="1280"/>
         <StackPanel HorizontalAlignment="Left" Height="120" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="1320" Background="#292929" Orientation="Horizontal" >
             <Button x:Name ="callServer" Content="Call a Server" Margin="20,20,20,20" HorizontalAlignment="Left" VerticalAlignment="Center" Width="360" Height="80" Background="#e01a31" Foreground="WhiteSmoke" FontSize="36" FontFamily="Arial"/>
             <Label Content="Legend: " Foreground="WhiteSmoke" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="48" Margin="200,20,20,20" FontWeight="Bold" FontFamily="Euphemia"/>
