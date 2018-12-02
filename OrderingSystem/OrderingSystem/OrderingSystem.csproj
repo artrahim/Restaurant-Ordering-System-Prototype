@@ -62,13 +62,13 @@
       <DependentUpon>OrderPopup.xaml</DependentUpon>
     </Compile>
     <Compile Include="MenuItem.xaml.cs">
-      <DependentUpon>OrderPopup.xaml</DependentUpon>
+      <DependentUpon>MenuItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="WelcomeScreen.xaml.cs">
       <DependentUpon>WelcomeScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="LastScreen.xaml.cs">
-      <DependentUpon>WelcomeScreen.xaml</DependentUpon>
+      <DependentUpon>LastScreen.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
