@@ -22,121 +22,61 @@ namespace OrderingSystem
     public partial class Starters : Page
     {
       //  ArrayList orderSummary = new ArrayList();
-        ArrayList vars = new ArrayList();
-        ArrayList menuItems = new ArrayList();
         
         public Starters()
         {
             InitializeComponent();
-            menuItems.Add("Starter Size + $12.99");
-            menuItems.Add("Double Order + $23.00 ");
-            menuItems.Add("Plain");
-            menuItems.Add("Medium");
-            menuItems.Add("Mild");
-            menuItems.Add("Hot");
-            menuItems.Add("BBQ");
-            menuItems.Add("Thai Chili");
-            menuItems.Add("Honey Garlic");
-            menuItems.Add("Salt And Pepper");
-            menuItems.Add("Memphis Hot Sauce");
-            menuItems.Add("Blue Cheese Dip");
-            menuItems.Add("Chipotle Caesar Dip");
-            menuItems.Add("Ranch Dip");
          //   menuItems.Add("Creamy Garlic Dip");
          //   menuItems.Add("Cactus Dip");
-            vars.Add(single_1);
-            vars.Add(double_1);
-            vars.Add(naked);
-            vars.Add(medium);
-            vars.Add(mild);
-            vars.Add(hot);
-            vars.Add(bbq);
-            vars.Add(thai);
-            vars.Add(honey);
-            vars.Add(salt);
-            vars.Add(memphis);
-            vars.Add(blue);
-            vars.Add(chip);
-            vars.Add(ranch);
 
         }
-        private void AddToOrder_Click_1(object sender, RoutedEventArgs e)
+        private void AddChickenWings_Click(object sender, RoutedEventArgs e)
         {
-            PopUpAddToOrder_1.IsOpen = true;
-        }
+            // create list of expanders
+            // split all expanders into their own list of strings
+            // first item is content type (follow same name, it uses string comparison)
+            //  second item is header name (don't use whitespaces)
 
-        private void CancelButton_1_Click(object sender, RoutedEventArgs e)
-        {
-            quantity_1 = 1;
+            List<String> sizes = new List<String>();
+            List<String> flavours = new List<String>();
+            List<String> dips = new List<String>();
 
-            PopUpAddToOrder_1.IsOpen = false;
-            quantityBox_1.Text = quantity_1.ToString();
-            expander_1.IsExpanded = false;
-            expander_2.IsExpanded = false;
-            expander_3.IsExpanded = false;
-            single_1.IsChecked = false;
-            double_1.IsChecked = false;
-            naked.IsChecked = false;
-            medium.IsChecked = false;
-            mild.IsChecked = false;
-            hot.IsChecked = false;
-            bbq.IsChecked = false;
-            thai.IsChecked = false;
-            honey.IsChecked = false;
-            salt.IsChecked = false;
-            memphis.IsChecked = false;
-            blue.IsChecked = false;
-            chip.IsChecked = false;
-            ranch.IsChecked = false;
 
+            List<List<String>> menuItems = new List<List<String>>();
+
+            sizes.Add("RadioButton");
+            sizes.Add("Sizes");
+            sizes.Add("Starter Size + $12.99");
+            sizes.Add("Double Order + $23.00");
+
+            flavours.Add("RadioButton");
+            flavours.Add("Flavour");
+            flavours.Add("Plain");
+            flavours.Add("Medium");
+            flavours.Add("Mild");
+            flavours.Add("Hot");
+            flavours.Add("BBQ");
+            flavours.Add("Thai Chili");
+            flavours.Add("Honey Garlic");
+            flavours.Add("Salt And Pepper");
+            flavours.Add("Memphis Hot Sauce");
+
+            dips.Add("CheckBox");
+            dips.Add("Dips");
+            dips.Add("Blue Cheese Dip");
+            dips.Add("Chipotle Caesar Dip");
+            dips.Add("Ranch Dip");
+            dips.Add("Creamy Garlic Dip");
+            dips.Add("Cactus Dip");
+
+            menuItems.Add(sizes);
+            menuItems.Add(flavours);
+            menuItems.Add(dips);
             
+            OrderPopup op = new OrderPopup(orderSummery, "Chicken Wings", menuItems);
+            StarterFrame.Children.Add(op);
         }
-
-        public int quantity_1 = 1;
-
-        private void add_1_Click(object sender, RoutedEventArgs e)
-        {
-            quantity_1++;
-            quantityBox_1.Text = quantity_1.ToString();
-        }
-
-        private void minus_1_Click(object sender, RoutedEventArgs e)
-        {
-            if(quantity_1 <= 1)
-            {
-                quantity_1 = 1;
-            }
-            else { 
-                quantity_1--;
-            }
-            quantityBox_1.Text = quantity_1.ToString();
-        }
-
         
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Expander orderSummeryExpander_1 = new Expander();
-            orderSummeryExpander_1.IsExpanded = false;
-            orderSummery.Children.Add(orderSummeryExpander_1);
-            TextBox text1 = new TextBox();
 
-            for (int i = 0; i < vars.Count; i++)
-            {
-                String checker = vars[i].ToString();
-                if (checker.Contains("True"))
-                {
-                    String name = menuItems[i].ToString();
-                    text1.Text = text1.Text + "\r\n" + name;
-                    //orderSummary.Add(menuItems[i].ToString());
-
-                }
-            }
-            text1.IsReadOnly = true;
-            //text1.Foreground = new SolidColorBrush(Colors.Red);          CHANGE COLOR OF TEXT
-            orderSummeryExpander_1.FontSize = 29;
-            orderSummeryExpander_1.Header = "Chicken Wings";
-            orderSummeryExpander_1.Content = text1;
-
-        }
     }
 }
