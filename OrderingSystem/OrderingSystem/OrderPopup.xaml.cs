@@ -29,6 +29,7 @@ namespace OrderingSystem
         private List<List<CheckBox>> checkBoxes = new List<List<CheckBox>>();
         private List<String> headers = new List<String>();
         private int quantity = 1;
+        private TextBox customerDet = new TextBox();
 
         public OrderPopup(StackPanel orderPanel, String orderName, List<List<String>> optionStrings)
         {
@@ -119,7 +120,7 @@ namespace OrderingSystem
                 }
             }
             
-            customizations.Text += "\r\n * " + customerDetails.Text;
+            customizations.Text += "\r\n * " + customerDet.Text;
             customizations.IsReadOnly = true;
             /*
             //create grid for header text alignment
@@ -232,7 +233,6 @@ namespace OrderingSystem
             popupStackPanel.Children.Add(details);
 
             //add textbox
-            TextBox customerDet = new TextBox();
             customerDet.TextWrapping = TextWrapping.Wrap;
             customerDet.FontSize = 20;
             customerDet.Margin = new Thickness(20, 10, 40, 20);
