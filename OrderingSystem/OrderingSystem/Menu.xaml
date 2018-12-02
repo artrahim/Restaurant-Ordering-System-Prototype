@@ -5,71 +5,71 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:OrderingSystem"
       mc:Ignorable="d" 
-      d:DesignHeight="1280" d:DesignWidth="1800"
+      d:DesignHeight="800" d:DesignWidth="1280"
       Title="Menu" >
 
     <Grid>
         <Frame Name="menu_Page"/>
-        <TabControl HorizontalAlignment="Left" Height="1160" Margin="0,0,0,0" VerticalAlignment="Top" Width="1320" FontWeight="Bold" FontFamily="Euphemia" FontSize="32">
-            <TabItem Header="STARTERS" Width="260" Height="80">
-                <Grid x:Name ="StarterFrame" Background="White" Grid.IsSharedSizeScope="True" Height="1080" Width="1320">
+        <TabControl HorizontalAlignment="Left" Height="720" Margin="0,0,0,0" VerticalAlignment="Top" Width="960" FontWeight="Bold" FontFamily="Euphemia" FontSize="28">
+            <TabItem Header="STARTERS" Width="170" Height="80">
+                <Grid x:Name ="StarterFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="960">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition SharedSizeGroup="A" Height="360"/>
-                        <RowDefinition SharedSizeGroup="A" Height="360"/>
-                        <RowDefinition SharedSizeGroup="A" Height="360"/>
+                        <RowDefinition SharedSizeGroup="A" Height="210"/>
+                        <RowDefinition SharedSizeGroup="A" Height="210"/>
+                        <RowDefinition SharedSizeGroup="A" Height="210"/>
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Column="0" Grid.Row="0">
-                        <local:MenuItem Width="Auto" Height="Auto" Margin="10,10,10,30" foodImage="img/chickenwings.jpg" itemDescription="Fried until golden and crispy." itemName="Fried Wings" price="$12.99" AddToOrderButtonClicked="AddChickenWings_Click" />
+                        <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/chickenwings.jpg" itemDescription="Fried until golden and crispy." itemName="Fried Wings" price="$12.99" AddToOrderButtonClicked="AddChickenWings_Click" />
                     </StackPanel>
                     <StackPanel Grid.Column="0" Grid.Row="1">
-                        <local:MenuItem Width="Auto" Margin="10,10,10,30" foodImage="img/garlicbread.png" itemName="Garlic Toast" itemDescription="Fresh from the oven, brushed with butter and garlic."  price="$1.80" Height="300"/>
+                        <local:MenuItem Width="Auto" Margin="5,5,5,15" foodImage="img/garlicbread.png" itemName="Garlic Toast" itemDescription="Fresh from the oven, brushed with butter and garlic."  price="$1.80" Height="300"/>
                     </StackPanel>
                     <StackPanel Grid.Column="0" Grid.Row="2">
-                        <local:MenuItem Width="Auto" Height="Auto" Margin="10,10,10,30" foodImage="img/soup.png" itemDescription="Baked with a toasted crouton and topped with pizza mozzarella, cheddar and feta. Finished with freshly grated Parmesan." itemName="Baked French Onion Soup" price="$6.99"/>
+                        <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/soup.png" itemDescription="Baked with a toasted crouton and topped with pizza mozzarella, cheddar and feta. Finished with freshly grated Parmesan." itemName="Baked French Onion Soup" price="$6.99"/>
                     </StackPanel>
 
                     <StackPanel Grid.Column="1" Grid.Row="0">
-                        <local:MenuItem Width="Auto" Margin="10,30,10,30" foodImage="img/soup.png"/>
+                        <local:MenuItem Width="Auto" Margin="5,5,10,15" foodImage="img/soup.png"/>
                     </StackPanel>
                     <StackPanel Grid.Column="1" Grid.Row="1">
-                        <local:MenuItem Width="Auto" Height="Auto" Margin="10,0,10,30"/>
+                        <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,10,15" Loaded="MenuItem_Loaded"/>
                     </StackPanel>
                     <StackPanel Grid.Column="1" Grid.Row="2">
-                        <local:MenuItem Width="Auto" Margin="10,0,10,30"/>
+                        <local:MenuItem Width="Auto" Margin="5,5,10,15"/>
                     </StackPanel>
 
                 </Grid>
             </TabItem>
-            <TabItem Header="PIZZA" Width="205">
+            <TabItem Header="PIZZA" Width="160">
                 <Grid Background="White">
                 </Grid>
             </TabItem>
-            <TabItem Header="PASTA" Width="200">
+            <TabItem Header="PASTA" Width="160">
                 <Grid Background="White">
                 </Grid>
             </TabItem>
-            <TabItem Header="MAINS" Width="200">
+            <TabItem Header="MAINS" Width="160">
                 <Grid Background="White">
                 </Grid>
             </TabItem>
-            <TabItem Header="DESSERTS" Width="240">
+            <TabItem Header="DESSERTS" Width="165">
                 <Grid Background="White">
                 </Grid>
             </TabItem>
-            <TabItem Header="DRINKS" Width="210">
+            <TabItem Header="DRINKS" Width="140">
                 <Grid Background="White">
 
                 </Grid>
             </TabItem>
         </TabControl>
-        <StackPanel x:Name="orderSummery" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Top" Width="472" Orientation="Vertical" Background="#292929" Height="1280"/>
-        <StackPanel HorizontalAlignment="Left" Height="120" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="1320" Background="#292929" Orientation="Horizontal" >
-            <Button x:Name ="callServer" Content="Call a Server" Margin="20,20,20,20" HorizontalAlignment="Left" VerticalAlignment="Center" Width="360" Height="80" Background="#e01a31" Foreground="WhiteSmoke" FontSize="36" FontFamily="Arial"/>
-            <Label Content="Legend: " Foreground="WhiteSmoke" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="48" Margin="200,20,20,20" FontWeight="Bold" FontFamily="Euphemia"/>
+        <StackPanel x:Name="orderSummery" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Top" Width="320" Orientation="Vertical" Background="#292929" Height="800"/>
+        <StackPanel HorizontalAlignment="Left" Height="80" Width="960" VerticalAlignment="Bottom" Background="#292929" Orientation="Horizontal" >
+            <Button x:Name ="callServer" Content="Call a Server" Margin="10,10,10,10" HorizontalAlignment="Left" VerticalAlignment="Center" Width="280" Height="80" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial"/>
+            <Label Content="Legend: " Foreground="WhiteSmoke" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="34" Margin="200,14,14,10" FontWeight="Bold" FontFamily="Euphemia"/>
             <Image Width="60" Height="60" Source="img/vegetarian.jpg"/>
         </StackPanel>
     </Grid>

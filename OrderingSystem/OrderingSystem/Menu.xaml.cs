@@ -33,7 +33,7 @@ namespace OrderingSystem
             // create list of expanders
             // split all expanders into their own list of strings
             // first item is content type (follow same name, it uses string comparison)
-            //  second item is header name (don't use whitespaces)
+            //  second item is header name (don't use whitespaces?)
 
             List<String> sizes = new List<String>();
             List<String> flavours = new List<String>();

@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:OrderingSystem"
       mc:Ignorable="d" 
-      d:DesignHeight="1280" d:DesignWidth="1800"
+      d:DesignHeight="800" d:DesignWidth="1280"
       Title="WelcomeScreen" Background="White">
     <Grid>
         <Frame x:Name="_NavigationFrame2" NavigationUIVisibility="Hidden"/>

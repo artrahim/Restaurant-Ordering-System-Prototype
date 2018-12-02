@@ -10,6 +10,7 @@
         <Border BorderBrush="Black" BorderThickness="2">
 
             <Popup x:Name="PopUpAddToOrder" Width="500" Height="500" Margin="0,0,0,0" IsOpen="{Binding ElementName=PopUpAddToOrder, Path=IsChecked, Mode=TwoWay}" Placement="Center" StaysOpen="True" IsHitTestVisible="False" AllowsTransparency="True">
+                
                 <Canvas Height="500" Background="SkyBlue" VerticalAlignment="Center" Margin="10,0,0,0" Width="500">
                     <Canvas.RenderTransform>
                         <RotateTransform x:Name="Transform" />

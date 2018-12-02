@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OrderingSystem"
         mc:Ignorable="d"
-        Title="WelcomeScreen" Height="1280" Width="1800" Loaded="Window_Loaded" WindowState="Maximized">
+        Title="WelcomeScreen" Height="800" Width="1280" Loaded="Window_Loaded">
     <DockPanel>
         <Frame x:Name="_NavigationFrame" NavigationUIVisibility="Hidden" Source ="WelcomeScreen.xaml"/>
     </DockPanel>
