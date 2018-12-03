@@ -70,10 +70,8 @@ namespace OrderingSystem
             menuItems.Add(flavours);
             menuItems.Add(dips);
             
-            OrderPopup op = new OrderPopup(orderSummery, "Chicken Wings", menuItems);
+            OrderPopup op = new OrderPopup(orderSummery, "Chicken Wings", menuItems,utilityGrid);
             StarterFrame.Children.Add(op);
         }
-        
-
     }
 }

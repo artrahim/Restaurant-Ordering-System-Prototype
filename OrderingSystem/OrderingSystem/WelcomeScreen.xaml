@@ -6,6 +6,7 @@
       xmlns:local="clr-namespace:OrderingSystem"
       mc:Ignorable="d" 
       d:DesignHeight="800" d:DesignWidth="1280"
+      Height="800" Width="1280"
       Title="WelcomeScreen" Background="White">
     <Grid>
         <Frame x:Name="_NavigationFrame2" NavigationUIVisibility="Hidden"/>
