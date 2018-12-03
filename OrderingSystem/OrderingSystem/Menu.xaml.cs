@@ -73,5 +73,19 @@ namespace OrderingSystem
             OrderPopup op = new OrderPopup(orderSummery, "Chicken Wings", menuItems,utilityGrid);
             StarterFrame.Children.Add(op);
         }
+        private void CallServer_Click(object sender, RoutedEventArgs e)
+        {
+
+            popUpServer.IsOpen = true;
+
+
+        }
+        private void CloseCallServer_Click(object sender, RoutedEventArgs e)
+        {
+
+            popUpServer.IsOpen = false;
+
+
+        }
     }
 }

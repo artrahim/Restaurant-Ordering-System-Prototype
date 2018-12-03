@@ -38,6 +38,14 @@ namespace OrderingSystem
 
             popUpServer.IsOpen = true;
 
+
+        }
+        private void CloseCallServer_Click(object sender, RoutedEventArgs e)
+        {
+
+            popUpServer.IsOpen = false;
+
+
         }
     }
 }
