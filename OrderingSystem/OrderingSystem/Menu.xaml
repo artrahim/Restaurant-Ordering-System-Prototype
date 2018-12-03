@@ -9,7 +9,7 @@
       Height="800" Width="1280"
       Title="Menu" >
 
-    <Grid>
+    <Grid x:Name="GridCorner">
         <Frame Name="menu_Page"/>
         <TabControl x:Name="menuFrame" HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="960" FontWeight="Bold" FontFamily="Euphemia" FontSize="28">
             <TabControl.Resources>
