@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="OrderingSystem.OrderPopup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OrderingSystem"
+             mc:Ignorable="d" 
+             d:DesignHeight="640" d:DesignWidth="960"
+            Height="640" Width="960" >
+    <Grid>
+
+        <Popup x:Name="PopUpAddToOrder" Width="540" Height="540"  Placement="Center" IsOpen="{Binding ElementName=PopUpAddToOrder, Path=IsChecked, Mode=TwoWay}" StaysOpen="True" IsHitTestVisible="False" AllowsTransparency="True" >
+            <Border BorderBrush="#e01a31" BorderThickness="5" >
+                <Canvas Height="530" Background="White" VerticalAlignment="Center" Width="530">
+                    <Canvas.RenderTransform>
+                        <RotateTransform x:Name="Transform" />
+                    </Canvas.RenderTransform>
+                    <ScrollViewer Canvas.Top="0" Width="528" Height="460">
+                        <StackPanel x:Name="popupStackPanel"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="500">
+                            <Label Content="Customize Your Order: " FontSize="38" FontStyle="Italic"></Label>
+                            
+                        </StackPanel>
+                    </ScrollViewer>
+                    <TextBox x:Name="quantityBox" IsReadOnly="True" Canvas.Left="80" Canvas.Bottom="20" Width="40" Height="40" Margin="1,0,0,0" Text="1" FontSize="27" HorizontalContentAlignment="Center"/>
+                    <Button x:Name="minus_1" Content="-" Width="40" Height="40" Canvas.Bottom="20" Canvas.Left="30" Margin="1,0,0,0" HorizontalContentAlignment="Center" Padding="1,-3,1,1" Click="minus_1_Click"/>
+                    <Button x:Name="add_1" Content="+" Width="40" Height="40" Canvas.Bottom="20" Canvas.Left="125" Margin="8,0,0,0" Click="add_1_Click" Padding="1,-4,1,1"/>
+                    <Button x:Name="CancelButton_1" Content="Cancel" Canvas.Left="360" Canvas.Bottom="20" Height="40" Width="140" FontSize="25" Click="CancelButton_1_Click" Margin="2,0,0,0"/>
+                    <Button x:Name="AddToOrder"  Content="Add" Tag="{Binding Code}" Canvas.Left="190" Canvas.Bottom="20" Height="40" Width="140" FontSize="25" Margin="7,0,0,0" Click="AddToOrder_Click"/>
+
+                </Canvas>
+            </Border>
+        </Popup>
+    </Grid>
+</UserControl>

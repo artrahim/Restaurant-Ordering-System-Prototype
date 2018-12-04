@@ -1,0 +1,112 @@
+﻿<UserControl x:Class="OrderingSystem.Camera"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OrderingSystem"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1280">
+    <Grid>
+        <StackPanel>
+
+            <Popup x:Name="cameraPopUp" Width="1280" Height="800" Margin="0,0,0,0" IsOpen="{Binding ElementName=cameraPopUp, Path=IsChecked, Mode=TwoWay}" Placement="Center" StaysOpen="True" IsHitTestVisible="False" AllowsTransparency="True">
+
+                <Canvas Height="800" Width="1280" VerticalAlignment="Center" Margin="-10,0,0,0">
+                    <Canvas.Background>
+                        <ImageBrush ImageSource="img/BP.jpg"/>
+                    </Canvas.Background>
+                    <Border Width="170" Height="800" Background="#292929"></Border>
+                    <Border Width="500" Height="600" BorderThickness="10" BorderBrush="#FF7AEA46" Canvas.Left="486" Canvas.Top="114" Padding="0" Margin="0">
+
+                    </Border>
+                    <Button x:Name="CancelButton_1" Canvas.Left="28" Canvas.Top="337" Height="112" Width="122" FontSize="25" Click="Camera_Switch_Scene_1" Margin="0" RenderTransformOrigin="0.5,0.5">
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                        <Image Width="124" Height="142" Source="img/icon.jpg"/>
+                    </Button>
+                </Canvas>
+            </Popup>
+
+            <Popup x:Name="cameraPopUp_Tom" Width="1280" Height="800" Margin="0,0,0,0" IsOpen="{Binding ElementName=cameraPopUp, Path=IsChecked, Mode=TwoWay}" Placement="Center" StaysOpen="True" IsHitTestVisible="False" AllowsTransparency="True">
+
+                <Canvas Height="800" Width="1280" VerticalAlignment="Center" Margin="-10,0,0,0">
+                    <Canvas.Background>
+                        <ImageBrush ImageSource="img/TomHolland.PNG"/>
+                    </Canvas.Background>
+                    <Border Width="170" Height="800" Background="#292929"></Border>
+                    <Border Width="500" Height="600" BorderThickness="10" BorderBrush="#FF7AEA46" Canvas.Left="486" Canvas.Top="114">
+
+                    </Border>
+                    <Button x:Name="CancelButton_3" Canvas.Left="28" Canvas.Top="337" Height="112" Width="122" FontSize="25" Click="Camera_Switch_Scene_2" Margin="0" RenderTransformOrigin="0.5,0.5">
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                        <Image Width="124" Height="142" Source="img/icon.jpg"/>
+                    </Button>
+                </Canvas>
+            </Popup>
+
+            <Popup x:Name="cameraPopUp_ID" Width="1280" Height="800" Margin="0,0,0,0" IsOpen="{Binding ElementName=cameraPopUp_ID, Path=IsChecked, Mode=TwoWay}" Placement="Center" StaysOpen="True" IsHitTestVisible="False" AllowsTransparency="True">
+
+                <Canvas Height="800" Width="1280" VerticalAlignment="Center" Margin="-10,0,0,0">
+                    <Canvas.Background>
+                        <ImageBrush ImageSource="img/Table.jpg"/>
+                    </Canvas.Background>
+                    <Border Width="170" Height="800" Background="#292929"></Border>
+                    <Border Width="806" Height="390" BorderThickness="10" BorderBrush="#FFEA4646" Canvas.Left="234" Canvas.Top="204">
+
+                    </Border>
+                    <Button x:Name="CancelButton_2" Canvas.Left="28" Canvas.Top="337" Height="112" Width="122" FontSize="25" Margin="0" RenderTransformOrigin="0.5,0.5" Click="Camera_Switch_Scene_3">
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                        <Image Width="124" Height="142" Source="img/icon.jpg"/>
+                    </Button>
+                </Canvas>
+            </Popup>
+
+
+            <Popup x:Name="cameraPopUp_ID_Tom" Width="1280" Height="800" Margin="0,0,0,0" IsOpen="{Binding ElementName=cameraPopUp_ID, Path=IsChecked, Mode=TwoWay}" Placement="Center" StaysOpen="True" IsHitTestVisible="False" AllowsTransparency="True">
+
+                <Canvas Height="800" Width="1280" VerticalAlignment="Center" Margin="-10,0,0,0">
+                    <Canvas.Background>
+                        <ImageBrush ImageSource="img/TomId.png"/>
+                    </Canvas.Background>
+                    <Border Width="170" Height="800" Background="#292929"></Border>
+                    <Border Width="806" Height="390" BorderThickness="10" BorderBrush="#FFEA4646" Canvas.Left="234" Canvas.Top="204">
+
+                    </Border>
+                    <Button x:Name="CancelButton_4" Canvas.Left="28" Canvas.Top="337" Height="112" Width="122" FontSize="25" Margin="0" RenderTransformOrigin="0.5,0.5" Click="Camera_Switch_Scene_4">
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                        <Image Width="124" Height="142" Source="img/icon.jpg"/>
+                    </Button>
+                </Canvas>
+            </Popup>
+
+
+        </StackPanel>
+    </Grid>
+</UserControl>

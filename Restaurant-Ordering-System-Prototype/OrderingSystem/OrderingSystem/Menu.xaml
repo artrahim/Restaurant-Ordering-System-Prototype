@@ -1,0 +1,147 @@
+<Page x:Class="OrderingSystem.Starters"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OrderingSystem"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1280"
+      Height="800" Width="1280"
+      Title="Menu" >
+
+    <Grid x:Name="GridCorner">
+        <Frame Name="menu_Page" Content="o"/>
+        <TabControl x:Name="menuFrame" HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="960" FontWeight="Bold" FontFamily="Euphemia" FontSize="28">
+            <TabControl.Resources>
+                <Style TargetType="TabItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TabItem">
+                                <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Gainsboro" CornerRadius="4,4,0,0" Margin="2,0">
+                                    <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="False">
+                                        <Setter TargetName="Border" Property="Background" Value="LightSkyBlue" />
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="Border" Property="Background" Value="GhostWhite" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TabControl.Resources>
+            <TabItem Header="STARTERS" Width="170" Height="80" >
+                <Grid x:Name ="StarterFrame" Background="White"  Grid.IsSharedSizeScope="True" Height="640" Width="960">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition SharedSizeGroup="A" Height="210"/>
+                        <RowDefinition SharedSizeGroup="A" Height="210"/>
+                        <RowDefinition SharedSizeGroup="A" Height="210"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Column="0" Grid.Row="0">
+                        <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/chickenwings.jpg" itemDescription="Fried until golden and crispy." itemName="Fried Wings" price="$12.99" AddToOrderButtonClicked="AddChickenWings_Click" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="0" Grid.Row="1">
+                        <local:MenuItem Width="Auto" Margin="5,5,5,15" foodImage="img/garlicbread.png" itemName="Garlic Toast" itemDescription="Fresh from the oven, brushed with butter and garlic."  price="$1.80" Height="300"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="0" Grid.Row="2">
+                        <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/soup.png" itemDescription="Baked with a toasted crouton and topped with pizza mozzarella, cheddar and feta. Finished with freshly grated Parmesan." itemName="Baked French Onion Soup" price="$6.99"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" Grid.Row="0">
+                        <local:MenuItem Width="Auto" Margin="5,5,10,15" foodImage="img/soup.png" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Grid.Row="1">
+                        <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,10,15"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Grid.Row="2">
+                        <local:MenuItem Width="Auto" Margin="5,5,10,15"/>
+                    </StackPanel>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="PIZZA" Width="160">
+                <Grid Background="White">
+                </Grid>
+            </TabItem>
+            <TabItem Header="PASTA" Width="160">
+                <Grid Background="White">
+                </Grid>
+            </TabItem>
+            <TabItem Header="MAINS" Width="160">
+                <Grid Background="White">
+                </Grid>
+            </TabItem>
+            <TabItem Header="DESSERTS" Width="165">
+                <Grid Background="White">
+                </Grid>
+            </TabItem>
+            <TabItem Header="DRINKS" Width="140">
+                <Grid x:Name ="DrinkFrame" Background="White"  Grid.IsSharedSizeScope="True" Height="640" Width="960">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition SharedSizeGroup="A" Height="50"/>
+                        <RowDefinition SharedSizeGroup="B" Height="210"/>
+                        <RowDefinition SharedSizeGroup="C" Height="80"/>
+                        <RowDefinition SharedSizeGroup="B" Height="210"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Column="0" Grid.Row="0" Margin="5,5,0,0">
+                        <TextBlock TextWrapping="Wrap" Text="Non-Alcoholic" Margin="5,10,0,0" TextDecorations="Underline"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="0" Grid.Row="1">
+                        <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/pop.jpg" itemDescription="Comes in 12 oz cans." itemName="Pop" price="$12.99" AddToOrderButtonClicked="AddChickenWings_Click" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="0" Grid.Row="2" Margin="5,5,0,0">
+                        <TextBlock TextWrapping="Wrap" Margin="5,15,-469,0"><Run Text="Alcoholic" TextDecorations="Underline"/><LineBreak/><Run FontWeight="Normal" FontSize="20" Text="Please note that the system will check your ID before sending your order in."/></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="0" Grid.Row="3">
+                        <local:MenuItem Width="Auto" Margin="5,5,5,15" foodImage="img/beer.png" itemName="Beer" itemDescription="Your choice of one of our domestic beers in a 32 oz glass."  price="$9.50" Height="300"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="0" Grid.Row="1"/>
+
+                    <StackPanel Grid.Column="1" Grid.Row="3">
+                        <local:MenuItem Width="Auto" Margin="5,5,10,15" foodImage="img/soup.png" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Grid.Row="1"/>
+                    <StackPanel Grid.Column="1" Grid.Row="2"/>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <StackPanel x:Name="orderSummery" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Top" Width="320" Orientation="Vertical" Background="#292929" Height="800">
+            <Label Name="orderSummaryLabel" Content="Order Summary" Background="White" Margin="50,0,40,0" FontFamily="Arial Black" FontSize="24" IsEnabled="False" Foreground="Red" />
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="80" Width="960" VerticalAlignment="Bottom" Background="#292929" Orientation="Horizontal" >
+            <ToggleButton x:Name ="CallServer" Margin="10,0,0,10" Content="Call a Server" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="260" Height="60" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Click="CallServer_Click"/>
+
+            <Label Content="Legend: " Foreground="WhiteSmoke" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="34" Margin="220,14,14,10" FontWeight="Bold" FontFamily="Euphemia"/>
+            <Image Width="75" Source="img/vegetarian symbol.png" Margin="0,5,0,5"/>
+            <Image Width="75" Source="img/spicy symbol.png" Margin="0,5,0,5"/>
+            <Image Width="75" Source="img/glutenwise symbol.png" Margin="0,5,0,5"/>
+        </StackPanel>
+        <Grid x:Name="utilityGrid" Background="White" Opacity="0.0" Visibility="Collapsed"></Grid>
+        <Popup x:Name="popUpServer" Width="400" Height="400" IsOpen="{Binding ElementName=CallServer, Path=IsChecked, Mode=TwoWay}" PlacementTarget="{Binding ElementName=menuFrame}" Placement="Center" StaysOpen="False" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
+            <Canvas Width="360" Height="300" Background="LightBlue" >
+                <Canvas.RenderTransform>
+                    <RotateTransform x:Name="Transform" />
+                </Canvas.RenderTransform>
+                <TextBlock Foreground="Black" FontSize="42" FontFamily="Arial" VerticalAlignment="Center" Text="Help is on the way! You can continue browsing by clicking the 'Menu' button" TextWrapping="Wrap" Height="300" Width="360" TextAlignment="Center">
+                </TextBlock>
+                <Button Content="OK" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Width="100" Height="50" FontSize="24" Background="WhiteSmoke" Canvas.Left="129" Canvas.Top="240" Click="CloseCallServer_Click"></Button>
+            </Canvas>
+        </Popup>
+    </Grid>
+</Page>
