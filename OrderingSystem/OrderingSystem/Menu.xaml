@@ -92,14 +92,20 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <StackPanel x:Name="orderSummery" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Top" Width="320" Orientation="Vertical" Background="#292929" Height="800">
+        <StackPanel x:Name="orderSummery" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Top" Width="320" Orientation="Vertical" Background="White" Height="800">
                   <Label Name="orderSummaryLabel" Content="Order Summary" Background="White" Margin="50,0,40,0" FontFamily="Arial Black" FontSize="24" IsEnabled="False" Foreground="Red" />
          </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Height="80" Width="960" VerticalAlignment="Bottom" Background="#292929" Orientation="Horizontal" >
+         <StackPanel x:Name="priceStack" HorizontalAlignment="Left" Height="118" Margin="960,597,0,0" VerticalAlignment="Top" Width="320" Background="White">
+            <Label x:Name="subtotalLabel" Content="Subtotal: $" Background="White" Foreground="Black" FontSize="22" FontFamily="Arial" Margin="0,0,177,0" BorderBrush="Red" Height="35"/>
+            <Label x:Name="taxLabel" Content="Tax: $" Background="White" FontSize="22" FontFamily="Arial" Foreground="Black" Height="35" Margin="0,0,177,0"/>
+            <Label x:Name="totalLabel" Content="Total: $" FontSize="22" FontFamily="Arial" Foreground="Black" Background="{x:Null}" BorderThickness="0" Height="35" Margin="0,0,177,0"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="80" Width="1280" VerticalAlignment="Bottom" Background="#292929" Orientation="Horizontal" >
             <ToggleButton x:Name ="CallServer" Margin="10,0,0,10" Content="Call a Server" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="260" Height="60" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Click="CallServer_Click"/>
                 
             <Label Content="Legend: " Foreground="WhiteSmoke" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="34" Margin="200,14,14,10" FontWeight="Bold" FontFamily="Euphemia"/>
             <Image Width="60" Height="60" Source="img/vegetarian.jpg"/>
+            <ToggleButton x:Name="sendOrder" Content="Send Order" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="260" Height="60" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Margin="300,0,0,10"/>
         </StackPanel>
         <Grid x:Name="utilityGrid" Background="White" Opacity="0.0" Visibility="Collapsed"></Grid>
         <Popup x:Name="popUpServer" Width="400" Height="400" IsOpen="{Binding ElementName=CallServer, Path=IsChecked, Mode=TwoWay}" PlacementTarget="{Binding ElementName=menuFrame}" Placement="Center" StaysOpen="False" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
