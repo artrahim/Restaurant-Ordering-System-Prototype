@@ -22,10 +22,13 @@ namespace OrderingSystem
     public partial class Starters : Page
     {
       //  ArrayList orderSummary = new ArrayList();
-        
+        double price = 0.0;
         public Starters()
         {
             InitializeComponent();
+            subtotalLabel.Content = "Subtotal: $" + price;
+            taxLabel.Content = "Tax: $" + price;
+            totalLabel.Content = "Total: $" + price;
 
         }
         private void AddChickenWings_Click(object sender, EventArgs e)
