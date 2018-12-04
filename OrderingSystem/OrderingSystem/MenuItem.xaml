@@ -5,25 +5,25 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:OrderingSystem"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="650" Height="Auto">
+             d:DesignHeight="210" d:DesignWidth="455" Height="Auto">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300*"></ColumnDefinition>
-            <ColumnDefinition Width="247*"></ColumnDefinition>
-            <ColumnDefinition Width="103*"/>
+            <ColumnDefinition Width="210*"></ColumnDefinition>
+            <ColumnDefinition Width="172*"></ColumnDefinition>
+            <ColumnDefinition Width="72*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="300"></RowDefinition>
+            <RowDefinition Height="210"></RowDefinition>
         </Grid.RowDefinitions>
-        <Image x:Name="FoodImage" HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Width="300" Stretch="Fill"/>
+        <Image x:Name="FoodImage" HorizontalAlignment="Left" Height="210" VerticalAlignment="Top" Width="210" Stretch="Fill"/>
         <StackPanel Grid.Column="1" Background="#FFE20000" Grid.ColumnSpan="2">
-            <TextBlock x:Name="ItemName" TextWrapping="Wrap" Text="Item Name" Margin="4,0,106,0" FontWeight="Bold" FontSize="30" Foreground="White"/>
-            <TextBlock x:Name="ItemDescription" Height="199" TextWrapping="Wrap" Text="Item Description" Margin="4,0,4,2" FontSize="20" Foreground="White"/>
+            <TextBlock x:Name="ItemName" TextWrapping="Wrap" Text="Item Name" Margin="4,0,88,0" FontWeight="Bold" FontSize="21" Foreground="White"/>
+            <TextBlock x:Name="ItemDescription" Height="120" TextWrapping="Wrap" Text="Item Description" Margin="3,0,3,2" FontSize="14" Foreground="White"/>
         </StackPanel>
         
-        <ToggleButton x:Name="AddToOrder" Content="Add to Order" Margin="35,247,35,10" Height="43" Grid.ColumnSpan="2" Grid.Column="1" FontSize="22" Click="AddToOrder_Click"/>
+        <ToggleButton x:Name="AddToOrder" Content="Add to Order" Margin="24,150,24,7" Height="43" Grid.ColumnSpan="2" Grid.Column="1" FontSize="18" Click="AddToOrder_Click"/>
         <StackPanel Grid.Column="2">
-            <TextBlock x:Name="Price" TextWrapping="Wrap" Text="Price" Foreground="White" FontWeight="Bold" Margin="0,0,2,0" FontSize="30" TextAlignment="Right"/>
+            <TextBlock x:Name="Price" TextWrapping="Wrap" Text="Price" Foreground="White" FontWeight="Bold" Margin="0,0,2,0" FontSize="22" TextAlignment="Right"/>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -151,5 +151,32 @@
   <ItemGroup>
     <Resource Include="img\smileyface.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\thaibites.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\flatbread.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\cactuscutpot.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\bostonroyal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\pestochicken.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\lasagna.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\chipotlebacon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\mediterranean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\vivaitalia.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
