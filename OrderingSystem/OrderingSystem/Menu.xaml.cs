@@ -21,12 +21,14 @@ namespace OrderingSystem
     /// </summary>
     public partial class Starters : Page
     {
-      //  ArrayList orderSummary = new ArrayList();
-        
+        //  ArrayList orderSummary = new ArrayList();
+       double price = 0.0;
         public Starters()
         {
             InitializeComponent();
-
+            subtotalLabel.Content = "Subtotal: $" + price;
+            taxLabel.Content = "Tax: $" + price;
+            totalLabel.Content = "Total: $" + price; 
         }
         private void AddChickenWings_Click(object sender, EventArgs e)
         {
@@ -70,7 +72,8 @@ namespace OrderingSystem
             menuItems.Add(flavours);
             menuItems.Add(dips);
             
-            OrderPopup op = new OrderPopup(orderSummery, "Chicken Wings", menuItems,utilityGrid);
+
+            OrderPopup op = new OrderPopup(orderSummery, "Chicken Wings", menuItems,utilityGrid,subtotalLabel, taxLabel, totalLabel);
             StarterFrame.Children.Add(op);
         }
 
@@ -250,6 +253,7 @@ namespace OrderingSystem
             OrderPopup op = new OrderPopup(orderSummery, "Boston Royal", menuItems, utilityGrid);
             PizzaFrame.Children.Add(op);
         }
+
         private void CallServer_Click(object sender, RoutedEventArgs e)
         {
 

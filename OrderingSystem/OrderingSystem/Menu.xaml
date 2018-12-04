@@ -155,25 +155,32 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <StackPanel x:Name="orderSummery" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Top" Width="320" Orientation="Vertical" Background="#292929" Height="800">
-            <Label Name="orderSummaryLabel" Content="Order Summary" Background="White" Margin="50,0,40,0" FontFamily="Arial Black" FontSize="24" IsEnabled="False" Foreground="Red" />
-        </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Height="80" Width="960" VerticalAlignment="Bottom" Background="#292929" Orientation="Horizontal" >
-            <ToggleButton x:Name ="CallServer" Margin="10,0,0,10" Content="Call a Server" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="260" Height="60" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Click="CallServer_Click"/>
+       
+    <StackPanel x:Name="orderSummery" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Top" Width="320" Orientation="Vertical" Background="White" Height="592">
+      <Label Name="orderSummaryLabel" Content="Order Summary" Background="White" Margin="50,0,40,0" FontFamily="Arial Black" FontSize="24" IsEnabled="False" Foreground="Red" />
+    </StackPanel>
+    <StackPanel x:Name="priceStack" HorizontalAlignment="Left" Height="118" Margin="960,597,0,0" VerticalAlignment="Top" Width="320" Background="White">
+      <Label x:Name="subtotalLabel" Background="White" Foreground="Black" FontSize="22" FontFamily="Arial" Height="35" IsEnabled="False"/>
+      <Label x:Name="taxLabel" Background="White" FontSize="22" FontFamily="Arial" Foreground="Black" Height="35" Margin="0,0,10,0" IsEnabled="False"/>
+      <Label x:Name="totalLabel" FontSize="22" FontFamily="Arial" Foreground="Black" Background="{x:Null}" BorderThickness="0" Height="35" Margin="0,0,10,0" IsEnabled="False"/>
+    </StackPanel>
+    <StackPanel HorizontalAlignment="Left" Height="80" Width="1280" VerticalAlignment="Bottom" Background="#292929" Orientation="Horizontal" >
+      <ToggleButton x:Name ="CallServer" Margin="10,0,0,10" Content="Call a Server" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="260" Height="60" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Click="CallServer_Click"/>
 
-            <Label Content="Legend: " Foreground="WhiteSmoke" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="34" Margin="200,14,14,10" FontWeight="Bold" FontFamily="Euphemia"/>
-            <Image Width="60" Height="60" Source="img/vegetarian.jpg"/>
-        </StackPanel>
-        <Grid x:Name="utilityGrid" Background="White" Opacity="0.0" Visibility="Collapsed"></Grid>
-        <Popup x:Name="popUpServer" Width="400" Height="400" IsOpen="{Binding ElementName=CallServer, Path=IsChecked, Mode=TwoWay}" PlacementTarget="{Binding ElementName=menuFrame}" Placement="Center" StaysOpen="False" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
-            <Canvas Width="360" Height="300" Background="LightBlue" >
-                <Canvas.RenderTransform>
-                    <RotateTransform x:Name="Transform" />
-                </Canvas.RenderTransform>
-                <TextBlock Foreground="Black" FontSize="42" FontFamily="Arial" VerticalAlignment="Center" Text="Help is on the way! You can continue browsing by clicking the 'Menu' button" TextWrapping="Wrap" Height="300" Width="360" TextAlignment="Center">
-                </TextBlock>
-                <Button Content="OK" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Width="100" Height="50" FontSize="24" Background="WhiteSmoke" Canvas.Left="129" Canvas.Top="240" Click="CloseCallServer_Click"></Button>
-            </Canvas>
-        </Popup>
-    </Grid>
+      <Label Content="Legend: " Foreground="WhiteSmoke" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="34" Margin="200,14,14,10" FontWeight="Bold" FontFamily="Euphemia"/>
+      <Image Width="60" Height="60" Source="img/vegetarian.jpg"/>
+      <ToggleButton x:Name="sendOrder" Content="Send Order" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="260" Height="60" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Margin="300,0,0,10"/>
+    </StackPanel>
+    <Grid x:Name="utilityGrid" Background="White" Opacity="0.0" Visibility="Collapsed"></Grid>
+    <Popup x:Name="popUpServer" Width="400" Height="400" IsOpen="{Binding ElementName=CallServer, Path=IsChecked, Mode=TwoWay}" PlacementTarget="{Binding ElementName=menuFrame}" Placement="Center" StaysOpen="False" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
+      <Canvas Width="360" Height="300" Background="LightBlue" >
+        <Canvas.RenderTransform>
+          <RotateTransform x:Name="Transform" />
+        </Canvas.RenderTransform>
+        <TextBlock Foreground="Black" FontSize="42" FontFamily="Arial" VerticalAlignment="Center" Text="Help is on the way! You can continue browsing by clicking the 'Menu' button" TextWrapping="Wrap" Height="300" Width="360" TextAlignment="Center">
+        </TextBlock>
+        <Button Content="OK" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Width="100" Height="50" FontSize="24" Background="WhiteSmoke" Canvas.Left="129" Canvas.Top="240" Click="CloseCallServer_Click"></Button>
+      </Canvas>
+    </Popup>
+  </Grid>
 </Page>
