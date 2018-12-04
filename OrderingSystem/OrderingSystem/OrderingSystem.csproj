@@ -184,7 +184,8 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\vivaitalia.png" />
-  </ItemGroup> 
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="img\Table.jpg" />
   </ItemGroup>
   <ItemGroup>
