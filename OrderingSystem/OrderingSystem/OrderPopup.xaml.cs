@@ -29,10 +29,15 @@ namespace OrderingSystem
         private List<List<CheckBox>> checkBoxes = new List<List<CheckBox>>();
         private List<String> headers = new List<String>();
         private int quantity = 1;
+        private Label subtotal_Label;
+        private Label tax_Label;
+        private Label total_Label;
         private TextBox customerDet = new TextBox();
         private Grid disable = new Grid();
-
-        public OrderPopup(StackPanel orderPanel, String orderName, List<List<String>> optionStrings, Grid disableGrid)
+        static double subT = 0.0;
+        static double tax = 0.0;
+        static double total = 0.0;
+        public OrderPopup(StackPanel orderPanel, String orderName, List<List<String>> optionStrings, Grid disableGrid, Label subtotalLabel, Label taxLabel, Label totalLabel)
         {
             InitializeComponent();
             PopUpAddToOrder.IsOpen = true;
@@ -40,7 +45,9 @@ namespace OrderingSystem
             name = orderName;
             menuItems = optionStrings;
             disable = disableGrid;
-
+            subtotal_Label = subtotalLabel;
+            tax_Label = taxLabel;
+            total_Label = totalLabel;
             disable.Visibility = System.Windows.Visibility.Visible;   
 
             createContentLists(optionStrings);
@@ -80,10 +87,11 @@ namespace OrderingSystem
 
         }
 
+        
         private void AddToOrder_Click(object sender, RoutedEventArgs e)
         {
 
-            
+
             TextBox customizations = new TextBox();
             Color colour = new Color();
             colour = Color.FromRgb(255, 255, 255);
@@ -92,7 +100,7 @@ namespace OrderingSystem
 
             List<int> badExpanders = new List<int>();
             int headerCount = 0;
-            
+
             for (int radioButtonSets = 0; radioButtonSets < radioButtons.Count; radioButtonSets++)
             {
                 Boolean hasChecked = false;
@@ -117,9 +125,9 @@ namespace OrderingSystem
                 headerCount++;
             }
             //if there are radio button expanders without a selection, return and put error message on header
-            if(badExpanders.Count != 0)
+            if (badExpanders.Count != 0)
             {
-                for(int i = 0;i < badExpanders.Count; i++)
+                for (int i = 0; i < badExpanders.Count; i++)
                 {
                     if (!expanders[badExpanders[i]].Header.ToString().Contains("* Requires Selection"))
                     {
@@ -168,11 +176,20 @@ namespace OrderingSystem
             orderSummeryExpander_1.IsExpanded = false;
             order.Children.Add(orderSummeryExpander_1);
 
+            double currPrice = (price * quantity);
             orderSummeryExpander_1.FontSize = 20;
-            orderSummeryExpander_1.Header = "   " + name + " x" + quantity + " $" + (price * quantity).ToString("n2");
+            orderSummeryExpander_1.Header = "   " + name + " x" + quantity + " $" + currPrice.ToString("n2");
             orderSummeryExpander_1.Foreground = textColour;
             orderSummeryExpander_1.Content = customizations;
 
+
+            subT += currPrice;
+            tax = subT * 0.05;
+            total = subT + tax;
+
+            subtotal_Label.Content = "Subtotal: $" + subT.ToString("n2");
+            tax_Label.Content = "Tax: $" + tax.ToString("n2");
+            total_Label.Content = "Tax: $" + total.ToString("n2");
             CancelButton_1_Click(sender, e);
 
         }
@@ -184,6 +201,7 @@ namespace OrderingSystem
             double price = Convert.ToDouble(priceString[1]);
             return price;
         }
+
 
         private void add_1_Click(object sender, RoutedEventArgs e)
         {
