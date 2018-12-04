@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -94,9 +94,11 @@ namespace OrderingSystem
 
             TextBox customizations = new TextBox();
             Color colour = new Color();
-            colour = Color.FromRgb(255, 255, 255);
+            colour = Color.FromRgb(0, 0, 0);
             SolidColorBrush textColour = new SolidColorBrush(colour);
             double price = 0.0;
+
+            customizations.BorderThickness = new Thickness(0);
 
             List<int> badExpanders = new List<int>();
             int headerCount = 0;
