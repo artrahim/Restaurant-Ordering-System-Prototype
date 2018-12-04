@@ -17,7 +17,8 @@
         </Grid.RowDefinitions>
         <Image x:Name="FoodImage" HorizontalAlignment="Left" Height="210" VerticalAlignment="Top" Width="210" Stretch="Fill"/>
         <StackPanel Grid.Column="1" Background="#FFE20000" Grid.ColumnSpan="2">
-            <TextBlock x:Name="ItemName" TextWrapping="Wrap" Text="Item Name" Margin="4,0,106,0" FontWeight="Bold" FontSize="21" Foreground="White"/>
+
+            <TextBlock x:Name="ItemName" TextWrapping="Wrap" Text="Item Name" Margin="4,0,88,0" FontWeight="Bold" FontSize="21" Foreground="White"/>
             <TextBlock x:Name="ItemDescription" Height="120" TextWrapping="Wrap" Text="Item Description" Margin="3,0,3,2" FontSize="14" Foreground="White"/>
         </StackPanel>
         
