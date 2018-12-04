@@ -5,7 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OrderingSystem"
         mc:Ignorable="d"
-        Title="WelcomeScreen" Height="1280" Width="1800" Loaded="Window_Loaded" WindowState="Maximized">
+        Title="WelcomeScreen" ResizeMode="NoResize" MinHeight="800" Height="840" MinWidth="1280" Width="1280" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style x:Key="{x:Type RadioButton}" TargetType="{x:Type RadioButton}">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="FocusVisualStyle" Value="{StaticResource RadioButtonFocusVisual}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RadioButton}">
+                        <BulletDecorator Background="Transparent">
+                            <BulletDecorator.Bullet>
+                                <Grid Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" 
+              Height="{Binding ActualHeight, ElementName=PART_Content}" >
+                                    <Ellipse x:Name="Border"  
+                Fill="{StaticResource NormalBrush}"
+                StrokeThickness="1"
+                Stroke="{StaticResource NormalBorderBrush}" />
+                                    <Ellipse x:Name="CheckMark"
+                Margin="4"
+                Fill="{StaticResource GlyphBrush}" />
+                                </Grid>
+                            </BulletDecorator.Bullet>
+                            <ContentPresenter Name="PART_Content"
+            Margin="4,0,0,0"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            RecognizesAccessKey="True"/>
+                        </BulletDecorator>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="false">
+                                <Setter TargetName="CheckMark" Property="Visibility" Value="Collapsed"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="Border" Property="Fill" Value="{StaticResource DarkBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="Border" Property="Fill" Value="{StaticResource PressedBrush}" />
+                                <Setter TargetName="Border" Property="Stroke" Value="{StaticResource GlyphBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter TargetName="Border" Property="Fill" Value="{StaticResource DisabledBackgroundBrush}" />
+                                <Setter TargetName="Border" Property="Stroke" Value="#40000000" />
+                                <Setter Property="Foreground" Value="#80000000"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <DockPanel>
         <Frame x:Name="_NavigationFrame" NavigationUIVisibility="Hidden" Source ="WelcomeScreen.xaml"/>
     </DockPanel>

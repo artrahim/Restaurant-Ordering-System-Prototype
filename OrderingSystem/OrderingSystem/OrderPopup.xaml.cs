@@ -30,15 +30,18 @@ namespace OrderingSystem
         private List<String> headers = new List<String>();
         private int quantity = 1;
         private TextBox customerDet = new TextBox();
+        private Grid disable = new Grid();
 
-        public OrderPopup(StackPanel orderPanel, String orderName, List<List<String>> optionStrings)
+        public OrderPopup(StackPanel orderPanel, String orderName, List<List<String>> optionStrings, Grid disableGrid)
         {
             InitializeComponent();
             PopUpAddToOrder.IsOpen = true;
             order = orderPanel;
             name = orderName;
             menuItems = optionStrings;
-            
+            disable = disableGrid;
+
+            disable.Visibility = System.Windows.Visibility.Visible;   
 
             createContentLists(optionStrings);
             createExpanders(radioButtons, checkBoxes);
@@ -73,28 +76,31 @@ namespace OrderingSystem
                 }
             }
 
+            disable.Visibility = System.Windows.Visibility.Collapsed;
 
         }
 
         private void AddToOrder_Click(object sender, RoutedEventArgs e)
         {
 
-            Expander orderSummeryExpander_1 = new Expander();
-            orderSummeryExpander_1.IsExpanded = false;
-            order.Children.Add(orderSummeryExpander_1);
+            
             TextBox customizations = new TextBox();
             Color colour = new Color();
             colour = Color.FromRgb(255, 255, 255);
             SolidColorBrush textColour = new SolidColorBrush(colour);
             double price = 0.0;
-            
 
+            List<int> badExpanders = new List<int>();
+            int headerCount = 0;
+            
             for (int radioButtonSets = 0; radioButtonSets < radioButtons.Count; radioButtonSets++)
             {
+                Boolean hasChecked = false;
                 for (int radioButtonCount = 0; radioButtonCount < radioButtons[radioButtonSets].Count; radioButtonCount++)
                 {
                     if (radioButtons[radioButtonSets][radioButtonCount].IsChecked == true)
                     {
+                        hasChecked = true;
                         String name = radioButtons[radioButtonSets][radioButtonCount].Content.ToString();
                         customizations.Text += "\r\n" + name;
                         if (name.Contains('$'))
@@ -103,7 +109,26 @@ namespace OrderingSystem
                         }
                     }
                 }
+                //check all radio buttons have made a selection
+                if (!hasChecked)
+                {
+                    badExpanders.Add(headerCount);
+                }
+                headerCount++;
             }
+            //if there are radio button expanders without a selection, return and put error message on header
+            if(badExpanders.Count != 0)
+            {
+                for(int i = 0;i < badExpanders.Count; i++)
+                {
+                    if (!expanders[badExpanders[i]].Header.ToString().Contains("* Requires Selection"))
+                    {
+                        expanders[badExpanders[i]].Header += " * Requires Selection";
+                    }
+                }
+                return;
+            }
+
             for (int checkBoxSets = 0; checkBoxSets < checkBoxes.Count; checkBoxSets++)
             {
                 for (int checkBoxCount = 0; checkBoxCount < checkBoxes[checkBoxSets].Count; checkBoxCount++)
@@ -118,9 +143,13 @@ namespace OrderingSystem
                         }
                     }
                 }
+                headerCount++;
             }
-            
-            customizations.Text += "\r\n * " + customerDet.Text;
+
+            if (!customizations.Text.Equals(""))
+            {
+                customizations.Text += "\r\n * " + customerDet.Text;
+            }
             customizations.IsReadOnly = true;
             /*
             //create grid for header text alignment
@@ -135,11 +164,16 @@ namespace OrderingSystem
             //add columns to grid
             headerGrid.ColumnDefinitions.Add(c1);
             */
+            Expander orderSummeryExpander_1 = new Expander();
+            orderSummeryExpander_1.IsExpanded = false;
+            order.Children.Add(orderSummeryExpander_1);
 
-            orderSummeryExpander_1.FontSize = 29;
+            orderSummeryExpander_1.FontSize = 20;
             orderSummeryExpander_1.Header = "   " + name + " x" + quantity + " $" + (price * quantity).ToString("n2");
             orderSummeryExpander_1.Foreground = textColour;
             orderSummeryExpander_1.Content = customizations;
+
+            CancelButton_1_Click(sender, e);
 
         }
 
@@ -185,10 +219,10 @@ namespace OrderingSystem
                 {
                     Border stackborder = new Border();
                     Color colour = new Color();
-                    colour = Color.FromRgb(255, 255, 255);
+                    colour = Color.FromRgb(224, 26, 49);
                     SolidColorBrush borderColour = new SolidColorBrush(colour);
                     stackborder.BorderBrush = borderColour;
-                    stackborder.BorderThickness = new Thickness(4, 2, 4, 2);
+                    stackborder.BorderThickness = new Thickness(5, 3, 5, 3);
 
                     stackborder.Child = buttonList[expander][radioButtonCount];
                     currentMenu.Children.Add(stackborder);
@@ -204,13 +238,13 @@ namespace OrderingSystem
             {
                 Expander current = new Expander();
                 StackPanel currentMenu = new StackPanel();
-                current.Header = "Select " + headers[headerCount];
+                current.Header = "Select " + headers[headerCount]+" (Optional)";
                 headerCount++;
                 for (int checkBoxCount = 0; checkBoxCount < boxList[expander].Count; checkBoxCount++)
                 {
                     Border stackborder = new Border();
                     Color colour = new Color();
-                    colour = Color.FromRgb(255, 255, 255);
+                    colour = Color.FromRgb(224, 26, 49);
                     SolidColorBrush borderColour = new SolidColorBrush(colour);
                     stackborder.BorderBrush = borderColour;
                     stackborder.BorderThickness = new Thickness(4, 2, 4, 2);
@@ -229,13 +263,13 @@ namespace OrderingSystem
             Label details = new Label();
             details.Content = "Additional Details For Order:";
             details.Margin = new Thickness(0,20,0,0);
-            details.FontSize = 20;
+            details.FontSize = 26;
             popupStackPanel.Children.Add(details);
 
             //add textbox
             TextBox customerDet = new TextBox();
             customerDet.TextWrapping = TextWrapping.Wrap;
-            customerDet.FontSize = 20;
+            customerDet.FontSize = 26;
             customerDet.Margin = new Thickness(20, 10, 40, 20);
             customerDet.MinHeight = 100;
             customerDet.MaxHeight = 100;
@@ -262,7 +296,7 @@ namespace OrderingSystem
                         RadioButton rb = new RadioButton();
                         rb.GroupName = menuItems[i][1];
                         rb.Content = menuItems[i][j];
-                        rb.FontSize = 20;
+                        rb.FontSize = 30;
                         current.Add(rb);
                     }
                     radioButtons.Add(current);
@@ -276,7 +310,7 @@ namespace OrderingSystem
                         //create checkbox
                         CheckBox rb = new CheckBox();
                         rb.Content = menuItems[i][j];
-                        rb.FontSize = 20;
+                        rb.FontSize = 30;
                         current.Add(rb);
                     }
                     checkBoxes.Add(current);
@@ -285,5 +319,9 @@ namespace OrderingSystem
 
         }
 
+        private void errorMessage()
+        {
+
+        }
     }
 }

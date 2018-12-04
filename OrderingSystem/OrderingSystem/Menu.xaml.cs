@@ -74,6 +74,7 @@ namespace OrderingSystem
             StarterFrame.Children.Add(op);
         }
 
+
         private void AddGarlicBread_Click(object sender, EventArgs e)
         {
             // create list of expanders
@@ -261,7 +262,6 @@ namespace OrderingSystem
         {
 
             popUpServer.IsOpen = false;
-
 
         }
     }
