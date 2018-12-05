@@ -101,7 +101,7 @@ namespace OrderingSystem
             menuItems.Add(sizes);
             menuItems.Add(dips);
 
-            OrderPopup op = new OrderPopup(orderSummery, "Garlic Bread", menuItems, utilityGrid);
+            OrderPopup op = new OrderPopup(orderSummery, "Garlic Bread", menuItems, utilityGrid, subtotalLabel, taxLabel, totalLabel);
             StarterFrame.Children.Add(op);
         }
 
@@ -134,7 +134,7 @@ namespace OrderingSystem
             menuItems.Add(dips);
 
 
-            OrderPopup op = new OrderPopup(orderSummery, "Thai Bites", menuItems, utilityGrid);
+            OrderPopup op = new OrderPopup(orderSummery, "Thai Bites", menuItems, utilityGrid, subtotalLabel, taxLabel, totalLabel);
             StarterFrame.Children.Add(op);
         }
 
@@ -178,7 +178,7 @@ namespace OrderingSystem
             menuItems.Add(extra);
 
 
-            OrderPopup op = new OrderPopup(orderSummery, "Pesto Chicken Penne", menuItems, utilityGrid);
+            OrderPopup op = new OrderPopup(orderSummery, "Pesto Chicken Penne", menuItems, utilityGrid, subtotalLabel, taxLabel, totalLabel);
             PastaFrame.Children.Add(op);
         }
 
@@ -250,7 +250,7 @@ namespace OrderingSystem
             menuItems.Add(dips);
 
 
-            OrderPopup op = new OrderPopup(orderSummery, "Boston Royal", menuItems, utilityGrid);
+            OrderPopup op = new OrderPopup(orderSummery, "Boston Royal", menuItems, utilityGrid, subtotalLabel, taxLabel, totalLabel);
             PizzaFrame.Children.Add(op);
         }
 
@@ -258,6 +258,7 @@ namespace OrderingSystem
         {
 
             popUpServer.IsOpen = true;
+            utilityGrid.Visibility = System.Windows.Visibility.Visible;
 
 
         }
@@ -265,8 +266,13 @@ namespace OrderingSystem
         {
 
             popUpServer.IsOpen = false;
+            utilityGrid.Visibility = System.Windows.Visibility.Collapsed;
 
+        }
 
+        private void sendOrder_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new LastScreen());
         }
     }
 }
