@@ -11,28 +11,33 @@
     <Grid>
         <Frame x:Name="NavigationFrame3" NavigationUIVisibility="Hidden"/>
         <ToggleButton x:Name="CallServer" Content="Call a Server" Height="60" Margin="160,630,0,0" Width="250" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Center" Click="CallServer_Click"/>
-        <Button x:Name="ContinueBrowsing" Content="Continue Browsing" Height="60" Margin="505,630,0,0" Width="270" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <ToggleButton x:Name="FinishPay" Content="Finish and Pay" HorizontalAlignment="Left" Height="60" Margin="850,630,0,0" Width="250" VerticalAlignment="Center" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial"/>
+        <Button x:Name="ContinueBrowsing" Content="Continue Browsing" Height="60" Margin="505,630,0,0" Width="270" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Center" Click="ContinueBrowsing_Click"/>
+        <ToggleButton x:Name="FinishPay" Content="Finish and Pay" HorizontalAlignment="Left" Height="60" Margin="850,630,0,0" Width="250" VerticalAlignment="Center" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Click="FinishPay_Click"/>
         <Image Name="smileyface" HorizontalAlignment="Left" Height="250" Margin="490,250,0,0" VerticalAlignment="Top" Width="250" Source="img/smileyface.jpg"/>
         <Label Name ="Thanks" Content="Thanks For Ordering!" Margin="230,0,238,625" FontSize="70" Foreground="#e01a31" FontFamily="/fonts/#Americana" HorizontalAlignment="Center" VerticalAlignment="Center" Width="805"/>
         <Label Name ="Order" Content="Your food will be here shorty" HorizontalAlignment="Center" Margin="85,0,84,400" VerticalAlignment="Center" FontSize="34" Foreground="#e01a31" FontFamily="/fonts/#Americana" Width="530"/>
-        <Popup x:Name="PopUpServer" Width="400" Height="400" Margin="0,0,0,100" IsOpen="{Binding ElementName=CallServer, Path=IsChecked, Mode=TwoWay}" PlacementTarget="{Binding ElementName=CallServer}" StaysOpen="False" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
-            <Canvas Width="250" Height="210" Background="LightBlue" VerticalAlignment="Bottom">
+        <Grid x:Name="utilityGrid" Background="White" Opacity="0.0" Visibility="Collapsed"></Grid>
+        <Popup x:Name="popUpServer" Width="360" Height="300" IsOpen="{Binding ElementName=CallServer, Path=IsChecked, Mode=TwoWay}" Placement="Center" StaysOpen="True" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
+            <Canvas Width="360" Height="300" Background="LightBlue" >
                 <Canvas.RenderTransform>
                     <RotateTransform x:Name="Transform1" />
                 </Canvas.RenderTransform>
-                <TextBlock Foreground="Black" FontSize="28" FontFamily="Arial" VerticalAlignment="Center" Text="Help is on the way! You can continue browsing by clicking the 'Menu' button" TextWrapping="Wrap" Height="210" Width="250" TextAlignment="Center">
+                <Border BorderThickness="2" BorderBrush="Black" Width="360" Height="300" HorizontalAlignment="Center" VerticalAlignment="Center"></Border>
+                <TextBlock Foreground="Black" FontSize="36" FontFamily="Arial" VerticalAlignment="Center" Text="Help is on the way! You can continue browsing!" TextWrapping="Wrap" Height="280" Width="340" TextAlignment="Center" Margin="10,20,0,0">
                 </TextBlock>
+                <Button Content="OK" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Width="100" Height="50" FontSize="24" Background="WhiteSmoke" Canvas.Left="125" Canvas.Top="220" Click="CloseCallServer_Click"></Button>
             </Canvas>
         </Popup>
-        <Popup x:Name="PopUpFinishPay" Width="280" Height="280" Margin="0,0,0,140" IsOpen="{Binding ElementName=FinishPay, Path=IsChecked, Mode=TwoWay}" PlacementTarget="{Binding ElementName=FinishPay}" StaysOpen="False" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
-            <Canvas Width="250" Height="210" Background="LightBlue" VerticalAlignment="Bottom">
+        <Popup x:Name="PopUpFinishPay" Width="360" Height="300" IsOpen="{Binding ElementName=FinishPay, Path=IsChecked, Mode=TwoWay}" Placement="Center" StaysOpen="True" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
+            <Canvas Width="360" Height="300" Background="LightBlue" >
                 <Canvas.RenderTransform>
                     <RotateTransform x:Name="Transform2" />
                 </Canvas.RenderTransform>
-                <TextBlock Foreground="Black" FontSize="28" FontFamily="Arial" VerticalAlignment="Center" Text="Thank You!
-                           Please proceed to the front to Pay" TextWrapping="Wrap" Height="210" Width="250" TextAlignment="Center">
+                <Border BorderThickness="2" BorderBrush="Black" Width="360" Height="300" HorizontalAlignment="Center" VerticalAlignment="Center"></Border>
+                <TextBlock Foreground="Black" FontSize="36" FontFamily="Arial" VerticalAlignment="Center" Text="Thank You!
+                           Please proceed to the front to Pay." TextWrapping="Wrap" Height="280" Width="340" TextAlignment="Center" Margin="10,30,0,0">
                 </TextBlock>
+                <Button Content="OK" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="100" Height="50" FontSize="24" Background="WhiteSmoke" Canvas.Left="125" Canvas.Top="220" Click="CloseFinishPay_Click"></Button>
             </Canvas>
         </Popup>
     </Grid>

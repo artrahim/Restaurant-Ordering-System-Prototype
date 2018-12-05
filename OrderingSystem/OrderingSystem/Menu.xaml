@@ -169,18 +169,19 @@
 
       <Label Content="Legend: " Foreground="WhiteSmoke" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="34" Margin="200,14,14,10" FontWeight="Bold" FontFamily="Euphemia"/>
       <Image Width="60" Height="60" Source="img/vegetarian.jpg"/>
-      <ToggleButton x:Name="sendOrder" Content="Send Order" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="260" Height="60" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Margin="300,0,0,10"/>
+      <ToggleButton x:Name="sendOrder" Content="Send Order" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="260" Height="60" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Margin="300,0,0,10" Click="sendOrder_Click"/>
     </StackPanel>
     <Grid x:Name="utilityGrid" Background="White" Opacity="0.0" Visibility="Collapsed"></Grid>
-    <Popup x:Name="popUpServer" Width="400" Height="400" IsOpen="{Binding ElementName=CallServer, Path=IsChecked, Mode=TwoWay}" PlacementTarget="{Binding ElementName=menuFrame}" Placement="Center" StaysOpen="False" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
-      <Canvas Width="360" Height="300" Background="LightBlue" >
-        <Canvas.RenderTransform>
-          <RotateTransform x:Name="Transform" />
-        </Canvas.RenderTransform>
-        <TextBlock Foreground="Black" FontSize="42" FontFamily="Arial" VerticalAlignment="Center" Text="Help is on the way! You can continue browsing by clicking the 'Menu' button" TextWrapping="Wrap" Height="300" Width="360" TextAlignment="Center">
-        </TextBlock>
-        <Button Content="OK" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Width="100" Height="50" FontSize="24" Background="WhiteSmoke" Canvas.Left="129" Canvas.Top="240" Click="CloseCallServer_Click"></Button>
-      </Canvas>
+    <Popup x:Name="popUpServer" Width="360" Height="300" IsOpen="{Binding ElementName=CallServer, Path=IsChecked, Mode=TwoWay}" PlacementTarget="{Binding ElementName=menuFrame}" Placement="Center" StaysOpen="True" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
+        <Canvas Width="360" Height="300" Background="LightBlue"  >
+            <Canvas.RenderTransform>
+                <RotateTransform x:Name="Transform" />
+            </Canvas.RenderTransform>
+            <Border BorderThickness="2" BorderBrush="Black" Width="360" Height="300" HorizontalAlignment="Center" VerticalAlignment="Center"></Border>
+            <TextBlock Foreground="Black" FontSize="36" FontFamily="Arial" VerticalAlignment="Center" Text="Help is on the way! You can continue browsing by clicking the 'Menu' button" TextWrapping="Wrap" Height="280" Width="340" TextAlignment="Center" HorizontalAlignment="Center" Margin="10,10,0,0" >
+            </TextBlock>
+            <Button Content="OK" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Width="100" Height="50" FontSize="24" Background="WhiteSmoke" Canvas.Left="125" Canvas.Top="220" Click="CloseCallServer_Click"></Button>
+        </Canvas>
     </Popup>
   </Grid>
 </Page>

@@ -27,7 +27,38 @@ namespace OrderingSystem
 
         private void CallServer_Click(object sender, RoutedEventArgs e)
         {
-            PopUpServer.IsOpen = true;
+            popUpServer.IsOpen = true;
+            utilityGrid.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        private void CloseCallServer_Click(object sender, RoutedEventArgs e)
+        {
+
+            popUpServer.IsOpen = false;
+            utilityGrid.Visibility = System.Windows.Visibility.Collapsed;
+
+
+        }
+
+        private void FinishPay_Click(object sender, RoutedEventArgs e)
+        {
+            PopUpFinishPay.IsOpen = true;
+            utilityGrid.Visibility = System.Windows.Visibility.Visible;
+        }
+
+
+        private void CloseFinishPay_Click(object sender, RoutedEventArgs e)
+        {
+
+            PopUpFinishPay.IsOpen = false;
+            utilityGrid.Visibility = System.Windows.Visibility.Collapsed;
+
+
+        }
+
+        private void ContinueBrowsing_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Starters());
         }
     }
 }

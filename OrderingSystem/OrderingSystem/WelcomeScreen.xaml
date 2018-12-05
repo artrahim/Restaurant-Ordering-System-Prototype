@@ -14,14 +14,16 @@
         <Label Name ="Welcome" Content="Welcome to" HorizontalAlignment="Center" Margin="0,0,0,850" VerticalAlignment="Center" FontSize="100" Foreground="#e01a31" FontFamily="/fonts/#Americana"/>
         <Button x:Name ="ToMenu" Content="Menu" HorizontalAlignment="Center" Margin="0,350,0,0" VerticalAlignment="Center" Width="180" Height="80" Background="#e01a31" Foreground="WhiteSmoke" FontSize="36" FontFamily="Arial" Click="ToMenu_Click"/>
         <ToggleButton x:Name ="CallServer" Content="Call a Server" HorizontalAlignment="Left" Margin="60,0,0,60" VerticalAlignment="Bottom" Width="360" Height="80" Background="#e01a31" Foreground="WhiteSmoke" FontSize="36" FontFamily="Arial" Click="CallServer_Click"/>
-        <Popup x:Name="popUpServer" Width="400" Height="400" IsOpen="{Binding ElementName=CallServer, Path=IsChecked, Mode=TwoWay}" Placement="Center" StaysOpen="False" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
-            <Canvas Width="360" Height="300" Background="LightBlue" >
+        <Grid x:Name="utilityGrid" Background="White" Opacity="0.0" Visibility="Collapsed"></Grid>
+        <Popup x:Name="popUpServer" Width="360" Height="300" IsOpen="{Binding ElementName=CallServer, Path=IsChecked, Mode=TwoWay}" Placement="Center" StaysOpen="True" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
+            <Canvas Width="360" Height="300" Background="LightBlue"  >
                 <Canvas.RenderTransform>
                     <RotateTransform x:Name="Transform" />
                 </Canvas.RenderTransform>
-                <TextBlock Foreground="Black" FontSize="42" FontFamily="Arial" VerticalAlignment="Center" Text="Help is on the way! You can continue browsing by clicking the 'Menu' button" TextWrapping="Wrap" Height="300" Width="360" TextAlignment="Center">
+                <Border BorderThickness="2" BorderBrush="Black" Width="360" Height="300" HorizontalAlignment="Center" VerticalAlignment="Center"></Border>
+                <TextBlock Foreground="Black" FontSize="36" FontFamily="Arial" VerticalAlignment="Center" Text="Help is on the way! You can continue browsing by clicking the 'Menu' button" TextWrapping="Wrap" Height="280" Width="340" TextAlignment="Center" HorizontalAlignment="Center" Margin="10,10,0,0" >
                 </TextBlock>
-                <Button Content="OK" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Width="100" Height="50" FontSize="24" Background="WhiteSmoke" Canvas.Left="129" Canvas.Top="240" Click="CloseCallServer_Click"></Button>
+                <Button Content="OK" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Width="100" Height="50" FontSize="24" Background="WhiteSmoke" Canvas.Left="125" Canvas.Top="220" Click="CloseCallServer_Click"></Button>
             </Canvas>
         </Popup>
     </Grid>

@@ -37,6 +37,7 @@ namespace OrderingSystem
         {
 
             popUpServer.IsOpen = true;
+            utilityGrid.Visibility = System.Windows.Visibility.Visible;
 
 
         }
@@ -44,6 +45,7 @@ namespace OrderingSystem
         {
 
             popUpServer.IsOpen = false;
+            utilityGrid.Visibility = System.Windows.Visibility.Collapsed;
 
 
         }
