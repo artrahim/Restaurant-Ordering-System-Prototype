@@ -238,11 +238,11 @@ namespace OrderingSystem
                 for (int radioButtonCount = 0; radioButtonCount < buttonList[expander].Count; radioButtonCount++)
                 {
                     Border stackborder = new Border();
-                    Color colour = new Color();
+                    /*Color colour = new Color();
                     colour = Color.FromRgb(224, 26, 49);
                     SolidColorBrush borderColour = new SolidColorBrush(colour);
                     stackborder.BorderBrush = borderColour;
-                    stackborder.BorderThickness = new Thickness(5, 3, 5, 3);
+                    stackborder.BorderThickness = new Thickness(5, 3, 5, 3);*/
 
                     stackborder.Child = buttonList[expander][radioButtonCount];
                     currentMenu.Children.Add(stackborder);
@@ -263,13 +263,13 @@ namespace OrderingSystem
                 for (int checkBoxCount = 0; checkBoxCount < boxList[expander].Count; checkBoxCount++)
                 {
                     Border stackborder = new Border();
-                    Color colour = new Color();
+                    /*Color colour = new Color();
                     colour = Color.FromRgb(224, 26, 49);
                     SolidColorBrush borderColour = new SolidColorBrush(colour);
                     stackborder.BorderBrush = borderColour;
                     stackborder.BorderThickness = new Thickness(4, 2, 4, 2);
 
-                    stackborder.Child = boxList[expander][checkBoxCount];
+                    stackborder.Child = boxList[expander][checkBoxCount];*/
                     currentMenu.Children.Add(stackborder);
 
                 }
@@ -316,7 +316,7 @@ namespace OrderingSystem
                         RadioButton rb = new RadioButton();
                         rb.GroupName = menuItems[i][1];
                         rb.Content = menuItems[i][j];
-                        rb.FontSize = 30;
+                        rb.FontSize = 20;
                         current.Add(rb);
                     }
                     radioButtons.Add(current);
@@ -330,7 +330,7 @@ namespace OrderingSystem
                         //create checkbox
                         CheckBox rb = new CheckBox();
                         rb.Content = menuItems[i][j];
-                        rb.FontSize = 30;
+                        rb.FontSize = 20;
                         current.Add(rb);
                     }
                     checkBoxes.Add(current);
