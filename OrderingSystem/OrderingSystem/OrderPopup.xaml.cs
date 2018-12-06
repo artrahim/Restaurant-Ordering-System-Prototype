@@ -316,7 +316,9 @@ namespace OrderingSystem
                         RadioButton rb = new RadioButton();
                         rb.GroupName = menuItems[i][1];
                         rb.Content = menuItems[i][j];
-                        rb.FontSize = 20;
+                        rb.Margin = new Thickness(30,0,0,0);
+                        rb.FontWeight = FontWeights.Normal;
+                        rb.FontSize = 25;
                         current.Add(rb);
                     }
                     radioButtons.Add(current);
@@ -330,7 +332,9 @@ namespace OrderingSystem
                         //create checkbox
                         CheckBox rb = new CheckBox();
                         rb.Content = menuItems[i][j];
-                        rb.FontSize = 20;
+                        rb.Margin = new Thickness(30,0,0,0);
+                        rb.FontWeight = FontWeights.Normal;
+                        rb.FontSize = 25;
                         current.Add(rb);
                     }
                     checkBoxes.Add(current);
