@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,12 +32,16 @@ namespace OrderingSystem
         private Label subtotal_Label;
         private Label tax_Label;
         private Label total_Label;
+        private Label preTotal_Label;
         private TextBox customerDet = new TextBox();
         private Grid disable = new Grid();
         static double subT = 0.0;
         static double tax = 0.0;
         static double total = 0.0;
-        public OrderPopup(StackPanel orderPanel, String orderName, List<List<String>> optionStrings, Grid disableGrid, Label subtotalLabel, Label taxLabel, Label totalLabel)
+        static double price;
+        private double returnedPreTotal;
+        static double previousTotal;
+        public OrderPopup(StackPanel orderPanel, String orderName, List<List<String>> optionStrings, Grid disableGrid, Label subtotalLabel, Label taxLabel, Label totalLabel, Label preTotalLabel, Double givenPreTotal)
         {
             InitializeComponent();
             PopUpAddToOrder.IsOpen = true;
@@ -48,12 +52,24 @@ namespace OrderingSystem
             subtotal_Label = subtotalLabel;
             tax_Label = taxLabel;
             total_Label = totalLabel;
+            preTotal_Label = preTotalLabel;
+            price = 0.0;
+            previousTotal = givenPreTotal ;
             disable.Visibility = System.Windows.Visibility.Visible;   
 
             createContentLists(optionStrings);
             createExpanders(radioButtons, checkBoxes);
 
 
+        }
+
+        public OrderPopup()
+        {
+            returnedPreTotal = price;
+            subT = 0.0;
+            tax = 0.0;
+            total = 0.0;
+            //price = 0.0;
         }
 
 
@@ -94,9 +110,11 @@ namespace OrderingSystem
 
             TextBox customizations = new TextBox();
             Color colour = new Color();
-            colour = Color.FromRgb(255, 255, 255);
+            colour = Color.FromRgb(0, 0, 0);
             SolidColorBrush textColour = new SolidColorBrush(colour);
-            double price = 0.0;
+            price = 0.0;
+
+            customizations.BorderThickness = new Thickness(0);
 
             List<int> badExpanders = new List<int>();
             int headerCount = 0;
@@ -185,13 +203,27 @@ namespace OrderingSystem
 
             subT += currPrice;
             tax = subT * 0.05;
-            total = subT + tax;
+
+            if (previousTotal == 0.0)
+            {
+                total = subT + tax;
+            } else
+            {
+                total = subT + tax + previousTotal;
+            }
+            
+            price = total;
 
             subtotal_Label.Content = "Subtotal: $" + subT.ToString("n2");
             tax_Label.Content = "Tax: $" + tax.ToString("n2");
-            total_Label.Content = "Tax: $" + total.ToString("n2");
+            total_Label.Content = "Total: $" + total.ToString("n2");
             CancelButton_1_Click(sender, e);
 
+        }
+
+        public Double getTotalPrice()
+        {
+            return returnedPreTotal;
         }
 
         private double getPrice(String s)
