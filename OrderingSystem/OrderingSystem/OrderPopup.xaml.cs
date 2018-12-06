@@ -28,6 +28,7 @@ namespace OrderingSystem
         private List<List<RadioButton>> radioButtons = new List<List<RadioButton>>();
         private List<List<CheckBox>> checkBoxes = new List<List<CheckBox>>();
         private List<String> headers = new List<String>();
+
         private int quantity = 1;
         private Label subtotal_Label;
         private Label tax_Label;
@@ -42,7 +43,6 @@ namespace OrderingSystem
         private double returnedPreTotal;
         static double previousTotal;
         public OrderPopup(StackPanel orderPanel, String orderName, List<List<String>> optionStrings, Grid disableGrid, Label subtotalLabel, Label taxLabel, Label totalLabel, Label preTotalLabel, Double givenPreTotal)
-        {
             InitializeComponent();
             PopUpAddToOrder.IsOpen = true;
             order = orderPanel;
@@ -63,6 +63,7 @@ namespace OrderingSystem
 
         }
 
+
         public OrderPopup()
         {
             returnedPreTotal = price;
@@ -72,8 +73,38 @@ namespace OrderingSystem
             //price = 0.0;
         }
 
-
         private void CancelButton_1_Click(object sender, RoutedEventArgs e)
+        {
+            quantity = 1;
+            PopUpAddToOrder.IsOpen = false;
+            quantityBox.Text = quantity.ToString();
+
+            for(int exCount = 0;exCount < expanders.Count; exCount++)
+            {
+                expanders[exCount].IsExpanded = false;
+            }
+
+            for (int radioCount = 0; radioCount < radioButtons.Count; radioCount++)
+            {
+                for (int rb = 0; rb < radioButtons[radioCount].Count; rb++)
+                {
+                    radioButtons[radioCount][rb].IsChecked = false;
+                }
+            }
+            for (int buttonCount = 0; buttonCount < checkBoxes.Count; buttonCount++)
+            {
+                for (int cb = 0; cb < checkBoxes[buttonCount].Count; cb++)
+                {
+                    checkBoxes[buttonCount][cb].IsChecked = false;
+                }
+            }
+
+            disable.Visibility = System.Windows.Visibility.Collapsed;
+
+        }
+
+        
+        private void AddToOrder_Click(object sender, RoutedEventArgs e)
         {
             quantity = 1;
             PopUpAddToOrder.IsOpen = false;
@@ -112,6 +143,7 @@ namespace OrderingSystem
             Color colour = new Color();
             colour = Color.FromRgb(0, 0, 0);
             SolidColorBrush textColour = new SolidColorBrush(colour);
+
             price = 0.0;
 
             customizations.BorderThickness = new Thickness(0);
@@ -200,6 +232,16 @@ namespace OrderingSystem
             orderSummeryExpander_1.Foreground = textColour;
             orderSummeryExpander_1.Content = customizations;
 
+            Button orderSummeryDelete = new Button();
+            orderSummeryDelete.Click += (s, ee) => {
+                order.Children.Remove(orderSummeryExpander_1);
+                order.Children.Remove(orderSummeryDelete);
+            };
+            orderSummeryDelete.Content = "X";
+            orderSummeryDelete.Width = 20;
+            orderSummeryDelete.Height = 20;
+            
+            order.Children.Add(orderSummeryDelete);
 
             subT += currPrice;
             tax = subT * 0.05;
@@ -268,11 +310,7 @@ namespace OrderingSystem
                 for (int radioButtonCount = 0; radioButtonCount < buttonList[expander].Count; radioButtonCount++)
                 {
                     Border stackborder = new Border();
-                    Color colour = new Color();
-                    colour = Color.FromRgb(224, 26, 49);
-                    SolidColorBrush borderColour = new SolidColorBrush(colour);
-                    stackborder.BorderBrush = borderColour;
-                    stackborder.BorderThickness = new Thickness(5, 3, 5, 3);
+
 
                     stackborder.Child = buttonList[expander][radioButtonCount];
                     currentMenu.Children.Add(stackborder);
@@ -293,13 +331,6 @@ namespace OrderingSystem
                 for (int checkBoxCount = 0; checkBoxCount < boxList[expander].Count; checkBoxCount++)
                 {
                     Border stackborder = new Border();
-                    Color colour = new Color();
-                    colour = Color.FromRgb(224, 26, 49);
-                    SolidColorBrush borderColour = new SolidColorBrush(colour);
-                    stackborder.BorderBrush = borderColour;
-                    stackborder.BorderThickness = new Thickness(4, 2, 4, 2);
-
-                    stackborder.Child = boxList[expander][checkBoxCount];
                     currentMenu.Children.Add(stackborder);
 
                 }
@@ -346,7 +377,9 @@ namespace OrderingSystem
                         RadioButton rb = new RadioButton();
                         rb.GroupName = menuItems[i][1];
                         rb.Content = menuItems[i][j];
-                        rb.FontSize = 30;
+                        rb.Margin = new Thickness(30,0,0,0);
+                        rb.FontWeight = FontWeights.Normal;
+                        rb.FontSize = 25;
                         current.Add(rb);
                     }
                     radioButtons.Add(current);
@@ -360,7 +393,9 @@ namespace OrderingSystem
                         //create checkbox
                         CheckBox rb = new CheckBox();
                         rb.Content = menuItems[i][j];
-                        rb.FontSize = 30;
+                        rb.Margin = new Thickness(30,0,0,0);
+                        rb.FontWeight = FontWeights.Normal;
+                        rb.FontSize = 25;
                         current.Add(rb);
                     }
                     checkBoxes.Add(current);

@@ -57,7 +57,7 @@ namespace OrderingSystem
         private void CloseFinishPay_Click(object sender, RoutedEventArgs e)
         {
 
-            PopUpFinishPay.IsOpen = false;
+            this.NavigationService.Navigate(new WelcomeScreen());
             utilityGrid.Visibility = System.Windows.Visibility.Collapsed;
 
 

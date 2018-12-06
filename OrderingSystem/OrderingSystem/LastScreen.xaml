@@ -35,7 +35,7 @@
                 </Canvas.RenderTransform>
                 <Border BorderThickness="2" BorderBrush="Black" Width="360" Height="300" HorizontalAlignment="Center" VerticalAlignment="Center"></Border>
                 <TextBlock Foreground="Black" FontSize="36" FontFamily="Arial" VerticalAlignment="Center" Text="Thank You!
-                           Please proceed to the front to Pay." TextWrapping="Wrap" Height="280" Width="340" TextAlignment="Center" Margin="10,30,0,0">
+                           Please proceed to the front to pay." TextWrapping="Wrap" Height="280" Width="340" TextAlignment="Center" Margin="10,30,0,0">
                 </TextBlock>
                 <Button Content="OK" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="100" Height="50" FontSize="24" Background="WhiteSmoke" Canvas.Left="125" Canvas.Top="220" Click="CloseFinishPay_Click"></Button>
             </Canvas>
