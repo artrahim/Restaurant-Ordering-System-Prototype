@@ -28,6 +28,9 @@ namespace OrderingSystem
         private List<List<RadioButton>> radioButtons = new List<List<RadioButton>>();
         private List<List<CheckBox>> checkBoxes = new List<List<CheckBox>>();
         private List<String> headers = new List<String>();
+        private List<Expander> orderExpanders = new List<Expander>();
+        private List<Button> orderButtons = new List<Button>();
+        
         private int quantity = 1;
         private Label subtotal_Label;
         private Label tax_Label;
@@ -183,6 +186,15 @@ namespace OrderingSystem
             orderSummeryExpander_1.Header = "   " + name + " x" + quantity + " $" + currPrice.ToString("n2");
             orderSummeryExpander_1.Foreground = textColour;
             orderSummeryExpander_1.Content = customizations;
+
+            orderExpanders.Add(orderSummeryExpander_1);
+            
+            Button orderSummeryDelete = new Button();
+            orderSummeryDelete.Content = "X";
+            orderSummeryDelete.Width = 20;
+            orderSummeryDelete.Height = 20;
+
+            orderButtons.Add(orderSummeryDelete);
 
 
             subT += currPrice;
