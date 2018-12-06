@@ -17,6 +17,39 @@
                     </Canvas.RenderTransform>
                     <ScrollViewer Canvas.Top="0" Width="528" Height="460">
                         <StackPanel x:Name="popupStackPanel"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="500">
+                          <StackPanel.Resources>
+
+                                <Style TargetType="Border" x:Key="ExpanderStyle" >
+                                    <Style.Resources>
+                                        <LinearGradientBrush x:Key="BackBrush" StartPoint="0.5,0" EndPoint="0.5,1">
+                                        </LinearGradientBrush>
+                                    </Style.Resources>
+                                    <Setter Property="Background" Value="{StaticResource BackBrush}"/>
+                                </Style>
+
+                                <DataTemplate x:Key="titleText">
+                                    <Border Style="{StaticResource ExpanderStyle}" Height="30">
+                                        <TextBlock Text="{Binding}" 
+                        Margin="4 0"
+                        VerticalAlignment="Center"
+                        Foreground="Black"
+                        FontSize="30" 
+                        FontWeight="Normal"
+                        Width="{Binding
+                        RelativeSource={RelativeSource
+                        Mode=FindAncestor,
+                        AncestorType={x:Type Expander}},
+                        Path=ActualWidth}"
+                        TextWrapping="Wrap"/>
+                                    </Border>
+                                </DataTemplate>
+
+                                <Style TargetType="{x:Type Expander}">
+                                    <Setter Property="HeaderTemplate" Value="{StaticResource titleText}"/>
+                                </Style>
+
+                            </StackPanel.Resources>
+
                             <Label Content="Customize Your Order: " FontSize="38" FontStyle="Italic"></Label>
                             
                         </StackPanel>
