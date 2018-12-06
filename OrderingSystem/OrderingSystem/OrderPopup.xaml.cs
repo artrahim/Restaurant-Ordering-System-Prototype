@@ -28,18 +28,21 @@ namespace OrderingSystem
         private List<List<RadioButton>> radioButtons = new List<List<RadioButton>>();
         private List<List<CheckBox>> checkBoxes = new List<List<CheckBox>>();
         private List<String> headers = new List<String>();
-        
+
         private int quantity = 1;
         private Label subtotal_Label;
         private Label tax_Label;
         private Label total_Label;
+        private Label preTotal_Label;
         private TextBox customerDet = new TextBox();
         private Grid disable = new Grid();
         static double subT = 0.0;
         static double tax = 0.0;
         static double total = 0.0;
-        public OrderPopup(StackPanel orderPanel, String orderName, List<List<String>> optionStrings, Grid disableGrid, Label subtotalLabel, Label taxLabel, Label totalLabel)
-        {
+        static double price;
+        private double returnedPreTotal;
+        static double previousTotal;
+        public OrderPopup(StackPanel orderPanel, String orderName, List<List<String>> optionStrings, Grid disableGrid, Label subtotalLabel, Label taxLabel, Label totalLabel, Label preTotalLabel, Double givenPreTotal)
             InitializeComponent();
             PopUpAddToOrder.IsOpen = true;
             order = orderPanel;
@@ -49,6 +52,9 @@ namespace OrderingSystem
             subtotal_Label = subtotalLabel;
             tax_Label = taxLabel;
             total_Label = totalLabel;
+            preTotal_Label = preTotalLabel;
+            price = 0.0;
+            previousTotal = givenPreTotal ;
             disable.Visibility = System.Windows.Visibility.Visible;   
 
             createContentLists(optionStrings);
@@ -58,7 +64,47 @@ namespace OrderingSystem
         }
 
 
+        public OrderPopup()
+        {
+            returnedPreTotal = price;
+            subT = 0.0;
+            tax = 0.0;
+            total = 0.0;
+            //price = 0.0;
+        }
+
         private void CancelButton_1_Click(object sender, RoutedEventArgs e)
+        {
+            quantity = 1;
+            PopUpAddToOrder.IsOpen = false;
+            quantityBox.Text = quantity.ToString();
+
+            for(int exCount = 0;exCount < expanders.Count; exCount++)
+            {
+                expanders[exCount].IsExpanded = false;
+            }
+
+            for (int radioCount = 0; radioCount < radioButtons.Count; radioCount++)
+            {
+                for (int rb = 0; rb < radioButtons[radioCount].Count; rb++)
+                {
+                    radioButtons[radioCount][rb].IsChecked = false;
+                }
+            }
+            for (int buttonCount = 0; buttonCount < checkBoxes.Count; buttonCount++)
+            {
+                for (int cb = 0; cb < checkBoxes[buttonCount].Count; cb++)
+                {
+                    checkBoxes[buttonCount][cb].IsChecked = false;
+                }
+            }
+
+            disable.Visibility = System.Windows.Visibility.Collapsed;
+
+        }
+
+        
+        private void AddToOrder_Click(object sender, RoutedEventArgs e)
         {
             quantity = 1;
             PopUpAddToOrder.IsOpen = false;
@@ -97,7 +143,8 @@ namespace OrderingSystem
             Color colour = new Color();
             colour = Color.FromRgb(0, 0, 0);
             SolidColorBrush textColour = new SolidColorBrush(colour);
-            double price = 0.0;
+
+            price = 0.0;
 
             customizations.BorderThickness = new Thickness(0);
 
@@ -198,13 +245,27 @@ namespace OrderingSystem
 
             subT += currPrice;
             tax = subT * 0.05;
-            total = subT + tax;
+
+            if (previousTotal == 0.0)
+            {
+                total = subT + tax;
+            } else
+            {
+                total = subT + tax + previousTotal;
+            }
+            
+            price = total;
 
             subtotal_Label.Content = "Subtotal: $" + subT.ToString("n2");
             tax_Label.Content = "Tax: $" + tax.ToString("n2");
-            total_Label.Content = "Tax: $" + total.ToString("n2");
+            total_Label.Content = "Total: $" + total.ToString("n2");
             CancelButton_1_Click(sender, e);
 
+        }
+
+        public Double getTotalPrice()
+        {
+            return returnedPreTotal;
         }
 
         private double getPrice(String s)
@@ -249,11 +310,7 @@ namespace OrderingSystem
                 for (int radioButtonCount = 0; radioButtonCount < buttonList[expander].Count; radioButtonCount++)
                 {
                     Border stackborder = new Border();
-                    /*Color colour = new Color();
-                    colour = Color.FromRgb(224, 26, 49);
-                    SolidColorBrush borderColour = new SolidColorBrush(colour);
-                    stackborder.BorderBrush = borderColour;
-                    stackborder.BorderThickness = new Thickness(5, 3, 5, 3);*/
+
 
                     stackborder.Child = buttonList[expander][radioButtonCount];
                     currentMenu.Children.Add(stackborder);
@@ -274,13 +331,6 @@ namespace OrderingSystem
                 for (int checkBoxCount = 0; checkBoxCount < boxList[expander].Count; checkBoxCount++)
                 {
                     Border stackborder = new Border();
-                    /*Color colour = new Color();
-                    colour = Color.FromRgb(224, 26, 49);
-                    SolidColorBrush borderColour = new SolidColorBrush(colour);
-                    stackborder.BorderBrush = borderColour;
-                    stackborder.BorderThickness = new Thickness(4, 2, 4, 2);
-
-                    stackborder.Child = boxList[expander][checkBoxCount];*/
                     currentMenu.Children.Add(stackborder);
 
                 }

@@ -22,14 +22,33 @@ namespace OrderingSystem
     public partial class Starters : Page
     {
         //  ArrayList orderSummary = new ArrayList();
-       double price = 0.0;
+        double price = 0.0;
+        double newPrice = 0.0;
         public Starters()
         {
             InitializeComponent();
             subtotalLabel.Content = "Subtotal: $" + price;
             taxLabel.Content = "Tax: $" + price;
-            totalLabel.Content = "Total: $" + price; 
+            totalLabel.Content = "Total: $" + price;
+            preTotalLabel.Content = "Previous Total: $" + price;
         }
+
+        public Starters(Double newPrice):this()
+        {
+
+            subtotalLabel.Content = "Subtotal: $" + price;
+            taxLabel.Content = "Tax: $" + price;
+            totalLabel.Content = "Total: $" + price;
+            preTotalLabel.Content = "Previous Total: $" + newPrice.ToString("n2");
+            price = newPrice;
+        }
+
+        public void setPreviousTotal(Label preTotal)
+        {
+            //MessageBox.Show(preTotal.ToString());
+            //preTotalLabel.Content = preTotal.Content.ToString();
+        }
+
         private void AddChickenWings_Click(object sender, EventArgs e)
         {
             // create list of expanders
@@ -72,8 +91,7 @@ namespace OrderingSystem
             menuItems.Add(flavours);
             menuItems.Add(dips);
             
-
-            OrderPopup op = new OrderPopup(orderSummery, "Chicken Wings", menuItems,utilityGrid,subtotalLabel, taxLabel, totalLabel);
+            OrderPopup op = new OrderPopup(orderSummery, "Chicken Wings", menuItems,utilityGrid,subtotalLabel, taxLabel, totalLabel, preTotalLabel,price);
             StarterFrame.Children.Add(op);
         }
 
@@ -101,7 +119,7 @@ namespace OrderingSystem
             menuItems.Add(sizes);
             menuItems.Add(dips);
 
-            OrderPopup op = new OrderPopup(orderSummery, "Garlic Bread", menuItems, utilityGrid, subtotalLabel, taxLabel, totalLabel);
+            OrderPopup op = new OrderPopup(orderSummery, "Garlic Bread", menuItems, utilityGrid, subtotalLabel, taxLabel, totalLabel, preTotalLabel,price);
             StarterFrame.Children.Add(op);
         }
 
@@ -134,7 +152,7 @@ namespace OrderingSystem
             menuItems.Add(dips);
 
 
-            OrderPopup op = new OrderPopup(orderSummery, "Thai Bites", menuItems, utilityGrid, subtotalLabel, taxLabel, totalLabel);
+            OrderPopup op = new OrderPopup(orderSummery, "Thai Bites", menuItems, utilityGrid, subtotalLabel, taxLabel, totalLabel, preTotalLabel,price);
             StarterFrame.Children.Add(op);
         }
 
@@ -178,7 +196,7 @@ namespace OrderingSystem
             menuItems.Add(extra);
 
 
-            OrderPopup op = new OrderPopup(orderSummery, "Pesto Chicken Penne", menuItems, utilityGrid, subtotalLabel, taxLabel, totalLabel);
+            OrderPopup op = new OrderPopup(orderSummery, "Pesto Chicken Penne", menuItems, utilityGrid, subtotalLabel, taxLabel, totalLabel, preTotalLabel,price);
             PastaFrame.Children.Add(op);
         }
 
@@ -250,7 +268,7 @@ namespace OrderingSystem
             menuItems.Add(dips);
 
 
-            OrderPopup op = new OrderPopup(orderSummery, "Boston Royal", menuItems, utilityGrid, subtotalLabel, taxLabel, totalLabel);
+            OrderPopup op = new OrderPopup(orderSummery, "Boston Royal", menuItems, utilityGrid, subtotalLabel, taxLabel, totalLabel, preTotalLabel, price);
             PizzaFrame.Children.Add(op);
         }
 
@@ -272,7 +290,25 @@ namespace OrderingSystem
 
         private void sendOrder_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new LastScreen());
+            popUpSendOrder.IsOpen = true;
+            utilityGrid.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        private void OkSendOrder_Click(object sender, RoutedEventArgs e)
+        {
+            OrderPopup op = new OrderPopup();
+            newPrice = op.getTotalPrice();
+            //MessageBox.Show(newPrice.ToString());
+
+            LastScreen myLastScreen = new LastScreen(newPrice);
+            this.NavigationService.Navigate(myLastScreen);
+        }
+
+        private void CancelSendOrder_Click(object sender, RoutedEventArgs e)
+        {
+            
+            popUpSendOrder.IsOpen = false;
+            utilityGrid.Visibility = System.Windows.Visibility.Collapsed;
         }
     }
 }

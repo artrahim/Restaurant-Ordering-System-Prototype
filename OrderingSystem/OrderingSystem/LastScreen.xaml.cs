@@ -20,10 +20,18 @@ namespace OrderingSystem
     /// </summary>
     public partial class LastScreen : Page
     {
-        public LastScreen()
+
+
+        //Label previousTotal;
+        Starters myStarters;
+        Double price;
+        public LastScreen(Double newPrice)
         {
             InitializeComponent();
+            price = newPrice;
+            //MessageBox.Show(newPrice.ToString());
         }
+
 
         private void CallServer_Click(object sender, RoutedEventArgs e)
         {
@@ -36,7 +44,6 @@ namespace OrderingSystem
 
             popUpServer.IsOpen = false;
             utilityGrid.Visibility = System.Windows.Visibility.Collapsed;
-
 
         }
 
@@ -58,7 +65,9 @@ namespace OrderingSystem
 
         private void ContinueBrowsing_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Starters());
+            myStarters = new Starters(price);
+            myStarters.preTotalLabel.Visibility = System.Windows.Visibility.Visible;
+            this.NavigationService.Navigate(myStarters);
         }
     }
 }
