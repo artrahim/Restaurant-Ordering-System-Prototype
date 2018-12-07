@@ -63,7 +63,7 @@
 
                     </StackPanel>
                     <StackPanel Grid.Column="1" Grid.Row="1">
-                        <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/flatbread.png" itemDescription="Diced BBQ chicken, bacon, red onions, BBQ sauce, pizza mozzarella and a drizzle of ranch dressing." itemName="Southwest Flatbread" price="$13.99" Loaded="MenuItem_Loaded"/>
+                        <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/flatbread.png" itemDescription="Diced BBQ chicken, bacon, red onions, BBQ sauce, pizza mozzarella and a drizzle of ranch dressing." itemName="Soutwest Flatbread" price="$13.99"/>
                     </StackPanel>
                     <StackPanel Grid.Column="1" Grid.Row="2">
                         <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/cactuscutpot.jpg" itemDescription="Spicy and thinly sliced fried potatoes served with our signature cactus dip." itemName="Cactus Cut Potatoes" price="$11.00"/>
@@ -91,7 +91,7 @@
                         <local:MenuItem Width="Auto" Margin="5,5,5,15" foodImage="img/mediterranean.png" itemName="Mediterranean" itemDescription="Signature pizza sauce, pizza mozzarella, fresh spinach, fresh mushrooms, sun-dried tomatoes, marinated artichoke hearts, feta and a pesto drizzle."  price="$13.00" Height="300"/>
                     </StackPanel>
                     <StackPanel Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3">
-
+                       
                     </StackPanel>
 
                     <StackPanel Grid.Column="3" Grid.Row="0">
@@ -99,10 +99,10 @@
 
                     </StackPanel>
                     <StackPanel Grid.Column="3" Grid.Row="1">
-
+                       
                     </StackPanel>
                     <StackPanel Grid.Column="3" Grid.Row="2">
-
+                      
                     </StackPanel>
                 </Grid>
             </TabItem>
@@ -130,8 +130,7 @@
                     </StackPanel>
 
                     <StackPanel Grid.Column="3" Grid.Row="0">
-                        <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/lasagna.png" itemDescription="Prepared in-house daily. Layers of 100% Canadian ground beef, our signature Bolognese sauce, pizza mozzarella, creamy ricotta, Romano and fresh Parmesan. Served with garlic toast" itemName="Four Cheese Lasagna" price="$12.99"/>
-
+                        <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/lasagna.png" itemDescription="Prepared in-house daily. Layers of 100% Canadian ground beef, our signature Bolognese sauce, pizza mozzarella, creamy ricotta, Romano and fresh Parmesan." itemName="Four Cheese Lasagna" price="$12.99" Loaded="MenuItem_Loaded"/>
                     </StackPanel>
                     <StackPanel Grid.Column="3" Grid.Row="1">
 
@@ -142,11 +141,7 @@
                 </Grid>
             </TabItem>
             <TabItem Header="MAINS" Width="160">
-                <Grid Background="White">
-                </Grid>
-            </TabItem>
-            <TabItem Header="DESSERTS" Width="165">
-                <Grid Background="White">
+                <Grid x:Name ="MainsFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition></ColumnDefinition>
@@ -157,10 +152,32 @@
                         <RowDefinition SharedSizeGroup="A" Height="210"/>
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Column="0" Grid.Row="0">
-                        <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/nycheesecake.png" itemDescription="Traditional New York–style cheesecake with a graham cracker crust." itemName="New York Cheesecake" price="$7.75"/>
+                        <local:MenuItem Width="Auto" Margin="5,5,5,15" foodImage="img/ribs.png" itemName="Slow Roasted Pork Back Ribs" itemDescription="Slow-roasted pork back ribs tossed in your choice of sauce. Comes in a half rack or full rack." price="$19.00" Height="207"/>
                     </StackPanel>
                     <StackPanel Grid.Column="0" Grid.Row="1">
-                        <local:MenuItem Width="Auto" Margin="5,5,5,15" foodImage="img/garlicbread.png" itemName="Garlic Toast" itemDescription="Fresh from the oven, brushed with butter and garlic."  price="$1.80" Height="300" AddToOrderButtonClicked="AddGarlicBread_Click"/>
+                        <local:MenuItem Width="Auto" Margin="5,5,5,15" foodImage="img/rib wing combo.png" itemName="Ribber Winger Combo" itemDescription="A half rack of ribs paired with six of our famous wings. Choose any type of wing and flavour."  price="$26.00" Height="300"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Grid.Row="0">
+                        <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/chicken parm.png" itemDescription="A fried buttermilk-breaded chicken breast, topped with our marinara sauce and pizza mozzarella." itemName="Chicken Parmesan" price="$21.00"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="DESSERTS" Width="165">
+                <Grid x:Name ="DessertFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition SharedSizeGroup="A" Height="210"/>
+                        <RowDefinition SharedSizeGroup="A" Height="210"/>
+                        <RowDefinition SharedSizeGroup="A" Height="210"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Column="0" Grid.Row="0">
+                        <local:MenuItem Width="Auto" Margin="5,5,5,15" foodImage="img/nycheesecake.png" itemName="New York Cheesecake" itemDescription="Traditional New York style cheesecake with a graham cracker crust. Calories for sauce are additional to calories for New York Cheesecake."  price="$7.75" Height="207"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="0" Grid.Row="1">
+                        <local:MenuItem Width="Auto" Margin="5,5,5,15" foodImage="img/choc cheesecake.png" itemName="Chocolate Cheesecake" itemDescription="Creamy chocolate mousse with chunks of cheesecake, caramel, toffee, pecans and almonds on a chocolate crust."  price="$8.00" Height="300"/>
                     </StackPanel>
                     <StackPanel Grid.Column="1" Grid.Row="0">
                         <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/apple crisp.png" itemDescription="Slices of tart Granny Smith apples in a butter sauce, baked with a delicious brown sugar and oat crumble and topped with our caramel sauce. Served with a scoop of vanilla ice cream." itemName="Apple Crisp" price="$6.99"/>
@@ -168,7 +185,7 @@
                 </Grid>
             </TabItem>
             <TabItem Header="DRINKS" Width="140">
-                <Grid Background="White">
+                <Grid x:Name ="DrinkFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40"/>
                         <RowDefinition SharedSizeGroup="A" Height="210"/>
@@ -182,7 +199,7 @@
                         <TextBlock TextDecorations="Underline" Margin="10">Non-Alcoholic</TextBlock>
                     </StackPanel>
                     <StackPanel Grid.Column="1" Grid.Row="0">
-                        <TextBlock TextDecorations="Underline" Margin="10">Alcoholic</TextBlock>
+                        <TextBlock TextDecorations="Underline" Margin="10" Text="Alcoholic"/>
                     </StackPanel>
                     <StackPanel Grid.Column="0" Grid.Row="1">
                         <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/pop.jpg" itemDescription="Comes in 330 ml cans." itemName="Pop" price="$3.50"/>
@@ -199,35 +216,36 @@
                 </Grid>
             </TabItem>
         </TabControl>
+       
+    <StackPanel x:Name="orderSummery" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Top" Width="320" Orientation="Vertical" Background="White" Height="592">
+      <Label Name="orderSummaryLabel" Content="Order Summary" Background="White" Margin="50,0,40,0" FontFamily="Arial Black" FontSize="24" IsEnabled="False" Foreground="Red" />
+    </StackPanel>
+    <StackPanel x:Name="priceStack" HorizontalAlignment="Left" Height="118" Margin="960,597,0,0" VerticalAlignment="Top" Width="320" Background="White">
+      <Label x:Name="subtotalLabel" Background="White" Foreground="Black" FontSize="22" FontFamily="Arial" Height="35" IsEnabled="False"/>
+      <Label x:Name="taxLabel" Background="White" FontSize="22" FontFamily="Arial" Foreground="Black" Height="35" Margin="0,0,10,0" IsEnabled="False"/>
+      <Label x:Name="totalLabel" FontSize="22" FontFamily="Arial" Foreground="Black" Background="{x:Null}" BorderThickness="0" Height="35" Margin="0,0,10,0" IsEnabled="False"/>
+    </StackPanel>
+    <StackPanel HorizontalAlignment="Left" Height="80" Width="1280" VerticalAlignment="Bottom" Background="#292929" Orientation="Horizontal" >
+      <ToggleButton x:Name ="CallServer" Margin="10,0,0,10" Content="Call a Server" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="260" Height="60" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Click="CallServer_Click"/>
 
-        <StackPanel x:Name="orderSummery" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Top" Width="320" Orientation="Vertical" Background="White" Height="592" Cursor="None">
-            <Label Name="orderSummaryLabel" Content="Order Summary" Background="White" Margin="50,0,40,0" FontFamily="Arial Black" FontSize="24" IsEnabled="False" Foreground="Red" />
-        </StackPanel>
-        <StackPanel x:Name="priceStack" HorizontalAlignment="Left" Height="118" Margin="960,597,0,0" VerticalAlignment="Top" Width="320" Background="White">
-            <Label x:Name="subtotalLabel" Background="White" Foreground="Black" FontSize="22" FontFamily="Arial" Height="35" IsEnabled="False"/>
-            <Label x:Name="taxLabel" Background="White" FontSize="22" FontFamily="Arial" Foreground="Black" Height="35" Margin="0,0,10,0" IsEnabled="False"/>
-            <Label x:Name="totalLabel" FontSize="22" FontFamily="Arial" Foreground="Black" Background="{x:Null}" BorderThickness="0" Height="35" Margin="0,0,10,0" IsEnabled="False"/>
-        </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Height="80" Width="1280" VerticalAlignment="Bottom" Background="#292929" Orientation="Horizontal" >
-            <ToggleButton x:Name ="CallServer" Margin="10,0,0,10" Content="Call a Server" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="260" Height="60" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Click="CallServer_Click"/>
-
-            <Label Content="Legend: " Foreground="WhiteSmoke" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="34" Margin="200,14,14,10" FontWeight="Bold" FontFamily="Euphemia"/>
-            <Image Width="95" Height="70" Source="img/vegetarian symbol.png"/>
-            <Image Width="95" Height="70" Source="img/spicy symbol.png"/>
-            <Image Width="95" Height="70" Source="img/glutenwise symbol.png"/>
-            <ToggleButton x:Name="sendOrder" Content="Send Order" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="260" Height="60" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Margin="75,0,0,10" Click="sendOrder_Click"/>
-        </StackPanel>
-        <Grid x:Name="utilityGrid" Background="White" Opacity="0.0" Visibility="Collapsed"></Grid>
-        <Popup x:Name="popUpServer" Width="360" Height="300" IsOpen="{Binding ElementName=CallServer, Path=IsChecked, Mode=TwoWay}" PlacementTarget="{Binding ElementName=menuFrame}" Placement="Center" StaysOpen="True" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
-            <Canvas Width="360" Height="300" Background="LightBlue"  >
-                <Canvas.RenderTransform>
-                    <RotateTransform x:Name="Transform" />
-                </Canvas.RenderTransform>
-                <Border BorderThickness="2" BorderBrush="Black" Width="360" Height="300" HorizontalAlignment="Center" VerticalAlignment="Center"></Border>
-                <TextBlock Foreground="Black" FontSize="36" FontFamily="Arial" VerticalAlignment="Center" Text="Help is on the way! You can continue browsing by clicking the 'Menu' button" TextWrapping="Wrap" Height="280" Width="340" TextAlignment="Center" HorizontalAlignment="Center" Margin="10,10,0,0" >
-                </TextBlock>
-                <Button Content="OK" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Width="100" Height="50" FontSize="24" Background="WhiteSmoke" Canvas.Left="125" Canvas.Top="220" Click="CloseCallServer_Click"></Button>
-            </Canvas>
-        </Popup>
-    </Grid>
+      <Label Content="Legend: " Foreground="WhiteSmoke" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="34" Margin="150,14,14,10" FontWeight="Bold" FontFamily="Euphemia"/>
+      <Image Width="95" Height="70" Source="img/guest favourite symbol.png"/>
+      <Image Width="95" Height="70" Source="img/vegetarian symbol.png"/>
+      <Image Width="95" Height="70" Source="img/spicy symbol.png"/>
+      <Image Width="95" Height="70" Source="img/glutenwise symbol.png"/>
+      <ToggleButton x:Name="sendOrder" Content="Send Order" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="260" Height="60" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Margin="35,0,0,10" Click="sendOrder_Click"/>
+    </StackPanel>
+    <Grid x:Name="utilityGrid" Background="White" Opacity="0.0" Visibility="Collapsed"></Grid>
+    <Popup x:Name="popUpServer" Width="360" Height="300" IsOpen="{Binding ElementName=CallServer, Path=IsChecked, Mode=TwoWay}" PlacementTarget="{Binding ElementName=menuFrame}" Placement="Center" StaysOpen="True" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
+        <Canvas Width="360" Height="300" Background="LightBlue"  >
+            <Canvas.RenderTransform>
+                <RotateTransform x:Name="Transform" />
+            </Canvas.RenderTransform>
+            <Border BorderThickness="2" BorderBrush="Black" Width="360" Height="300" HorizontalAlignment="Center" VerticalAlignment="Center"></Border>
+            <TextBlock Foreground="Black" FontSize="36" FontFamily="Arial" VerticalAlignment="Center" Text="Help is on the way! You can continue browsing by clicking the 'Menu' button" TextWrapping="Wrap" Height="280" Width="340" TextAlignment="Center" HorizontalAlignment="Center" Margin="10,10,0,0" >
+            </TextBlock>
+            <Button Content="OK" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Width="100" Height="50" FontSize="24" Background="WhiteSmoke" Canvas.Left="125" Canvas.Top="220" Click="CloseCallServer_Click"></Button>
+        </Canvas>
+    </Popup>
+  </Grid>
 </Page>
