@@ -40,12 +40,13 @@
             </TabControl.Resources>
             <TabItem Header="STARTERS" Width="170" Height="80" >
                 <ScrollViewer VerticalScrollBarVisibility="Hidden">
-                    <Grid x:Name ="StarterFrame" Background="White"  Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left">
+                    <Grid x:Name ="StarterFrame" Background="White"  Grid.IsSharedSizeScope="True" Height="850" Width="950" HorizontalAlignment="Left">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
+                            <RowDefinition SharedSizeGroup="A" Height="210"/>
                             <RowDefinition SharedSizeGroup="A" Height="210"/>
                             <RowDefinition SharedSizeGroup="A" Height="210"/>
                             <RowDefinition SharedSizeGroup="A" Height="210"/>
@@ -58,6 +59,9 @@
                         </StackPanel>
                         <StackPanel Grid.Column="0" Grid.Row="2">
                             <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/thaibites.png" itemDescription="Chicken or shrimp tossed in sweet Thai chili sauce and served with crunchy Asian noodles, carrots, fresh cilantro, green onions and sesame seeds." itemName="Thai Bites" price="$13.00" AddToOrderButtonClicked="AddThaiBites_Click"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="0" Grid.Row="3">
+                            <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/chicken.png" itemDescription="Original or Buffalo style. Lightly breaded chicken breast filet served with your choice of dipping sauce." itemName="Chicken Fingers" price="$11.50"/>
                         </StackPanel>
 
                         <StackPanel Grid.Column="1" Grid.Row="0">
@@ -243,7 +247,7 @@
         </StackPanel>
         <Grid x:Name="utilityGrid" Background="White" Opacity="0.0" Visibility="Collapsed"></Grid>
         <Popup x:Name="popUpServer" Width="360" Height="300" IsOpen="{Binding ElementName=CallServer, Path=IsChecked, Mode=TwoWay}" PlacementTarget="{Binding ElementName=menuFrame}" Placement="Center" StaysOpen="True" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
-            <Canvas Width="360" Height="300" Background="LightBlue"  >
+            <Canvas Width="360" Height="300" Background="#FFDDDDDD"  >
                 <Canvas.RenderTransform>
                     <RotateTransform x:Name="Transform1" />
                 </Canvas.RenderTransform>
@@ -254,7 +258,7 @@
             </Canvas>
         </Popup>
         <Popup x:Name="popUpSendOrder" Width="360" Height="300" IsOpen="{Binding ElementName=senOrder, Path=IsChecked, Mode=TwoWay}" PlacementTarget="{Binding ElementName=menuFrame}" Placement="Center" StaysOpen="True" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
-            <Canvas Width="360" Height="300" Background="LightBlue"  >
+            <Canvas Width="360" Height="300" Background="#FFDDDDDD"  >
                 <Canvas.RenderTransform>
                     <RotateTransform x:Name="Transform2" />
                 </Canvas.RenderTransform>
@@ -267,7 +271,7 @@
         </Popup>
 
         <Popup x:Name="confirmBeer" Width="360" Height="300" IsOpen="{Binding ElementName=confirmBeer, Path=IsChecked, Mode=TwoWay}" PlacementTarget="{Binding ElementName=menuFrame}" Placement="Center" StaysOpen="True" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
-            <Canvas Width="360" Height="300" Background="LightBlue">
+            <Canvas Width="360" Height="300" Background="#FFDDDDDD">
                 <Canvas.RenderTransform>
                     <RotateTransform x:Name="Transform3" />
                 </Canvas.RenderTransform>
@@ -279,7 +283,7 @@
             </Canvas>
         </Popup>
         <Popup x:Name="orderEmpty" Width="360" Height="300" IsOpen="{Binding ElementName=orderEmpty, Path=IsChecked, Mode=TwoWay}" PlacementTarget="{Binding ElementName=menuFrame}" Placement="Center" StaysOpen="True" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
-            <Canvas Width="360" Height="300" Background="LightBlue"  >
+            <Canvas Width="360" Height="300" Background="#FFDDDDDD"  >
                 <Canvas.RenderTransform>
                     <RotateTransform x:Name="Transform4" />
                 </Canvas.RenderTransform>
