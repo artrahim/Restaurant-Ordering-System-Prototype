@@ -38,7 +38,8 @@
                 </Style>
             </TabControl.Resources>
             <TabItem Header="STARTERS" Width="170" Height="80" >
-                <Grid x:Name ="StarterFrame" Background="White"  Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left">
+                <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                    <Grid x:Name ="StarterFrame" Background="White"  Grid.IsSharedSizeScope="True" Height="840" Width="960" ScrollViewer.CanContentScroll="True">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition></ColumnDefinition>
@@ -70,9 +71,11 @@
                     </StackPanel>
 
                 </Grid>
+                  </ScrollViewer>
             </TabItem>
-            <TabItem Header="PIZZA" Width="160">
-                <Grid x:Name ="PizzaFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left">
+            <TabItem Header="PIZZA" Width="160">                
+                  <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                <Grid x:Name ="PizzaFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left" ScrollViewer.CanContentScroll="True">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="92*"/>
                         <ColumnDefinition Width="116*"/>
@@ -105,9 +108,11 @@
                       
                     </StackPanel>
                 </Grid>
+                  </ScrollViewer>
             </TabItem>
             <TabItem Header="PASTA" Width="160">
-                <Grid x:Name ="PastaFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left">
+                                  <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                <Grid x:Name ="PastaFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left" ScrollViewer.CanContentScroll="True">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="92*"/>
                         <ColumnDefinition Width="116*"/>
@@ -139,9 +144,11 @@
 
                     </StackPanel>
                 </Grid>
+                  </ScrollViewer>
             </TabItem>
             <TabItem Header="MAINS" Width="160">
-                <Grid x:Name ="MainsFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left">
+                                  <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                <Grid x:Name ="MainsFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left" ScrollViewer.CanContentScroll="True">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition></ColumnDefinition>
@@ -161,9 +168,11 @@
                         <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/chicken parm.png" itemDescription="A fried buttermilk-breaded chicken breast, topped with our marinara sauce and pizza mozzarella." itemName="Chicken Parmesan" price="$21.00"/>
                     </StackPanel>
                 </Grid>
+                  </ScrollViewer>
             </TabItem>
             <TabItem Header="DESSERTS" Width="165">
-                <Grid x:Name ="DessertFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left">
+                                  <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                <Grid x:Name ="DessertFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left" ScrollViewer.CanContentScroll="True">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition></ColumnDefinition>
@@ -183,9 +192,11 @@
                         <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/apple crisp.png" itemDescription="Slices of tart Granny Smith apples in a butter sauce, baked with a delicious brown sugar and oat crumble and topped with our caramel sauce. Served with a scoop of vanilla ice cream." itemName="Apple Crisp" price="$6.99"/>
                     </StackPanel>
                 </Grid>
+                  </ScrollViewer>
             </TabItem>
             <TabItem Header="DRINKS" Width="140">
-                <Grid x:Name ="DrinkFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left">
+                                  <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                <Grid x:Name ="DrinkFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left" ScrollViewer.CanContentScroll="True">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40"/>
                         <RowDefinition SharedSizeGroup="A" Height="210"/>
@@ -214,6 +225,7 @@
                         <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/wine.png" itemDescription="Your choice of Sauvignon Blanc, Italy Pinot Grigio, or Chardonnay." itemName="White Wine" price="$7.99"/>
                     </StackPanel>
                 </Grid>
+                  </ScrollViewer>
             </TabItem>
         </TabControl>
        
