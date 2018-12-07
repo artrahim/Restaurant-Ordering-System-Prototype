@@ -366,7 +366,6 @@ namespace OrderingSystem
             popupStackPanel.Children.Add(details);
 
             //add textbox
-            TextBox customerDet = new TextBox();
             customerDet.TextWrapping = TextWrapping.Wrap;
             customerDet.FontSize = 26;
             customerDet.Margin = new Thickness(20, 10, 40, 20);
