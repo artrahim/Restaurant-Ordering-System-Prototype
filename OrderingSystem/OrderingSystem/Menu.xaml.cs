@@ -24,6 +24,7 @@ namespace OrderingSystem
         //  ArrayList orderSummary = new ArrayList();
         double price = 0.0;
         double newPrice = 0.0;
+        double emptyPrice = 0.0;
         public Starters()
         {
             InitializeComponent();
