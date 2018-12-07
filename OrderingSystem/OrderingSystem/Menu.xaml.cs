@@ -311,10 +311,61 @@ namespace OrderingSystem
             utilityGrid.Visibility = System.Windows.Visibility.Collapsed;
         }
 
+   
+
         private void beerOrder(object sender, EventArgs e)
+        {
+           
+                confirmBeer.IsOpen = true;
+                utilityGrid.Visibility = System.Windows.Visibility.Visible;
+
+    
+        }
+        private void takePhoto()
         {
             Camera cam = new Camera();
             GridCorner.Children.Add(cam);
+        }
+
+        private void ConfirmBeerOrder_Click(object sender, RoutedEventArgs e)
+        {
+
+            List<String> domestic = new List<String>();
+            List<String> import = new List<String>();
+            List<String> specialty = new List<String>();
+
+            List<List<String>> menuItems = new List<List<String>>();
+
+            domestic.Add("RadioButton");
+            domestic.Add("Domestic");
+            domestic.Add("Budweiser");
+            domestic.Add("Bud Light");
+            domestic.Add("Coors Light");
+            domestic.Add("Miller Lite");
+            domestic.Add("Corona");
+
+            /*
+            import.Add("CheckBox");
+            import.Add("Import + $1.00");
+            import.Add("Guinness");
+            import.Add("Heineken");
+            import.Add("Stella Artois");
+            import.Add("Modelo Negra");
+            */
+
+            menuItems.Add(domestic);
+            //menuItems.Add(import);
+            OrderPopup op = new OrderPopup(orderSummery, "Beer", menuItems, utilityGrid, subtotalLabel, taxLabel, totalLabel, preTotalLabel, price);
+            DrinkFrame.Children.Add(op);
+            confirmBeer.IsOpen = false;
+            utilityGrid.Visibility = System.Windows.Visibility.Collapsed;
+            takePhoto();
+        }
+
+        private void CancelBeer_Click(object sender, RoutedEventArgs e)
+        {
+            confirmBeer.IsOpen = false;
+            utilityGrid.Visibility = System.Windows.Visibility.Collapsed;
         }
     }
 }
