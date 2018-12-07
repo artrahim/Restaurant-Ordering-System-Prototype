@@ -159,7 +159,7 @@
                         <RowDefinition SharedSizeGroup="A" Height="210"/>
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Column="0" Grid.Row="0">
-                        <local:MenuItem Width="Auto" Margin="5,5,5,15" foodImage="img/ribs.png" itemName="Slow Roasted Pork Back Ribs" itemDescription="Slow-roasted pork back ribs tossed in your choice of sauce. Comes in a half rack or full rack." price="$19.00" Height="207"/>
+                        <local:MenuItem Width="Auto" Margin="5,5,5,15" foodImage="img/ribs.png" itemName="Slow Roasted Pork Back Ribs" itemDescription="Slow-roasted pork back ribs tossed in your choice of sauce. Comes in a half rack or full rack." price="$19.00" Height="207"  AddToOrderButtonClicked="AddPorkRibs_Click"/>
                     </StackPanel>
                     <StackPanel Grid.Column="0" Grid.Row="1">
                         <local:MenuItem Width="Auto" Margin="5,5,5,15" foodImage="img/rib wing combo.png" itemName="Ribber Winger Combo" itemDescription="A half rack of ribs paired with six of our famous wings. Choose any type of wing and flavour."  price="$26.00" Height="300"/>
