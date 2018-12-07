@@ -73,6 +73,7 @@
                 </Grid>
                   </ScrollViewer>
             </TabItem>
+
             <TabItem Header="PIZZA" Width="160">                
                   <ScrollViewer VerticalScrollBarVisibility="Hidden">
                 <Grid x:Name ="PizzaFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left" ScrollViewer.CanContentScroll="True">
@@ -111,8 +112,10 @@
                   </ScrollViewer>
             </TabItem>
             <TabItem Header="PASTA" Width="160">
-                                  <ScrollViewer VerticalScrollBarVisibility="Hidden">
+
+              <ScrollViewer VerticalScrollBarVisibility="Hidden">
                 <Grid x:Name ="PastaFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left" ScrollViewer.CanContentScroll="True">
+
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="92*"/>
                         <ColumnDefinition Width="116*"/>
@@ -135,7 +138,7 @@
                     </StackPanel>
 
                     <StackPanel Grid.Column="3" Grid.Row="0">
-                        <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/lasagna.png" itemDescription="Prepared in-house daily. Layers of 100% Canadian ground beef, our signature Bolognese sauce, pizza mozzarella, creamy ricotta, Romano and fresh Parmesan." itemName="Four Cheese Lasagna" price="$12.99" Loaded="MenuItem_Loaded"/>
+                        <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/lasagna.png" itemDescription="Prepared in-house daily. Layers of 100% Canadian ground beef, our signature Bolognese sauce, pizza mozzarella, creamy ricotta, Romano and fresh Parmesan." itemName="Four Cheese Lasagna" price="$12.99"/>
                     </StackPanel>
                     <StackPanel Grid.Column="3" Grid.Row="1">
 
@@ -147,7 +150,7 @@
                   </ScrollViewer>
             </TabItem>
             <TabItem Header="MAINS" Width="160">
-                                  <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                <ScrollViewer VerticalScrollBarVisibility="Hidden">
                 <Grid x:Name ="MainsFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left" ScrollViewer.CanContentScroll="True">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -171,7 +174,7 @@
                   </ScrollViewer>
             </TabItem>
             <TabItem Header="DESSERTS" Width="165">
-                                  <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                <ScrollViewer VerticalScrollBarVisibility="Hidden">
                 <Grid x:Name ="DessertFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left" ScrollViewer.CanContentScroll="True">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -195,7 +198,7 @@
                   </ScrollViewer>
             </TabItem>
             <TabItem Header="DRINKS" Width="140">
-                                  <ScrollViewer VerticalScrollBarVisibility="Hidden">
+              <ScrollViewer VerticalScrollBarVisibility="Hidden">
                 <Grid x:Name ="DrinkFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left" ScrollViewer.CanContentScroll="True">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40"/>
@@ -240,14 +243,15 @@
     <StackPanel HorizontalAlignment="Left" Height="80" Width="1280" VerticalAlignment="Bottom" Background="#292929" Orientation="Horizontal" >
       <ToggleButton x:Name ="CallServer" Margin="10,0,0,10" Content="Call a Server" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="260" Height="60" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Click="CallServer_Click"/>
 
-      <Label Content="Legend: " Foreground="WhiteSmoke" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="34" Margin="150,14,14,10" FontWeight="Bold" FontFamily="Euphemia"/>
-      <Image Width="95" Height="70" Source="img/guest favourite symbol.png"/>
-      <Image Width="95" Height="70" Source="img/vegetarian symbol.png"/>
-      <Image Width="95" Height="70" Source="img/spicy symbol.png"/>
-      <Image Width="95" Height="70" Source="img/glutenwise symbol.png"/>
-      <ToggleButton x:Name="sendOrder" Content="Send Order" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="260" Height="60" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Margin="35,0,0,10" Click="sendOrder_Click"/>
-    </StackPanel>
-    <Grid x:Name="utilityGrid" Background="White" Opacity="0.0" Visibility="Collapsed"></Grid>
+            <Label Content="Legend: " Foreground="WhiteSmoke" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="34" Margin="150,14,14,10" FontWeight="Bold" FontFamily="Euphemia"/>
+            <Image Width="95" Height="70" Source="img/guest favourite symbol.png"/>
+            <Image Width="95" Height="70" Source="img/vegetarian symbol.png"/>
+            <Image Width="95" Height="70" Source="img/spicy symbol.png"/>
+            <Image Width="95" Height="70" Source="img/glutenwise symbol.png"/>
+            <ToggleButton x:Name="sendOrder" Content="Send Order" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="260" Height="60" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Margin="35,0,0,10" Click="sendOrder_Click"/>
+        </StackPanel>
+        <Grid x:Name="utilityGrid" Background="White" Opacity="0.0" Visibility="Collapsed"></Grid>
+
     <Popup x:Name="popUpServer" Width="360" Height="300" IsOpen="{Binding ElementName=CallServer, Path=IsChecked, Mode=TwoWay}" PlacementTarget="{Binding ElementName=menuFrame}" Placement="Center" StaysOpen="True" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
         <Canvas Width="360" Height="300" Background="LightBlue"  >
             <Canvas.RenderTransform>
