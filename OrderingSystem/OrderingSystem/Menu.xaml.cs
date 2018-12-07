@@ -63,7 +63,7 @@ namespace OrderingSystem
             List<List<String>> menuItems = new List<List<String>>();
 
             sizes.Add("RadioButton");
-            sizes.Add("Sizes");
+            sizes.Add("Size");
             sizes.Add("Starter Size  $12.99");
             sizes.Add("Double Order  $23.00");
 
@@ -108,12 +108,12 @@ namespace OrderingSystem
             List<List<String>> menuItems = new List<List<String>>();
 
             sizes.Add("RadioButton");
-            sizes.Add("Sizes");
+            sizes.Add("Size");
             sizes.Add("1 Slice  $1.80");
             sizes.Add("2 Slices  $3.20");
 
             dips.Add("CheckBox");
-            dips.Add("Dips");
+            dips.Add("Dip");
             dips.Add("Beefy Bolognese meat sauce + $3.25");
 
             menuItems.Add(sizes);
@@ -136,7 +136,7 @@ namespace OrderingSystem
             List<List<String>> menuItems = new List<List<String>>();
 
             types.Add("RadioButton");
-            types.Add("Types");
+            types.Add("Type");
             types.Add("Breaded Chicken Breast  $13.00");
             types.Add("Breaded Shrimps  $13.00");
 
@@ -218,19 +218,19 @@ namespace OrderingSystem
 
             
             crust.Add("RadioButton");
-            crust.Add("Types");
-            crust.Add("BP's Oroginal Crust");
+            crust.Add("Crust");
+            crust.Add("BP's Original Crust");
 
             sizes.Add("RadioButton");
-            sizes.Add("Sizes");
+            sizes.Add("Size");
             sizes.Add("8\" Indy + $13.00");
             sizes.Add("10\" Small + $18.00");
-            sizes.Add("8\" Meduim + $28.00");
-            sizes.Add("8\" Large + $32.50");
+            sizes.Add("13\" Medium + $28.00");
+            sizes.Add("15\" Large + $32.50");
 
             cheese.Add("CheckBox");
             cheese.Add("Cheese");
-            cheese.Add("Cheddar+ $2.30");
+            cheese.Add("Cheddar + $2.30");
             cheese.Add("Feta + $2.30");
             cheese.Add("Italian Cheese Blend + $2.30");
             cheese.Add("Pizza Mozzarella + $2.30");
