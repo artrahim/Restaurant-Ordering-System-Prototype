@@ -201,33 +201,49 @@ namespace OrderingSystem
             orderSummeryExpander_1.Foreground = textColour;
             orderSummeryExpander_1.Content = customizations;
 
+            subT += currPrice;
+
             Button orderSummeryDelete = new Button();
             orderSummeryDelete.Click += (s, ee) => {
                 order.Children.Remove(orderSummeryExpander_1);
                 order.Children.Remove(orderSummeryDelete);
+                subT = subT - currPrice;
+                tax = subT * 0.05;
+                total = subT + tax;
+
+                subtotal_Label.Content = "Subtotal: $" + subT.ToString("n2");
+                tax_Label.Content = "Tax: $" + tax.ToString("n2");
+                total_Label.Content = "Tax: $" + total.ToString("n2");
+
+
             };
+
+
+            tax = subT * 0.05;
+            total = subT + tax;
+            
+            subtotal_Label.Content = "Subtotal: $" + subT.ToString("n2");
+            tax_Label.Content = "Tax: $" + tax.ToString("n2");
+            total_Label.Content = "Tax: $" + total.ToString("n2");
+
+            Color colour1 = new Color();
+            colour1 = Color.FromRgb(41, 41, 41);
+            SolidColorBrush buttonColor = new SolidColorBrush(colour1);
+
+            Color white = new Color();
+            white = Color.FromRgb(255, 255, 255);
+            SolidColorBrush buttonText = new SolidColorBrush(white);
+
             orderSummeryDelete.Content = "X";
             orderSummeryDelete.Width = 20;
             orderSummeryDelete.Height = 20;
+            orderSummeryDelete.HorizontalAlignment = HorizontalAlignment.Right;
+            orderSummeryDelete.Background = buttonColor;
+            orderSummeryDelete.Foreground = buttonText;
+            orderSummeryDelete.Margin = new Thickness(0,0,30,0);
             
             order.Children.Add(orderSummeryDelete);
 
-            subT += currPrice;
-            tax = subT * 0.05;
-
-            if (previousTotal == 0.0)
-            {
-                total = subT + tax;
-            } else
-            {
-                total = subT + tax + previousTotal;
-            }
-            
-            price = total;
-
-            subtotal_Label.Content = "Subtotal: $" + subT.ToString("n2");
-            tax_Label.Content = "Tax: $" + tax.ToString("n2");
-            total_Label.Content = "Total: $" + total.ToString("n2");
             CancelButton_1_Click(sender, e);
 
         }
