@@ -16,7 +16,7 @@
         <ToggleButton x:Name ="CallServer" Content="Call a Server" HorizontalAlignment="Left" Margin="30,0,0,30" VerticalAlignment="Bottom" Width="300" Height="80" Background="#e01a31" Foreground="WhiteSmoke" FontSize="36" FontFamily="Arial" Click="CallServer_Click"/>
         <Grid x:Name="utilityGrid" Background="White" Opacity="0.0" Visibility="Collapsed"></Grid>
         <Popup x:Name="popUpServer" Width="360" Height="300" IsOpen="{Binding ElementName=CallServer, Path=IsChecked, Mode=TwoWay}" Placement="Center" StaysOpen="True" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
-            <Canvas Width="360" Height="300" Background="LightBlue"  >
+            <Canvas Width="360" Height="300" Background="#FFDDDDDD"  >
                 <Canvas.RenderTransform>
                     <RotateTransform x:Name="Transform" />
                 </Canvas.RenderTransform>
