@@ -43,6 +43,7 @@ namespace OrderingSystem
         private double returnedPreTotal;
         static double previousTotal;
         public OrderPopup(StackPanel orderPanel, String orderName, List<List<String>> optionStrings, Grid disableGrid, Label subtotalLabel, Label taxLabel, Label totalLabel, Label preTotalLabel, Double givenPreTotal)
+        {  
             InitializeComponent();
             PopUpAddToOrder.IsOpen = true;
             order = orderPanel;
@@ -59,8 +60,6 @@ namespace OrderingSystem
 
             createContentLists(optionStrings);
             createExpanders(radioButtons, checkBoxes);
-
-
         }
 
 
@@ -103,36 +102,6 @@ namespace OrderingSystem
 
         }
 
-        
-        private void AddToOrder_Click(object sender, RoutedEventArgs e)
-        {
-            quantity = 1;
-            PopUpAddToOrder.IsOpen = false;
-            quantityBox.Text = quantity.ToString();
-
-            for(int exCount = 0;exCount < expanders.Count; exCount++)
-            {
-                expanders[exCount].IsExpanded = false;
-            }
-
-            for (int radioCount = 0; radioCount < radioButtons.Count; radioCount++)
-            {
-                for (int rb = 0; rb < radioButtons[radioCount].Count; rb++)
-                {
-                    radioButtons[radioCount][rb].IsChecked = false;
-                }
-            }
-            for (int buttonCount = 0; buttonCount < checkBoxes.Count; buttonCount++)
-            {
-                for (int cb = 0; cb < checkBoxes[buttonCount].Count; cb++)
-                {
-                    checkBoxes[buttonCount][cb].IsChecked = false;
-                }
-            }
-
-            disable.Visibility = System.Windows.Visibility.Collapsed;
-
-        }
 
         
         private void AddToOrder_Click(object sender, RoutedEventArgs e)
@@ -331,6 +300,11 @@ namespace OrderingSystem
                 for (int checkBoxCount = 0; checkBoxCount < boxList[expander].Count; checkBoxCount++)
                 {
                     Border stackborder = new Border();
+                    Color colour = new Color();
+                    SolidColorBrush borderColour = new SolidColorBrush(colour);
+                    stackborder.BorderBrush = borderColour;
+                    stackborder.BorderThickness = new Thickness(4, 2, 4, 2);
+                    stackborder.Child = boxList[expander][checkBoxCount];
                     currentMenu.Children.Add(stackborder);
 
                 }
