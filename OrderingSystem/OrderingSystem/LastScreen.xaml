@@ -18,7 +18,7 @@
         <Label Name ="Order" Content="Your food will be here shortly." HorizontalAlignment="Center" Margin="351,197,363,555" VerticalAlignment="Center" FontSize="34" Foreground="#e01a31" FontFamily="/fonts/#Americana" Width="566"/>
         <Grid x:Name="utilityGrid" Background="White" Opacity="0.0" Visibility="Collapsed"></Grid>
         <Popup x:Name="popUpServer" Width="360" Height="300" IsOpen="{Binding ElementName=CallServer, Path=IsChecked, Mode=TwoWay}" Placement="Center" StaysOpen="True" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
-            <Canvas Width="360" Height="300" Background="LightBlue" >
+            <Canvas Width="360" Height="300" Background="#FFDDDDDD" >
                 <Canvas.RenderTransform>
                     <RotateTransform x:Name="Transform1" />
                 </Canvas.RenderTransform>
@@ -29,7 +29,7 @@
             </Canvas>
         </Popup>
         <Popup x:Name="PopUpFinishPay" Width="360" Height="300" IsOpen="{Binding ElementName=FinishPay, Path=IsChecked, Mode=TwoWay}" Placement="Center" StaysOpen="True" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
-            <Canvas Width="360" Height="300" Background="LightBlue" >
+            <Canvas Width="360" Height="300" Background="#FFDDDDDD" >
                 <Canvas.RenderTransform>
                     <RotateTransform x:Name="Transform2" />
                 </Canvas.RenderTransform>
