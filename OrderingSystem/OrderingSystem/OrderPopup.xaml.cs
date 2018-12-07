@@ -112,6 +112,10 @@ namespace OrderingSystem
             Color colour = new Color();
             colour = Color.FromRgb(0, 0, 0);
             SolidColorBrush textColour = new SolidColorBrush(colour);
+            TextBlock error = new TextBlock();
+            error.Text = "* Requires Selection";
+            error.RenderTransformOrigin = new Point(0.5, 0.5);
+            error.LayoutTransform = new RotateTransform() { Angle = 90 };
 
             price = 0.0;
 
@@ -148,9 +152,13 @@ namespace OrderingSystem
             {
                 for (int i = 0; i < badExpanders.Count; i++)
                 {
-                    if (!expanders[badExpanders[i]].Header.ToString().Contains("* Requires Selection"))
+                    if (!expanders[badExpanders[i]].Header.ToString().Contains("* Required"))
                     {
-                        expanders[badExpanders[i]].Header += " * Requires Selection";
+                        expanders[badExpanders[i]].Header += " * Required";
+                        //expanders[badExpanders[i]].Header = error;
+                        //+= " * Requires Selection";
+                        //expanders[badExpanders[i]].Header.forground
+
                     }
                 }
                 return;
@@ -163,7 +171,7 @@ namespace OrderingSystem
                     if (checkBoxes[checkBoxSets][checkBoxCount].IsChecked == true)
                     {
                         String name = checkBoxes[checkBoxSets][checkBoxCount].Content.ToString();
-                        customizations.Text += "\r\n" + name;
+                        customizations.Text += name + "\r\n";
                         if (name.Contains('$'))
                         {
                             price += getPrice(name);
@@ -173,9 +181,9 @@ namespace OrderingSystem
                 headerCount++;
             }
 
-            if (!customizations.Text.Equals(""))
+            if (!customerDet.Text.Equals(""))
             {
-                customizations.Text += "\r\n * " + customerDet.Text;
+                customizations.Text += "\r\n" + customerDet.Text;
             }
             customizations.IsReadOnly = true;
             /*
@@ -201,18 +209,24 @@ namespace OrderingSystem
             orderSummeryExpander_1.Foreground = textColour;
             orderSummeryExpander_1.Content = customizations;
 
+            subT += currPrice;
+
             Button orderSummeryDelete = new Button();
             orderSummeryDelete.Click += (s, ee) => {
                 order.Children.Remove(orderSummeryExpander_1);
                 order.Children.Remove(orderSummeryDelete);
-            };
-            orderSummeryDelete.Content = "X";
-            orderSummeryDelete.Width = 20;
-            orderSummeryDelete.Height = 20;
-            
-            order.Children.Add(orderSummeryDelete);
 
-            subT += currPrice;
+                subT = subT - currPrice;
+                tax = subT * 0.05;
+                total = subT + tax;
+                subtotal_Label.Content = "Subtotal: $" + subT.ToString("n2");
+                tax_Label.Content = "Tax: $" + tax.ToString("n2");
+                total_Label.Content = "Total: $" + total.ToString("n2");
+            };
+
+           
+
+            
             tax = subT * 0.05;
 
             if (previousTotal == 0.0)
@@ -229,6 +243,25 @@ namespace OrderingSystem
             tax_Label.Content = "Tax: $" + tax.ToString("n2");
             total_Label.Content = "Total: $" + total.ToString("n2");
             CancelButton_1_Click(sender, e);
+
+
+            Color colour1 = new Color();
+            colour1 = Color.FromRgb(41, 41, 41);
+            SolidColorBrush buttonColor = new SolidColorBrush(colour1);
+            Color white = new Color();
+            white = Color.FromRgb(255, 255, 255);
+            SolidColorBrush buttonText = new SolidColorBrush(white);
+
+
+            orderSummeryDelete.Content = "X";
+            orderSummeryDelete.Width = 20;
+            orderSummeryDelete.Height = 20;
+            orderSummeryDelete.HorizontalAlignment = HorizontalAlignment.Right;
+            orderSummeryDelete.Background = buttonColor;
+            orderSummeryDelete.Foreground = buttonText;
+            orderSummeryDelete.Margin = new Thickness(0, 0, 30, 0);
+
+            order.Children.Add(orderSummeryDelete);
 
         }
 

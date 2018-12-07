@@ -38,7 +38,7 @@
                 </Style>
             </TabControl.Resources>
             <TabItem Header="STARTERS" Width="170" Height="80" >
-                <Grid x:Name ="StarterFrame" Background="White"  Grid.IsSharedSizeScope="True" Height="640" Width="960">
+                <Grid x:Name ="StarterFrame" Background="White"  Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition></ColumnDefinition>
@@ -72,7 +72,7 @@
                 </Grid>
             </TabItem>
             <TabItem Header="PIZZA" Width="160">
-                <Grid x:Name ="PizzaFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="960">
+                <Grid x:Name ="PizzaFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="92*"/>
                         <ColumnDefinition Width="116*"/>
@@ -107,7 +107,7 @@
                 </Grid>
             </TabItem>
             <TabItem Header="PASTA" Width="160">
-                <Grid x:Name ="PastaFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="960">
+                <Grid x:Name ="PastaFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="92*"/>
                         <ColumnDefinition Width="116*"/>
@@ -130,8 +130,7 @@
                     </StackPanel>
 
                     <StackPanel Grid.Column="3" Grid.Row="0">
-                        <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/lasagna.png" itemDescription="Prepared in-house daily. Layers of 100% Canadian ground beef, our signature Bolognese sauce, pizza mozzarella, creamy ricotta, Romano and fresh Parmesan. Served with garlic toast" itemName="Four Cheese Lasagna" price="$12.99"/>
-
+                        <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/lasagna.png" itemDescription="Prepared in-house daily. Layers of 100% Canadian ground beef, our signature Bolognese sauce, pizza mozzarella, creamy ricotta, Romano and fresh Parmesan." itemName="Four Cheese Lasagna" price="$12.99"/>
                     </StackPanel>
                     <StackPanel Grid.Column="3" Grid.Row="1">
 
@@ -142,16 +141,78 @@
                 </Grid>
             </TabItem>
             <TabItem Header="MAINS" Width="160">
-                <Grid Background="White">
+                <Grid x:Name ="MainsFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition SharedSizeGroup="A" Height="210"/>
+                        <RowDefinition SharedSizeGroup="A" Height="210"/>
+                        <RowDefinition SharedSizeGroup="A" Height="210"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Column="0" Grid.Row="0">
+                        <local:MenuItem Width="Auto" Margin="5,5,5,15" foodImage="img/ribs.png" itemName="Slow Roasted Pork Back Ribs" itemDescription="Slow-roasted pork back ribs tossed in your choice of sauce. Comes in a half rack or full rack." price="$19.00" Height="207"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="0" Grid.Row="1">
+                        <local:MenuItem Width="Auto" Margin="5,5,5,15" foodImage="img/rib wing combo.png" itemName="Ribber Winger Combo" itemDescription="A half rack of ribs paired with six of our famous wings. Choose any type of wing and flavour."  price="$26.00" Height="300"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Grid.Row="0">
+                        <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/chicken parm.png" itemDescription="A fried buttermilk-breaded chicken breast, topped with our marinara sauce and pizza mozzarella." itemName="Chicken Parmesan" price="$21.00"/>
+                    </StackPanel>
                 </Grid>
             </TabItem>
             <TabItem Header="DESSERTS" Width="165">
-                <Grid Background="White">
+                <Grid x:Name ="DessertFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition SharedSizeGroup="A" Height="210"/>
+                        <RowDefinition SharedSizeGroup="A" Height="210"/>
+                        <RowDefinition SharedSizeGroup="A" Height="210"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Column="0" Grid.Row="0">
+                        <local:MenuItem Width="Auto" Margin="5,5,5,15" foodImage="img/nycheesecake.png" itemName="New York Cheesecake" itemDescription="Traditional New York style cheesecake with a graham cracker crust. Calories for sauce are additional to calories for New York Cheesecake."  price="$7.75" Height="207"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="0" Grid.Row="1">
+                        <local:MenuItem Width="Auto" Margin="5,5,5,15" foodImage="img/choc cheesecake.png" itemName="Chocolate Cheesecake" itemDescription="Creamy chocolate mousse with chunks of cheesecake, caramel, toffee, pecans and almonds on a chocolate crust."  price="$8.00" Height="300"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Grid.Row="0">
+                        <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/apple crisp.png" itemDescription="Slices of tart Granny Smith apples in a butter sauce, baked with a delicious brown sugar and oat crumble and topped with our caramel sauce. Served with a scoop of vanilla ice cream." itemName="Apple Crisp" price="$6.99"/>
+                    </StackPanel>
                 </Grid>
             </TabItem>
             <TabItem Header="DRINKS" Width="140">
-                <Grid Background="White">
-
+                <Grid x:Name ="DrinkFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition SharedSizeGroup="A" Height="210"/>
+                        <RowDefinition SharedSizeGroup="A" Height="210"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Grid.Row="0">
+                        <TextBlock TextDecorations="Underline" Margin="10">Non-Alcoholic</TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Grid.Row="0">
+                        <TextBlock TextDecorations="Underline" Margin="10">Alcoholic</TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="0" Grid.Row="1">
+                        <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/pop.jpg" itemDescription="Comes in 330 ml cans." itemName="Pop" price="$3.50"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="0" Grid.Row="2">
+                        <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/coffee.png" itemDescription="Arabica beans brewed to perfection." itemName="Coffee" price="$3.69"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Grid.Row="1">
+                        <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/beer.png" itemDescription="Your selection of one of our domestic beers. Comes in a 341 ml bottle." itemName="Beer" price="$5.99"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Grid.Row="2">
+                        <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/wine.png" itemDescription="Your choice of Sauvignon Blanc, Italy Pinot Grigio, or Chardonnay." itemName="White Wine" price="$7.99"/>
+                    </StackPanel>
                 </Grid>
             </TabItem>
         </TabControl>
@@ -168,11 +229,14 @@
     <StackPanel HorizontalAlignment="Left" Height="80" Width="1280" VerticalAlignment="Bottom" Background="#292929" Orientation="Horizontal" >
       <ToggleButton x:Name ="CallServer" Margin="10,0,0,10" Content="Call a Server" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="260" Height="60" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Click="CallServer_Click"/>
 
-      <Label Content="Legend: " Foreground="WhiteSmoke" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="34" Margin="200,14,14,10" FontWeight="Bold" FontFamily="Euphemia"/>
-      <Image Width="60" Height="60" Source="img/vegetarian.jpg"/>
-      <ToggleButton x:Name="sendOrder" Content="Send Order" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="260" Height="60" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Margin="300,0,0,10" Click="sendOrder_Click"/>
-    </StackPanel>
-    <Grid x:Name="utilityGrid" Background="White" Opacity="0.0" Visibility="Collapsed"></Grid>
+            <Label Content="Legend: " Foreground="WhiteSmoke" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="34" Margin="150,14,14,10" FontWeight="Bold" FontFamily="Euphemia"/>
+            <Image Width="95" Height="70" Source="img/guest favourite symbol.png"/>
+            <Image Width="95" Height="70" Source="img/vegetarian symbol.png"/>
+            <Image Width="95" Height="70" Source="img/spicy symbol.png"/>
+            <Image Width="95" Height="70" Source="img/glutenwise symbol.png"/>
+            <ToggleButton x:Name="sendOrder" Content="Send Order" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="260" Height="60" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Margin="35,0,0,10" Click="sendOrder_Click"/>
+        </StackPanel>
+        <Grid x:Name="utilityGrid" Background="White" Opacity="0.0" Visibility="Collapsed"></Grid>
     <Popup x:Name="popUpServer" Width="360" Height="300" IsOpen="{Binding ElementName=CallServer, Path=IsChecked, Mode=TwoWay}" PlacementTarget="{Binding ElementName=menuFrame}" Placement="Center" StaysOpen="True" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
         <Canvas Width="360" Height="300" Background="LightBlue"  >
             <Canvas.RenderTransform>
