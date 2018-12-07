@@ -147,7 +147,7 @@ namespace OrderingSystem
                 }
                 headerCount++;
             }
-            //if there are radio button expanders without a selection, return and put error message on header
+             //if there are radio button expanders without a selection, return and put error message on header
             if (badExpanders.Count != 0)
             {
                 for (int i = 0; i < badExpanders.Count; i++)
@@ -158,6 +158,7 @@ namespace OrderingSystem
                         //expanders[badExpanders[i]].Header = error;
                         //+= " * Requires Selection";
                         //expanders[badExpanders[i]].Header.forground
+
 
                     }
                 }
@@ -171,7 +172,8 @@ namespace OrderingSystem
                     if (checkBoxes[checkBoxSets][checkBoxCount].IsChecked == true)
                     {
                         String name = checkBoxes[checkBoxSets][checkBoxCount].Content.ToString();
-                        customizations.Text += name + "\r\n";
+
+                        customizations.Text +=  name+"\r\n" ;
                         if (name.Contains('$'))
                         {
                             price += getPrice(name);
@@ -242,6 +244,7 @@ namespace OrderingSystem
             subtotal_Label.Content = "Subtotal: $" + subT.ToString("n2");
             tax_Label.Content = "Tax: $" + tax.ToString("n2");
             total_Label.Content = "Total: $" + total.ToString("n2");
+
             CancelButton_1_Click(sender, e);
 
 

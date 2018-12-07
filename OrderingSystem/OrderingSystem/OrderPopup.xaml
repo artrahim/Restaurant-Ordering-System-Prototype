@@ -10,7 +10,7 @@
     <Grid>
 
         <Popup x:Name="PopUpAddToOrder" Width="540" Height="540"  Placement="Center" IsOpen="{Binding ElementName=PopUpAddToOrder, Path=IsChecked, Mode=TwoWay}" StaysOpen="True" IsHitTestVisible="False" AllowsTransparency="True" >
-            <Border BorderBrush="#e01a31" BorderThickness="5" >
+            <Border BorderBrush="#e01a31" BorderThickness="5"  CornerRadius="8,8,3,3">
                 <Canvas Height="530" Background="White" VerticalAlignment="Center" Width="530">
                     <Canvas.RenderTransform>
                         <RotateTransform x:Name="Transform" />
@@ -34,7 +34,7 @@
                         VerticalAlignment="Center"
                         Foreground="Black"
                         FontSize="30" 
-                        FontWeight="Normal"
+                        FontWeight="SemiBold"
                         Width="{Binding
                         RelativeSource={RelativeSource
                         Mode=FindAncestor,
