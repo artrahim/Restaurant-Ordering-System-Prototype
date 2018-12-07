@@ -138,6 +138,11 @@ namespace OrderingSystem
                         {
                             price += getPrice(name);
                         }
+                        if(name.Contains("Bud") || name.Contains("Light") || name.Contains("Coron") || name.Contains("Miller"))
+                        {
+                            price += 5.99;
+                        }
+
                     }
                 }
                 //check all radio buttons have made a selection
