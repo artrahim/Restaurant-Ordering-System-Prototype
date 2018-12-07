@@ -38,6 +38,7 @@
                 </Style>
             </TabControl.Resources>
             <TabItem Header="STARTERS" Width="170" Height="80" >
+                <ScrollViewer VerticalScrollBarVisibility="Hidden">
                 <Grid x:Name ="StarterFrame" Background="White"  Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -70,6 +71,7 @@
                     </StackPanel>
 
                 </Grid>
+                </ScrollViewer>
             </TabItem>
             <TabItem Header="PIZZA" Width="160">
                 <Grid x:Name ="PizzaFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left">
