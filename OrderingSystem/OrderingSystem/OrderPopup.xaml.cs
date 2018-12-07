@@ -334,7 +334,7 @@ namespace OrderingSystem
             {
                 Expander current = new Expander();
                 StackPanel currentMenu = new StackPanel();
-                current.Header = "Select " + headers[headerCount];
+                current.Header = headers[headerCount];
                 headerCount++;
                 for (int radioButtonCount = 0; radioButtonCount < buttonList[expander].Count; radioButtonCount++)
                 {
@@ -355,7 +355,7 @@ namespace OrderingSystem
             {
                 Expander current = new Expander();
                 StackPanel currentMenu = new StackPanel();
-                current.Header = "Select " + headers[headerCount]+" (Optional)";
+                current.Header = headers[headerCount]+" (Optional)";
                 headerCount++;
                 for (int checkBoxCount = 0; checkBoxCount < boxList[expander].Count; checkBoxCount++)
                 {
