@@ -159,9 +159,7 @@ namespace OrderingSystem
                 {
                     if (!expanders[badExpanders[i]].Header.ToString().Contains("* Required"))
                     {
-                        Viewbox vb = new Viewbox();
-                        vb.StretchDirection = StretchDirection.DownOnly;
-                        vb.Child = expanders[badExpanders[i]];
+                        
                         expanders[badExpanders[i]].Header += " * Required";
                         //expanders[badExpanders[i]].Header = error;
                         //+= " * Requires Selection";
@@ -214,7 +212,6 @@ namespace OrderingSystem
             Expander orderSummeryExpander_1 = new Expander();
             orderSummeryExpander_1.IsExpanded = false;
             orderSummeryExpander_1.Padding = new Thickness(20,0,0,0);
-            order.Children.Add(orderSummeryExpander_1);
 
             double currPrice = (price * quantity);
             orderSummeryExpander_1.FontSize = 20;
@@ -256,7 +253,6 @@ namespace OrderingSystem
             tax_Label.Content = "Tax: $" + tax.ToString("n2");
             total_Label.Content = "Total: $" + total.ToString("n2");
 
-            CancelButton_1_Click(sender, e);
 
             Color colour1 = new Color();
             colour1 = Color.FromRgb(41, 41, 41);
@@ -275,6 +271,8 @@ namespace OrderingSystem
             orderSummeryDelete.Margin = new Thickness(0, 0, 30, 0);
 
             order.Children.Add(orderSummeryDelete);
+            order.Children.Add(orderSummeryExpander_1);
+            CancelButton_1_Click(sender, e);
 
         }
 
