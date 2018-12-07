@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -141,16 +141,10 @@
     <Resource Include="img\bostonpizzalogo.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="img\chickenwings.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="img\vegetarian.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\glutenfree.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\garlicbread.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\soup.png" />
@@ -159,31 +153,10 @@
     <Resource Include="img\smileyface.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="img\thaibites.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\flatbread.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\cactuscutpot.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\bostonroyal.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="img\pestochicken.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\lasagna.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\chipotlebacon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\mediterranean.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="img\vivaitalia.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\Table.jpg" />
@@ -199,6 +172,64 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\bp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\beer.png" />
+    <Resource Include="img\coffee.png" />
+    <Resource Include="img\glutenwise symbol.png" />
+    <Resource Include="img\legend.png" />
+    <Resource Include="img\pop.jpg" />
+    <Resource Include="img\spicy symbol.png" />
+    <Resource Include="img\vegetarian symbol.png" />
+    <Resource Include="img\wine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\ribs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\rib wing combo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\guest favourite symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\chickenwings.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\cactuscutpot.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\flatbread.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\thaibites.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\garlicbread.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\bostonroyal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\vivaitalia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\mediterranean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\chipotlebacon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\chicken parm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\choc cheesecake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\nycheesecake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\apple crisp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
