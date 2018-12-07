@@ -310,5 +310,11 @@ namespace OrderingSystem
             popUpSendOrder.IsOpen = false;
             utilityGrid.Visibility = System.Windows.Visibility.Collapsed;
         }
+
+        private void beerOrder(object sender, EventArgs e)
+        {
+            Camera cam = new Camera();
+            GridCorner.Children.Add(cam);
+        }
     }
 }
