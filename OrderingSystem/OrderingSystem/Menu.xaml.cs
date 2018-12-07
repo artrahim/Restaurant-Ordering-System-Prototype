@@ -293,7 +293,6 @@ namespace OrderingSystem
         {
             OrderPopup op = new OrderPopup();
             emptyPrice = op.getTotalPrice();
-            
             if(emptyPrice == 0.0)
             {
                 orderEmpty.IsOpen = true;
