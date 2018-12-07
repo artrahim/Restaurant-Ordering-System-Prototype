@@ -290,8 +290,25 @@ namespace OrderingSystem
 
         private void sendOrder_Click(object sender, RoutedEventArgs e)
         {
-            popUpSendOrder.IsOpen = true;
-            utilityGrid.Visibility = System.Windows.Visibility.Visible;
+            OrderPopup op = new OrderPopup();
+            emptyPrice = op.getTotalPrice();
+            
+            if(emptyPrice == 0.0)
+            {
+                orderEmpty.IsOpen = true;
+            }
+
+            else
+            {
+                popUpSendOrder.IsOpen = true;
+                utilityGrid.Visibility = System.Windows.Visibility.Visible;
+            }
+        }
+        
+        private void CloseEmpty(object sender, RoutedEventArgs e)
+        {
+            orderEmpty.IsOpen = false;
+            utilityGrid.Visibility = System.Windows.Visibility.Collapsed;
         }
 
         private void OkSendOrder_Click(object sender, RoutedEventArgs e)
