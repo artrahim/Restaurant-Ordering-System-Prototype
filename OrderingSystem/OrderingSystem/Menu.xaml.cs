@@ -28,17 +28,17 @@ namespace OrderingSystem
         public Starters()
         {
             InitializeComponent();
-            subtotalLabel.Content = "Subtotal: $" + price;
-            taxLabel.Content = "Tax: $" + price;
-            totalLabel.Content = "Total: $" + price;
-            preTotalLabel.Content = "Previous Total: $" + price;
+            subtotalLabel.Content = "Subtotal: $" + price.ToString("n2");
+            taxLabel.Content = "Tax: $" + price.ToString("n2");
+            totalLabel.Content = "Total: $" + price.ToString("n2");
+            preTotalLabel.Content = "Previous Total: $" + price.ToString("n2");
         }
 
         public Starters(Double newPrice):this()
         {
 
-            subtotalLabel.Content = "Subtotal: $" + price;
-            taxLabel.Content = "Tax: $" + price;
+            subtotalLabel.Content = "Subtotal: $" + price.ToString("n2");
+            taxLabel.Content = "Tax: $" + price.ToString("n2");
             totalLabel.Content = "Total: $" + newPrice.ToString("n2");
             preTotalLabel.Content = "Previous Total: $" + newPrice.ToString("n2");
             price = newPrice;
