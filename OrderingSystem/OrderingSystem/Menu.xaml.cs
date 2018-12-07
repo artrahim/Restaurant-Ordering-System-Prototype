@@ -273,7 +273,7 @@ namespace OrderingSystem
             PizzaFrame.Children.Add(op);
         }
         
-                private void AddPorkRibs_Click(object sender, EventArgs e)
+             private void AddPorkRibs_Click(object sender, EventArgs e)
         {
             List<String> sizes = new List<String>();
             List<String> salads = new List<String>();       
@@ -289,7 +289,7 @@ namespace OrderingSystem
             sizes.Add("Half Rack 26.00");
 
             sauces.Add("RadioButton");
-            sauces.Add("Saucse");
+            sauces.Add("Sauces");
             sauces.Add("BBQ sauce");
             sauces.Add("Honey garlic sauce");
             sauces.Add("Signature sauce");
