@@ -38,8 +38,7 @@
                 </Style>
             </TabControl.Resources>
             <TabItem Header="STARTERS" Width="170" Height="80" >
-                <ScrollViewer VerticalScrollBarVisibility="Hidden">
-                    <Grid x:Name ="StarterFrame" Background="White"  Grid.IsSharedSizeScope="True" Height="840" Width="960" ScrollViewer.CanContentScroll="True">
+                <Grid x:Name ="StarterFrame" Background="White"  Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition></ColumnDefinition>
@@ -71,12 +70,9 @@
                     </StackPanel>
 
                 </Grid>
-                  </ScrollViewer>
             </TabItem>
-
-            <TabItem Header="PIZZA" Width="160">                
-                  <ScrollViewer VerticalScrollBarVisibility="Hidden">
-                <Grid x:Name ="PizzaFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left" ScrollViewer.CanContentScroll="True">
+            <TabItem Header="PIZZA" Width="160">
+                <Grid x:Name ="PizzaFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="92*"/>
                         <ColumnDefinition Width="116*"/>
@@ -109,13 +105,9 @@
                       
                     </StackPanel>
                 </Grid>
-                  </ScrollViewer>
             </TabItem>
             <TabItem Header="PASTA" Width="160">
-
-              <ScrollViewer VerticalScrollBarVisibility="Hidden">
-                <Grid x:Name ="PastaFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left" ScrollViewer.CanContentScroll="True">
-
+                <Grid x:Name ="PastaFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="92*"/>
                         <ColumnDefinition Width="116*"/>
@@ -147,11 +139,9 @@
 
                     </StackPanel>
                 </Grid>
-                  </ScrollViewer>
             </TabItem>
             <TabItem Header="MAINS" Width="160">
-                <ScrollViewer VerticalScrollBarVisibility="Hidden">
-                <Grid x:Name ="MainsFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left" ScrollViewer.CanContentScroll="True">
+                <Grid x:Name ="MainsFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition></ColumnDefinition>
@@ -171,11 +161,9 @@
                         <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/chicken parm.png" itemDescription="A fried buttermilk-breaded chicken breast, topped with our marinara sauce and pizza mozzarella." itemName="Chicken Parmesan" price="$21.00"/>
                     </StackPanel>
                 </Grid>
-                  </ScrollViewer>
             </TabItem>
             <TabItem Header="DESSERTS" Width="165">
-                <ScrollViewer VerticalScrollBarVisibility="Hidden">
-                <Grid x:Name ="DessertFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left" ScrollViewer.CanContentScroll="True">
+                <Grid x:Name ="DessertFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition></ColumnDefinition>
@@ -195,11 +183,9 @@
                         <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/apple crisp.png" itemDescription="Slices of tart Granny Smith apples in a butter sauce, baked with a delicious brown sugar and oat crumble and topped with our caramel sauce. Served with a scoop of vanilla ice cream." itemName="Apple Crisp" price="$6.99"/>
                     </StackPanel>
                 </Grid>
-                  </ScrollViewer>
             </TabItem>
             <TabItem Header="DRINKS" Width="140">
-              <ScrollViewer VerticalScrollBarVisibility="Hidden">
-                <Grid x:Name ="DrinkFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left" ScrollViewer.CanContentScroll="True">
+                <Grid x:Name ="DrinkFrame" Background="White" Grid.IsSharedSizeScope="True" Height="640" Width="950" HorizontalAlignment="Left">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40"/>
                         <RowDefinition SharedSizeGroup="A" Height="210"/>
@@ -228,17 +214,17 @@
                         <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/wine.png" itemDescription="Your choice of Sauvignon Blanc, Italy Pinot Grigio, or Chardonnay." itemName="White Wine" price="$7.99"/>
                     </StackPanel>
                 </Grid>
-                  </ScrollViewer>
             </TabItem>
         </TabControl>
        
     <StackPanel x:Name="orderSummery" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Top" Width="320" Orientation="Vertical" Background="White" Height="592">
       <Label Name="orderSummaryLabel" Content="Order Summary" Background="White" Margin="50,0,40,0" FontFamily="Arial Black" FontSize="24" IsEnabled="False" Foreground="Red" />
     </StackPanel>
-    <StackPanel x:Name="priceStack" HorizontalAlignment="Left" Height="118" Margin="960,597,0,0" VerticalAlignment="Top" Width="320" Background="White">
-      <Label x:Name="subtotalLabel" Background="White" Foreground="Black" FontSize="22" FontFamily="Arial" Height="35" IsEnabled="False"/>
-      <Label x:Name="taxLabel" Background="White" FontSize="22" FontFamily="Arial" Foreground="Black" Height="35" Margin="0,0,10,0" IsEnabled="False"/>
-      <Label x:Name="totalLabel" FontSize="22" FontFamily="Arial" Foreground="Black" Background="{x:Null}" BorderThickness="0" Height="35" Margin="0,0,10,0" IsEnabled="False"/>
+    <StackPanel x:Name="priceStack" HorizontalAlignment="Left" Height="140" Margin="960,580,0,0" VerticalAlignment="Top" Width="320" Background="White">
+        <Label x:Name="preTotalLabel" FontSize="22" FontFamily="Arial" Foreground="Black" Background="{x:Null}" BorderThickness="0" Height="35" Margin="0,0,10,0" IsEnabled="False" Visibility="Hidden"  />
+        <Label x:Name="subtotalLabel" Background="White" Foreground="Black" FontSize="22" FontFamily="Arial" Height="35" IsEnabled="False"/>
+        <Label x:Name="taxLabel" Background="White" FontSize="22" FontFamily="Arial" Foreground="Black" Height="35" Margin="0,0,10,0" IsEnabled="False"/>
+        <Label x:Name="totalLabel" FontSize="22" FontFamily="Arial" Foreground="Black" Background="{x:Null}" BorderThickness="0" Height="35" Margin="0,0,10,0" IsEnabled="False"/>
     </StackPanel>
     <StackPanel HorizontalAlignment="Left" Height="80" Width="1280" VerticalAlignment="Bottom" Background="#292929" Orientation="Horizontal" >
       <ToggleButton x:Name ="CallServer" Margin="10,0,0,10" Content="Call a Server" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="260" Height="60" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Click="CallServer_Click"/>
@@ -251,11 +237,10 @@
             <ToggleButton x:Name="sendOrder" Content="Send Order" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="260" Height="60" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Margin="35,0,0,10" Click="sendOrder_Click"/>
         </StackPanel>
         <Grid x:Name="utilityGrid" Background="White" Opacity="0.0" Visibility="Collapsed"></Grid>
-
     <Popup x:Name="popUpServer" Width="360" Height="300" IsOpen="{Binding ElementName=CallServer, Path=IsChecked, Mode=TwoWay}" PlacementTarget="{Binding ElementName=menuFrame}" Placement="Center" StaysOpen="True" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
         <Canvas Width="360" Height="300" Background="LightBlue"  >
             <Canvas.RenderTransform>
-                <RotateTransform x:Name="Transform" />
+                <RotateTransform x:Name="Transform1" />
             </Canvas.RenderTransform>
             <Border BorderThickness="2" BorderBrush="Black" Width="360" Height="300" HorizontalAlignment="Center" VerticalAlignment="Center"></Border>
             <TextBlock Foreground="Black" FontSize="36" FontFamily="Arial" VerticalAlignment="Center" Text="Help is on the way! You can continue browsing by clicking the 'Menu' button" TextWrapping="Wrap" Height="280" Width="340" TextAlignment="Center" HorizontalAlignment="Center" Margin="10,10,0,0" >
@@ -263,5 +248,17 @@
             <Button Content="OK" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Width="100" Height="50" FontSize="24" Background="WhiteSmoke" Canvas.Left="125" Canvas.Top="220" Click="CloseCallServer_Click"></Button>
         </Canvas>
     </Popup>
-  </Grid>
+        <Popup x:Name="popUpSendOrder" Width="360" Height="300" IsOpen="{Binding ElementName=senOrder, Path=IsChecked, Mode=TwoWay}" PlacementTarget="{Binding ElementName=menuFrame}" Placement="Center" StaysOpen="True" IsHitTestVisible="False" PopupAnimation="Fade" AllowsTransparency="True">
+            <Canvas Width="360" Height="300" Background="LightBlue"  >
+                <Canvas.RenderTransform>
+                    <RotateTransform x:Name="Transform2" />
+                </Canvas.RenderTransform>
+                <Border BorderThickness="2" BorderBrush="Black" Width="360" Height="300" HorizontalAlignment="Center" VerticalAlignment="Center"></Border>
+                <TextBlock Foreground="Black" FontSize="36" FontFamily="Arial" VerticalAlignment="Center" Text="Are you sure you want to send the order?" TextWrapping="Wrap" Height="280" Width="340" TextAlignment="Center" HorizontalAlignment="Center" Margin="10,10,0,0" >
+                </TextBlock>
+                <Button Content="OK" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Width="100" Height="50" FontSize="24" Background="WhiteSmoke" Canvas.Left="50" Canvas.Top="220" Click="OkSendOrder_Click"></Button>
+                <Button Content="Cancel" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Width="100" Height="50" FontSize="24" Background="WhiteSmoke" Canvas.Left="210" Canvas.Top="220" Click="CancelSendOrder_Click"></Button>
+            </Canvas>
+        </Popup>
+    </Grid>
 </Page>
