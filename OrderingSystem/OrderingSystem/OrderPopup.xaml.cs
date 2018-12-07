@@ -143,14 +143,14 @@ namespace OrderingSystem
                 }
                 headerCount++;
             }
-            //if there are radio button expanders without a selection, return and put error message on header
+             //if there are radio button expanders without a selection, return and put error message on header
             if (badExpanders.Count != 0)
             {
                 for (int i = 0; i < badExpanders.Count; i++)
                 {
-                    if (!expanders[badExpanders[i]].Header.ToString().Contains("* Requires Selection"))
+                    if (!expanders[badExpanders[i]].Header.ToString().Contains("* Required"))
                     {
-                        expanders[badExpanders[i]].Header += " * Requires Selection";
+                        expanders[badExpanders[i]].Header += " * Required";
                     }
                 }
                 return;
@@ -163,7 +163,7 @@ namespace OrderingSystem
                     if (checkBoxes[checkBoxSets][checkBoxCount].IsChecked == true)
                     {
                         String name = checkBoxes[checkBoxSets][checkBoxCount].Content.ToString();
-                        customizations.Text += "\r\n" + name;
+                        customizations.Text +=  name+"\r\n" ;
                         if (name.Contains('$'))
                         {
                             price += getPrice(name);
@@ -173,7 +173,7 @@ namespace OrderingSystem
                 headerCount++;
             }
 
-            if (!customizations.Text.Equals(""))
+            if (!customerDet.Text.Equals(""))
             {
                 customizations.Text += "\r\n * " + customerDet.Text;
             }
