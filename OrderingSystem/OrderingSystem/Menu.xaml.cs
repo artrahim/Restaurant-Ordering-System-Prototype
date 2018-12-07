@@ -272,6 +272,52 @@ namespace OrderingSystem
             OrderPopup op = new OrderPopup(orderSummery, "Boston Royal", menuItems, utilityGrid, subtotalLabel, taxLabel, totalLabel, preTotalLabel, price);
             PizzaFrame.Children.Add(op);
         }
+        
+                private void AddPorkRibs_Click(object sender, EventArgs e)
+        {
+            List<String> sizes = new List<String>();
+            List<String> salads = new List<String>();       
+            List<String> sides = new List<String>();
+            List<String> sauces = new List<String>();
+
+
+            List<List<String>> menuItems = new List<List<String>>();
+
+            sizes.Add("RadioButton");
+            sizes.Add("Size");
+            sizes.Add("Half Rack $19.00");
+            sizes.Add("Half Rack 26.00");
+
+            sauces.Add("RadioButton");
+            sauces.Add("Saucse");
+            sauces.Add("BBQ sauce");
+            sauces.Add("Honey garlic sauce");
+            sauces.Add("Signature sauce");
+
+            salads.Add("RadioButton");
+            salads.Add("Add a starter salad?");
+            salads.Add("Garden Salad + $4.00");
+            salads.Add("Caesar Salad (now with bacon) + $4.00");
+            salads.Add("Mediterranean Salad + $5.50");
+
+            sides.Add("RadioButton");
+            sides.Add("Sides");
+            sides.Add("Fries");
+            sides.Add("Garlic Mashed Potatoes");
+            sides.Add("Loaded Mini Baked Potatoes");
+            sides.Add("Cactus Cut Potatoes +$3.00");
+            sides.Add("Seasonal Vegetables");
+            sides.Add("Fries");
+
+            menuItems.Add(sizes);
+            menuItems.Add(sauces);
+            menuItems.Add(salads);
+            menuItems.Add(sides);
+
+            OrderPopup op = new OrderPopup(orderSummery, "Pork Back Ribs", menuItems, utilityGrid, subtotalLabel, taxLabel, totalLabel, preTotalLabel, price);
+            MainsFrame.Children.Add(op);
+
+        }
 
         private void CallServer_Click(object sender, RoutedEventArgs e)
         {
