@@ -248,7 +248,7 @@
                     <RotateTransform x:Name="Transform1" />
                 </Canvas.RenderTransform>
                 <Border BorderThickness="2" BorderBrush="Black" Width="360" Height="300" HorizontalAlignment="Center" VerticalAlignment="Center"></Border>
-                <TextBlock Foreground="Black" FontSize="36" FontFamily="Arial" VerticalAlignment="Center" Text="Help is on the way! You can continue browsing by clicking the 'Menu' button" TextWrapping="Wrap" Height="280" Width="340" TextAlignment="Center" HorizontalAlignment="Center" Margin="10,10,0,0" >
+                <TextBlock Foreground="Black" FontSize="36" FontFamily="Arial" VerticalAlignment="Center" Text="Help is on the way! Feel free to continue browsing in the meantime." TextWrapping="Wrap" Height="280" Width="340" TextAlignment="Center" HorizontalAlignment="Center" Margin="10,10,0,0" >
                 </TextBlock>
                 <Button Content="OK" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Width="100" Height="50" FontSize="24" Background="WhiteSmoke" Canvas.Left="125" Canvas.Top="220" Click="CloseCallServer_Click"></Button>
             </Canvas>
@@ -259,7 +259,7 @@
                     <RotateTransform x:Name="Transform2" />
                 </Canvas.RenderTransform>
                 <Border BorderThickness="2" BorderBrush="Black" Width="360" Height="300" HorizontalAlignment="Center" VerticalAlignment="Center"></Border>
-                <TextBlock Foreground="Black" FontSize="36" FontFamily="Arial" VerticalAlignment="Center" Text="Are you sure you want to send the order?" TextWrapping="Wrap" Height="280" Width="340" TextAlignment="Center" HorizontalAlignment="Center" Margin="10,10,0,0" >
+                <TextBlock Foreground="Black" FontSize="36" FontFamily="Arial" VerticalAlignment="Center" Text="Are you sure you want to send your order?" TextWrapping="Wrap" Height="280" Width="340" TextAlignment="Center" HorizontalAlignment="Center" Margin="10,10,0,0" >
                 </TextBlock>
                 <Button Content="OK" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Width="100" Height="50" FontSize="24" Background="WhiteSmoke" Canvas.Left="50" Canvas.Top="220" Click="OkSendOrder_Click"></Button>
                 <Button Content="Cancel" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Width="100" Height="50" FontSize="24" Background="WhiteSmoke" Canvas.Left="210" Canvas.Top="220" Click="CancelSendOrder_Click"></Button>
@@ -272,7 +272,7 @@
                     <RotateTransform x:Name="Transform3" />
                 </Canvas.RenderTransform>
                 <Border BorderThickness="2" BorderBrush="Black" Width="360" Height="300" HorizontalAlignment="Center" VerticalAlignment="Center"></Border>
-                <TextBlock Foreground="Black" FontSize="32" FontFamily="Arial" VerticalAlignment="Center" Text="You must be over 18 to order this, If you choose to confirm, a picture of yourself and ID is needed" TextWrapping="Wrap" Height="280" Width="340" TextAlignment="Center" HorizontalAlignment="Center" Margin="10,10,0,0" >
+                <TextBlock Foreground="Black" FontSize="32" FontFamily="Arial" VerticalAlignment="Center" Text="You must be over 18 to order this. If you hit 'OK', the system will ask you to provide photo ID." TextWrapping="Wrap" Height="280" Width="340" TextAlignment="Center" HorizontalAlignment="Center" Margin="10,10,0,0" >
                 </TextBlock>
                 <Button Content="OK" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Width="100" Height="50" FontSize="24" Background="WhiteSmoke" Canvas.Left="50" Canvas.Top="220" Click="ConfirmBeerOrder_Click"></Button>
                 <Button Content="Cancel" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Width="100" Height="50" FontSize="24" Background="WhiteSmoke" Canvas.Left="210" Canvas.Top="220" Click="CancelBeer_Click"></Button>
