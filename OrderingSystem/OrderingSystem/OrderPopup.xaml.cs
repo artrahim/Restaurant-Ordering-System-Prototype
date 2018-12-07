@@ -113,7 +113,7 @@ namespace OrderingSystem
             colour = Color.FromRgb(0, 0, 0);
             SolidColorBrush textColour = new SolidColorBrush(colour);
             TextBlock error = new TextBlock();
-            error.Text = "* Requires Selection";
+            error.Text = "* Required";
             error.RenderTransformOrigin = new Point(0.5, 0.5);
             error.LayoutTransform = new RotateTransform() { Angle = 90 };
 
@@ -133,7 +133,7 @@ namespace OrderingSystem
                     {
                         hasChecked = true;
                         String name = radioButtons[radioButtonSets][radioButtonCount].Content.ToString();
-                        customizations.Text += "\r\n" + name;
+                        customizations.Text += name+"\r\n";
                         if (name.Contains('$'))
                         {
                             price += getPrice(name);
@@ -154,6 +154,9 @@ namespace OrderingSystem
                 {
                     if (!expanders[badExpanders[i]].Header.ToString().Contains("* Required"))
                     {
+                        Viewbox vb = new Viewbox();
+                        vb.StretchDirection = StretchDirection.DownOnly;
+                        vb.Child = expanders[badExpanders[i]];
                         expanders[badExpanders[i]].Header += " * Required";
                         //expanders[badExpanders[i]].Header = error;
                         //+= " * Requires Selection";
@@ -201,8 +204,11 @@ namespace OrderingSystem
             //add columns to grid
             headerGrid.ColumnDefinitions.Add(c1);
             */
+            
+            
             Expander orderSummeryExpander_1 = new Expander();
             orderSummeryExpander_1.IsExpanded = false;
+            orderSummeryExpander_1.Padding = new Thickness(20,0,0,0);
             order.Children.Add(orderSummeryExpander_1);
 
             double currPrice = (price * quantity);
@@ -246,7 +252,6 @@ namespace OrderingSystem
             total_Label.Content = "Total: $" + total.ToString("n2");
 
             CancelButton_1_Click(sender, e);
-
 
             Color colour1 = new Color();
             colour1 = Color.FromRgb(41, 41, 41);

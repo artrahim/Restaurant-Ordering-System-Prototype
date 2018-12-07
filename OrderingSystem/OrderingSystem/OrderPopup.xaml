@@ -29,7 +29,7 @@
 
                                 <DataTemplate x:Key="titleText">
                                     <Border Style="{StaticResource ExpanderStyle}" Height="30">
-                                        <TextBlock Text="{Binding}" 
+                                        <TextBlock Text="{Binding}"  
                         Margin="4 0"
                         VerticalAlignment="Center"
                         Foreground="Black"
@@ -40,6 +40,7 @@
                         Mode=FindAncestor,
                         AncestorType={x:Type Expander}},
                         Path=ActualWidth}"
+                        Height="Auto"
                         TextWrapping="Wrap"/>
                                     </Border>
                                 </DataTemplate>

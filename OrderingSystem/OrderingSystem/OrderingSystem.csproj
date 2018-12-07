@@ -230,5 +230,8 @@
   <ItemGroup>
     <Resource Include="img\apple crisp.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\bpsign.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

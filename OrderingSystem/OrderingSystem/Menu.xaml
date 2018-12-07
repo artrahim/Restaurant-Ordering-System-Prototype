@@ -26,7 +26,8 @@
                                 </Border>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsSelected" Value="False">
-                                        <Setter TargetName="Border" Property="Background" Value="LightSkyBlue" />
+                                        <Setter TargetName="Border" Property="Background" Value="#0957ac" />
+                                        <Setter TargetName="Border" Property="TextElement.Foreground" Value="White" />
                                     </Trigger>
                                     <Trigger Property="IsSelected" Value="True">
                                         <Setter TargetName="Border" Property="Background" Value="GhostWhite" />
@@ -218,15 +219,17 @@
                 </Grid>
             </TabItem>
         </TabControl>
+        <Border BorderBrush="White" BorderThickness="5" Width="315" Height="580" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,5,0">
+            <StackPanel x:Name="orderSummery" HorizontalAlignment="Right" VerticalAlignment="Top" Width="320" Orientation="Vertical" Background="#f2f7ff" Height="592">
 
-        <StackPanel x:Name="orderSummery" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Top" Width="320" Orientation="Vertical" Background="White" Height="592">
-            <Label Name="orderSummaryLabel" Content="Order Summary" Background="White" Margin="50,0,40,0" FontFamily="Arial Black" FontSize="24" IsEnabled="False" Foreground="Red" />
-        </StackPanel>
+                <Label Name="orderSummaryLabel" Content="Order Summary" Background="#f2f7ff" Margin="50,10,40,0" FontFamily="Arial Black" FontSize="24" IsEnabled="False" Foreground="#292929" />
+            </StackPanel>
+        </Border>
         <StackPanel x:Name="priceStack" HorizontalAlignment="Left" Height="140" Margin="960,580,0,0" VerticalAlignment="Top" Width="320" Background="White">
-            <Label x:Name="preTotalLabel" FontSize="22" FontFamily="Arial" Foreground="Black" Background="{x:Null}" BorderThickness="0" Height="35" Margin="0,0,10,0" IsEnabled="False" Visibility="Hidden"  />
-            <Label x:Name="subtotalLabel" Background="White" Foreground="Black" FontSize="22" FontFamily="Arial" Height="35" IsEnabled="False"/>
-            <Label x:Name="taxLabel" Background="White" FontSize="22" FontFamily="Arial" Foreground="Black" Height="35" Margin="0,0,10,0" IsEnabled="False"/>
-            <Label x:Name="totalLabel" FontSize="22" FontFamily="Arial" Foreground="Black" Background="{x:Null}" BorderThickness="0" Height="35" Margin="0,0,10,0" IsEnabled="False"/>
+            <Label x:Name="preTotalLabel"  Padding="20,0,0,0" FontSize="22" FontFamily="Arial" Foreground="Black" Background="{x:Null}" BorderThickness="0" Height="35" Margin="0,0,10,0" IsEnabled="False" Visibility="Hidden"  />
+            <Label x:Name="subtotalLabel" Padding="20,0,0,0" Background="White" Foreground="Black" FontSize="22" FontFamily="Arial" Height="35" IsEnabled="False"/>
+            <Label x:Name="taxLabel" Padding="20,0,0,0" Background="White" FontSize="22" FontFamily="Arial" Foreground="Black" Height="35" Margin="0,0,10,0" IsEnabled="False"/>
+            <Label x:Name="totalLabel"  Padding="20,0,0,0" FontSize="22" FontFamily="Arial" Foreground="Black" Background="{x:Null}" BorderThickness="0" Height="35" Margin="0,0,10,0" IsEnabled="False"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" Height="80" Width="1280" VerticalAlignment="Bottom" Background="#292929" Orientation="Horizontal" >
             <ToggleButton x:Name ="CallServer" Margin="10,0,0,10" Content="Call a Server" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="260" Height="60" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Click="CallServer_Click"/>

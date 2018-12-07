@@ -13,7 +13,7 @@
         <ToggleButton x:Name="CallServer" Content="Call a Server" Height="60" Margin="160,630,0,0" Width="250" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Center" Click="CallServer_Click"/>
         <Button x:Name="ContinueBrowsing" Content="Continue Browsing" Height="60" Margin="505,630,0,0" Width="270" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Center" Click="ContinueBrowsing_Click"/>
         <ToggleButton x:Name="FinishPay" Content="Finish and Pay" HorizontalAlignment="Left" Height="60" Margin="850,630,0,0" Width="250" VerticalAlignment="Center" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Click="FinishPay_Click"/>
-        <Image Name="smileyface" HorizontalAlignment="Left" Height="250" Margin="490,250,0,0" VerticalAlignment="Top" Width="250" Source="img/smileyface.jpg"/>
+        <Image Name="smileyface" HorizontalAlignment="Left" Height="250" Margin="490,250,0,0" VerticalAlignment="Top" Width="250" Source="img/bpsign.PNG"/>
         <Label Name ="Thanks" Content="Thanks For Ordering!" Margin="230,0,238,625" FontSize="70" Foreground="#e01a31" FontFamily="/fonts/#Americana" HorizontalAlignment="Center" VerticalAlignment="Center" Width="805"/>
         <Label Name ="Order" Content="Your food will be here shorty" HorizontalAlignment="Center" Margin="85,0,84,400" VerticalAlignment="Center" FontSize="34" Foreground="#e01a31" FontFamily="/fonts/#Americana" Width="530"/>
         <Grid x:Name="utilityGrid" Background="White" Opacity="0.0" Visibility="Collapsed"></Grid>

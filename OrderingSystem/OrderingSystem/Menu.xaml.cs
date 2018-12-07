@@ -38,7 +38,7 @@ namespace OrderingSystem
 
             subtotalLabel.Content = "Subtotal: $" + price;
             taxLabel.Content = "Tax: $" + price;
-            totalLabel.Content = "Total: $" + price;
+            totalLabel.Content = "Total: $" + newPrice.ToString("n2");
             preTotalLabel.Content = "Previous Total: $" + newPrice.ToString("n2");
             price = newPrice;
         }
