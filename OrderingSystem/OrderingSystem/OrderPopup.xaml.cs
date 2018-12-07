@@ -228,7 +228,18 @@ namespace OrderingSystem
 
                 subT = subT - currPrice;
                 tax = subT * 0.05;
-                total = subT + tax;
+
+                if (previousTotal == 0.0)
+                {
+                    total = subT + tax;
+                    price = total;
+                }
+                else
+                {
+                    total = subT + tax + previousTotal;
+                    price = total;
+                }
+                //total = subT + tax;
                 subtotal_Label.Content = "Subtotal: $" + subT.ToString("n2");
                 tax_Label.Content = "Tax: $" + tax.ToString("n2");
                 total_Label.Content = "Total: $" + total.ToString("n2");
@@ -279,6 +290,11 @@ namespace OrderingSystem
         public Double getTotalPrice()
         {
             return returnedPreTotal;
+        }
+        
+        public Double getSubTotal()
+        {
+            return subT;
         }
 
         private double getPrice(String s)
