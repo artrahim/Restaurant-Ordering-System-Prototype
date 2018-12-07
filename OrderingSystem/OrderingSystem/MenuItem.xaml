@@ -13,13 +13,13 @@
             <ColumnDefinition Width="77*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="210"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <Image x:Name="FoodImage" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Stretch="Fill"/>
+        <Image x:Name="FoodImage" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Stretch="UniformToFill"/>
         <StackPanel Grid.Column="1" Background="#FFE20000" Grid.ColumnSpan="2">
 
             <TextBlock x:Name="ItemName" TextWrapping="Wrap" Text="Item Name" Margin="5,5,88,0" FontWeight="Bold" FontSize="21" Foreground="White"/>
-            <TextBlock x:Name="ItemDescription" Height="110" TextWrapping="Wrap" Text="Item Description" Margin="5,5,5,2" FontSize="14" Foreground="White"/>
+            <TextBlock x:Name="ItemDescription" Height="110" TextWrapping="Wrap" Text="Item Description" Margin="5,5,5,2" FontSize="14" Foreground="White" FontWeight="Normal"/>
         </StackPanel>
 
         <ToggleButton x:Name="AddToOrder" Content="Add to Order" Margin="24,151,24,16" Grid.ColumnSpan="2" Grid.Column="1" FontSize="18" Click="AddToOrder_Click"/>
