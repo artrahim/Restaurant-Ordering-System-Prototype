@@ -230,10 +230,12 @@
             </StackPanel>
         </Border>
         <StackPanel x:Name="priceStack" HorizontalAlignment="Left" Height="140" Margin="960,580,0,0" VerticalAlignment="Top" Width="320" Background="White">
+         <StackPanel x:Name="priceStack" HorizontalAlignment="Left" Height="145" Margin="960,575,0,0" VerticalAlignment="Top" Width="320" Background="#f2f7ff">
             <Label x:Name="preTotalLabel"  Padding="20,0,0,0" FontSize="22" FontFamily="Arial" Foreground="Black" Background="{x:Null}" BorderThickness="0" Height="35" Margin="0,0,10,0" IsEnabled="False" Visibility="Hidden"  />
-            <Label x:Name="subtotalLabel" Padding="20,0,0,0" Background="White" Foreground="Black" FontSize="22" FontFamily="Arial" Height="35" IsEnabled="False"/>
-            <Label x:Name="taxLabel" Padding="20,0,0,0" Background="White" FontSize="22" FontFamily="Arial" Foreground="Black" Height="35" Margin="0,0,10,0" IsEnabled="False"/>
+            <Label x:Name="subtotalLabel" Padding="20,0,0,0" Background="#f2f7ff" Foreground="Black" FontSize="22" FontFamily="Arial" Height="35" IsEnabled="False"/>
+            <Label x:Name="taxLabel" Padding="20,0,0,0" Background="#f2f7ff" FontSize="22" FontFamily="Arial" Foreground="Black" Height="35" Margin="0,0,10,0" IsEnabled="False"/>
             <Label x:Name="totalLabel"  Padding="20,0,0,0" FontSize="22" FontFamily="Arial" Foreground="Black" Background="{x:Null}" BorderThickness="0" Height="35" Margin="0,0,10,0" IsEnabled="False"/>
+        </StackPanel>
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" Height="80" Width="1280" VerticalAlignment="Bottom" Background="#292929" Orientation="Horizontal" >
             <ToggleButton x:Name ="CallServer" Margin="10,0,0,10" Content="Call a Server" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="260" Height="60" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Click="CallServer_Click"/>
