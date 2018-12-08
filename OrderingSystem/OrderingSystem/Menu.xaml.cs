@@ -286,7 +286,7 @@ namespace OrderingSystem
             sizes.Add("RadioButton");
             sizes.Add("Size");
             sizes.Add("Half Rack $19.00");
-            sizes.Add("Half Rack 26.00");
+            sizes.Add("Full Rack $26.00");
 
             sauces.Add("RadioButton");
             sauces.Add("Sauces");
