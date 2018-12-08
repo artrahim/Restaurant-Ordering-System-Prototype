@@ -98,12 +98,6 @@
                     <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3">
                         <local:MenuItem Width="Auto" Margin="5,5,5,15" foodImage="img/mediterranean.png" itemName="Mediterranean" itemDescription="Signature pizza sauce, pizza mozzarella, fresh spinach, fresh mushrooms, sun-dried tomatoes, marinated artichoke hearts, feta and a pesto drizzle."  price="$13.00" Height="300"/>
                     </StackPanel>
-                    <StackPanel Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3">
-                    <StackPanel Grid.Column="0" Grid.Row="3">
-                       <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/chicken.png" itemDescription="Original or Buffalo style. Lightly breaded chicken breast filet served with your choice of dipping sauce." itemName="Chicken Fingers" price="$11.50"/>
-                    </StackPanel>                          
-
-                    </StackPanel>
 
                     <StackPanel Grid.Column="3" Grid.Row="0">
                         <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/vivaitalia.png" itemDescription="Arrabbiata pizza sauce, pizza mozzarella, Genoa salami, chopped bacon, spicy Italian sausage, roasted red peppers, banana peppers, goat cheese, freshly grated Parmesan and a pesto drizzle." itemName="Viva Italia" price="$13.00"/>
@@ -232,14 +226,12 @@
             <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="0,0,0,-5" Height="502">
                 <StackPanel x:Name="orderSummery" HorizontalAlignment="Right" VerticalAlignment="Top" Width="320" Orientation="Vertical" Background="#f2f7ff" Height="779" Margin="0"/>
             </ScrollViewer>
-        </Border>
-        <StackPanel x:Name="priceStack" HorizontalAlignment="Left" Height="140" Margin="960,580,0,0" VerticalAlignment="Top" Width="320" Background="White">
+          </Border>
          <StackPanel x:Name="priceStack" HorizontalAlignment="Left" Height="145" Margin="960,575,0,0" VerticalAlignment="Top" Width="320" Background="#f2f7ff">
             <Label x:Name="preTotalLabel"  Padding="20,0,0,0" FontSize="22" FontFamily="Arial" Foreground="Black" Background="{x:Null}" BorderThickness="0" Height="35" Margin="0,0,10,0" IsEnabled="False" Visibility="Hidden"  />
             <Label x:Name="subtotalLabel" Padding="20,0,0,0" Background="#f2f7ff" Foreground="Black" FontSize="22" FontFamily="Arial" Height="35" IsEnabled="False"/>
             <Label x:Name="taxLabel" Padding="20,0,0,0" Background="#f2f7ff" FontSize="22" FontFamily="Arial" Foreground="Black" Height="35" Margin="0,0,10,0" IsEnabled="False"/>
             <Label x:Name="totalLabel"  Padding="20,0,0,0" FontSize="22" FontFamily="Arial" Foreground="Black" Background="{x:Null}" BorderThickness="0" Height="35" Margin="0,0,10,0" IsEnabled="False"/>
-        </StackPanel>
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" Height="80" Width="1280" VerticalAlignment="Bottom" Background="#292929" Orientation="Horizontal" >
             <ToggleButton x:Name ="CallServer" Margin="10,0,0,10" Content="Call a Server" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="260" Height="60" Background="#e01a31" Foreground="WhiteSmoke" FontSize="30" FontFamily="Arial" Click="CallServer_Click"/>
