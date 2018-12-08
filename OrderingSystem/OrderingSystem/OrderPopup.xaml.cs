@@ -214,7 +214,7 @@ namespace OrderingSystem
             orderSummeryExpander_1.Padding = new Thickness(20,0,0,0);
 
             double currPrice = (price * quantity);
-            orderSummeryExpander_1.FontSize = 20;
+            orderSummeryExpander_1.FontSize = 18;
             orderSummeryExpander_1.Header = "   " + name + " x" + quantity + " $" + currPrice.ToString("n2");
             orderSummeryExpander_1.Foreground = textColour;
             orderSummeryExpander_1.Content = customizations;
