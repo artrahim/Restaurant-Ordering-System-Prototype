@@ -90,6 +90,7 @@
                         <RowDefinition SharedSizeGroup="A" Height="210"/>
                         <RowDefinition SharedSizeGroup="A" Height="210"/>
                         <RowDefinition SharedSizeGroup="A" Height="210"/>
+                        <RowDefinition SharedSizeGroup="A" Height="210"/>
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3">
                         <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/bostonroyal.png" itemDescription="Signature pizza sauce, pizza mozzarella, smoked ham, pepperoni, shrimp, olives, green peppers, onions and fresh mushrooms." itemName="Boston Royal" price="$13.00" AddToOrderButtonClicked="AddBostonRoyal_Click" />
@@ -98,6 +99,9 @@
                         <local:MenuItem Width="Auto" Margin="5,5,5,15" foodImage="img/mediterranean.png" itemName="Mediterranean" itemDescription="Signature pizza sauce, pizza mozzarella, fresh spinach, fresh mushrooms, sun-dried tomatoes, marinated artichoke hearts, feta and a pesto drizzle."  price="$13.00" Height="300"/>
                     </StackPanel>
                     <StackPanel Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3">
+                    <StackPanel Grid.Column="0" Grid.Row="3">
+                       <local:MenuItem Width="Auto" Height="Auto" Margin="5,5,5,15" foodImage="img/chicken.png" itemDescription="Original or Buffalo style. Lightly breaded chicken breast filet served with your choice of dipping sauce." itemName="Chicken Fingers" price="$11.50"/>
+                    </StackPanel>                          
 
                     </StackPanel>
 
@@ -223,11 +227,11 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Border BorderBrush="White" BorderThickness="5" Width="315" Height="580" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,5,0">
-            <StackPanel x:Name="orderSummery" HorizontalAlignment="Right" VerticalAlignment="Top" Width="320" Orientation="Vertical" Background="#f2f7ff" Height="592">
-
-                <Label Name="orderSummaryLabel" Content="Order Summary" Background="#f2f7ff" Margin="50,10,40,0" FontFamily="Arial Black" FontSize="24" IsEnabled="False" Foreground="#292929" />
-            </StackPanel>
+        <Label Name="orderSummaryLabel" Content="     Order Summary" Background="#f2f7ff" Margin="954,0,-5,727" FontFamily="Arial Black" FontSize="24" IsEnabled="False" Foreground="#292929" Width="320" />
+        <Border BorderBrush="#f2f7ff" BorderThickness="5" Width="315" Height="502" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,73,5,0">
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="0,0,0,-5" Height="502">
+                <StackPanel x:Name="orderSummery" HorizontalAlignment="Right" VerticalAlignment="Top" Width="320" Orientation="Vertical" Background="#f2f7ff" Height="779" Margin="0"/>
+            </ScrollViewer>
         </Border>
         <StackPanel x:Name="priceStack" HorizontalAlignment="Left" Height="140" Margin="960,580,0,0" VerticalAlignment="Top" Width="320" Background="White">
          <StackPanel x:Name="priceStack" HorizontalAlignment="Left" Height="145" Margin="960,575,0,0" VerticalAlignment="Top" Width="320" Background="#f2f7ff">
