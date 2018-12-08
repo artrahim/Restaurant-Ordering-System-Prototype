@@ -221,16 +221,16 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Label Name="orderSummaryLabel" Content="     Order Summary" Background="#f2f7ff" Margin="954,0,-5,727" FontFamily="Arial Black" FontSize="24" IsEnabled="False" Foreground="#292929" Width="320" />
-        <Border BorderBrush="#f2f7ff" BorderThickness="5" Width="315" Height="502" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,73,5,0">
+        <Label Name="orderSummaryLabel" Content="     Order Summary" Background="#a3c5ff" Margin="954,0,-5,727" Padding="0,25,0,0" FontFamily="Arial Black" FontSize="24" IsEnabled="False" Foreground="#292929" Width="320" />
+        <Border BorderBrush="#a3c5ff" BorderThickness="5" Width="315" Height="502" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,73,5,0">
             <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="0,0,0,-5" Height="502">
-                <StackPanel x:Name="orderSummery" HorizontalAlignment="Right" VerticalAlignment="Top" Width="320" Orientation="Vertical" Background="#f2f7ff" Height="779" Margin="0"/>
+                <StackPanel x:Name="orderSummery" HorizontalAlignment="Right" VerticalAlignment="Top" Width="320" Orientation="Vertical" Background="#a3c5ff" Height="779" Margin="0"/>
             </ScrollViewer>
           </Border>
-         <StackPanel x:Name="priceStack" HorizontalAlignment="Left" Height="145" Margin="960,575,0,0" VerticalAlignment="Top" Width="320" Background="#f2f7ff">
+        <StackPanel x:Name="priceStack" HorizontalAlignment="Left" Height="145" Margin="960,575,0,0" VerticalAlignment="Top" Width="320" Background="#a3c5ff">
             <Label x:Name="preTotalLabel"  Padding="20,0,0,0" FontSize="22" FontFamily="Arial" Foreground="Black" Background="{x:Null}" BorderThickness="0" Height="35" Margin="0,0,10,0" IsEnabled="False" Visibility="Hidden"  />
-            <Label x:Name="subtotalLabel" Padding="20,0,0,0" Background="#f2f7ff" Foreground="Black" FontSize="22" FontFamily="Arial" Height="35" IsEnabled="False"/>
-            <Label x:Name="taxLabel" Padding="20,0,0,0" Background="#f2f7ff" FontSize="22" FontFamily="Arial" Foreground="Black" Height="35" Margin="0,0,10,0" IsEnabled="False"/>
+            <Label x:Name="subtotalLabel" Padding="20,0,0,0" Foreground="Black" FontSize="22" FontFamily="Arial" Height="35" IsEnabled="False"/>
+            <Label x:Name="taxLabel" Padding="20,0,0,0"  FontSize="22" FontFamily="Arial" Foreground="Black" Height="35" Margin="0,0,10,0" IsEnabled="False"/>
             <Label x:Name="totalLabel"  Padding="20,0,0,0" FontSize="22" FontFamily="Arial" Foreground="Black" Background="{x:Null}" BorderThickness="0" Height="35" Margin="0,0,10,0" IsEnabled="False"/>
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" Height="80" Width="1280" VerticalAlignment="Bottom" Background="#292929" Orientation="Horizontal" >
